@@ -1,11 +1,12 @@
 import React from "react";
 
 import PageWrapper from "src/components/page-wrapper";
+import ProjectPanels from "src/components/project-panels";
 
 const IndexPage = () => {
   return (
     <PageWrapper>
-      <div>Index Page</div>
+      <ProjectPanels />
     </PageWrapper>
   );
 };
