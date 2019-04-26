@@ -1,6 +1,9 @@
 [
   {
-    "img": "hello",
-    "text": "there"
+    "img": {
+      "src": "../assets/images/silver-ticket.jpg",
+      "alt_text": "Silver Ticket"
+    },
+    "title": "Mayhem"
   }
 ]
