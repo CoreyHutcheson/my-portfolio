@@ -1,12 +1,12 @@
 import React from "react";
 
 import PageWrapper from "src/components/page-wrapper";
-import ProjectPanels from "src/components/project-panels";
+import Projects from "src/components/projects";
 
 const IndexPage = () => {
   return (
     <PageWrapper>
-      <ProjectPanels />
+      <Projects />
     </PageWrapper>
   );
 };
