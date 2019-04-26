@@ -6,8 +6,17 @@ export const useProjects = () => {
       allProjectsJson {
         edges {
           node {
-            img
-            text
+            img {
+              src {
+                childImageSharp {
+                  fluid {
+                    ...GatsbyImageSharpFluid_withWebp_tracedSVG
+                  }
+                }
+              }
+              alt_text
+            }
+            title
           }
         }
       }
