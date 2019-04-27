@@ -14,21 +14,41 @@ const StyledProjects = styled.div`
 const Projects = () => {
   const projectData = useProjects();
   const [showModal, setShowModal] = useState(false);
+  const [modalInfo, setModalInfo] = useState({});
+
+  const handleModalOpen = info => {
+    setModalInfo(info);
+    setShowModal(true);
+  };
+
+  const handleModalClose = () => {
+    setModalInfo({});
+    setShowModal(false);
+  };
+
+  // This is used for accessibility purposes
+  Modal.setAppElement("#___gatsby");
 
   return (
     <StyledProjects>
       {projectData.map(({ node }) => (
         <Panel
+          key={node.id}
           src={node.img.src.childImageSharp.fluid}
           alt={node.img.alt_text}
           title={node.title}
-          openModal={() => setShowModal(true)}
+          openModal={handleModalOpen}
         />
       ))}
 
-      <Modal isOpen={showModal} contentLabel="Example Modal">
-        <p>This is a modal</p>
-        <button onClick={() => setShowModal(false)}>Close</button>
+      <Modal
+        isOpen={showModal}
+        contentLabel="Project Modal"
+        onRequestClose={handleModalClose}
+      >
+        <p>Title: {modalInfo.title}</p>
+        <p>Alt: {modalInfo.alt}</p>
+        <button onClick={handleModalClose}>Close</button>
       </Modal>
     </StyledProjects>
   );
