@@ -6,10 +6,25 @@ import { useProjects } from "src/utils/js/useProjects";
 import Panel from "./panel";
 
 const StyledProjects = styled.div`
-  width: 90%;
-  height: 1000px;
-  background: pink;
+  width: 100%;
+  margin: 0 auto;
+  background: #aaa;
+
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  justify-items: center;
+  align-items: center;
+  grid-gap: 0.5rem;
+
+  @media (min-width: 400px) {
+    width: 90%;
+  }
 `;
+
+const modalStyles = {
+  overlay: {},
+  content: {},
+};
 
 const Projects = () => {
   const projectData = useProjects();
@@ -45,6 +60,7 @@ const Projects = () => {
         isOpen={showModal}
         contentLabel="Project Modal"
         onRequestClose={handleModalClose}
+        style={modalStyles}
       >
         <p>Title: {modalInfo.title}</p>
         <p>Alt: {modalInfo.alt}</p>
