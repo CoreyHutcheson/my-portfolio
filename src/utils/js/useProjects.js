@@ -6,6 +6,8 @@ export const useProjects = () => {
       allProjectsJson {
         edges {
           node {
+            id
+            title
             img {
               src {
                 childImageSharp {
@@ -16,7 +18,6 @@ export const useProjects = () => {
               }
               alt_text
             }
-            title
           }
         }
       }
