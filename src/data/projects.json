@@ -4,6 +4,13 @@
       "src": "../assets/images/silver-ticket.jpg",
       "alt_text": "Silver Ticket"
     },
-    "title": "Mayhem"
+    "title": "Mayhem Silver"
+  },
+  {
+    "img": {
+      "src": "../assets/images/gold-ticket.jpg",
+      "alt_text": "Gold Ticket"
+    },
+    "title": "Mayhem Gold"
   }
 ]

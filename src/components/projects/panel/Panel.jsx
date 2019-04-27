@@ -37,6 +37,8 @@ const Title = styled.div`
   font-weight: 600;
 
   padding: 5px 0;
+  width: 100%;
+  text-align: center;
 
   transition: all 0.3s ease-in-out;
   opacity: 0;
