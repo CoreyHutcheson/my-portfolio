@@ -81,11 +81,11 @@ const Button = styled.div`
   }
 `;
 
-const Panel = ({ src, alt, title }) => (
+const Panel = ({ src, alt, title, openModal }) => (
   <StyledPanel>
     <Image fluid={src} alt={alt} />
     <Title>{title}</Title>
-    <Button>Learn More</Button>
+    <Button onClick={openModal}>Learn More</Button>
   </StyledPanel>
 );
 
@@ -93,6 +93,7 @@ Panel.propTypes = {
   src: PropTypes.object.isRequired,
   alt: PropTypes.string,
   title: PropTypes.string.isRequired,
+  openModal: PropTypes.func.isRequired,
 };
 
 export default Panel;

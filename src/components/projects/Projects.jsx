@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
+import Modal from "react-modal";
 
 import { useProjects } from "src/utils/js/useProjects";
 import Panel from "./panel";
@@ -12,6 +13,7 @@ const StyledProjects = styled.div`
 
 const Projects = () => {
   const projectData = useProjects();
+  const [showModal, setShowModal] = useState(false);
 
   return (
     <StyledProjects>
@@ -20,8 +22,14 @@ const Projects = () => {
           src={node.img.src.childImageSharp.fluid}
           alt={node.img.alt_text}
           title={node.title}
+          openModal={() => setShowModal(true)}
         />
       ))}
+
+      <Modal isOpen={showModal} contentLabel="Example Modal">
+        <p>This is a modal</p>
+        <button onClick={() => setShowModal(false)}>Close</button>
+      </Modal>
     </StyledProjects>
   );
 };
