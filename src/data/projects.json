@@ -1,16 +1,56 @@
 [
   {
-    "img": {
-      "src": "../assets/images/silver-ticket.jpg",
-      "alt_text": "Silver Ticket"
-    },
-    "title": "Mayhem Silver"
+    "title": "Mayhem",
+    "description": "Custom Mayhem Wrestling site",
+    "images": [
+      {
+        "src": "../assets/images/bronze-ticket.jpg",
+        "alt_text": "Bronze Ticket"
+      },
+      {
+        "src": "../assets/images/silver-ticket.jpg",
+        "alt_text": "Silver Ticket"
+      },
+      {
+        "src": "../assets/images/gold-ticket.jpg",
+        "alt_text": "Gold Ticket"
+      }
+    ]
   },
   {
-    "img": {
-      "src": "../assets/images/gold-ticket.jpg",
-      "alt_text": "Gold Ticket"
-    },
-    "title": "Mayhem Gold"
+    "title": "Mayhem",
+    "description": "Test 2",
+    "images": [
+      {
+        "src": "../assets/images/silver-ticket.jpg",
+        "alt_text": "Silver Ticket"
+      },
+      {
+        "src": "../assets/images/bronze-ticket.jpg",
+        "alt_text": "Bronze Ticket"
+      },
+      {
+        "src": "../assets/images/gold-ticket.jpg",
+        "alt_text": "Gold Ticket"
+      }
+    ]
+  },
+  {
+    "title": "Mayhem",
+    "description": "Test 3",
+    "images": [
+      {
+        "src": "../assets/images/gold-ticket.jpg",
+        "alt_text": "Gold Ticket"
+      },
+      {
+        "src": "../assets/images/bronze-ticket.jpg",
+        "alt_text": "Bronze Ticket"
+      },
+      {
+        "src": "../assets/images/silver-ticket.jpg",
+        "alt_text": "Silver Ticket"
+      }
+    ]
   }
 ]

@@ -8,15 +8,17 @@ export const useProjects = () => {
           node {
             id
             title
-            img {
+            description
+            images {
+              alt_text
               src {
+                id
                 childImageSharp {
                   fluid {
                     ...GatsbyImageSharpFluid_withWebp_tracedSVG
                   }
                 }
               }
-              alt_text
             }
           }
         }
