@@ -81,15 +81,19 @@ const Button = styled.div`
   }
 `;
 
-const Panel = ({ src, alt, title, openModal }) => {
+const Panel = ({ title, description, images, openModal }) => {
   const modalInfo = {
-    alt,
     title,
+    description,
+    images,
   };
 
   return (
     <StyledPanel>
-      <Image fluid={src} alt={alt} />
+      <Image
+        fluid={images[0].src.childImageSharp.fluid}
+        alt={images[0].alt_text}
+      />
       <Title>{title}</Title>
       <Button onClick={() => openModal(modalInfo)}>Learn More</Button>
     </StyledPanel>
@@ -97,9 +101,9 @@ const Panel = ({ src, alt, title, openModal }) => {
 };
 
 Panel.propTypes = {
-  src: PropTypes.object.isRequired,
-  alt: PropTypes.string,
   title: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired,
+  images: PropTypes.array.isRequired,
   openModal: PropTypes.func.isRequired,
 };
 
