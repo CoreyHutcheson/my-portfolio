@@ -4,6 +4,7 @@ import Modal from "react-modal";
 
 import { useProjects } from "src/utils/js/useProjects";
 import Panel from "./panel";
+import Carousel from "src/components/carousel";
 
 const StyledProjects = styled.div`
   width: 100%;
@@ -58,9 +59,9 @@ const Projects = () => {
       {projectData.map(({ node }) => (
         <Panel
           key={node.id}
-          src={node.img.src.childImageSharp.fluid}
-          alt={node.img.alt_text}
           title={node.title}
+          description={node.description}
+          images={node.images}
           openModal={handleModalOpen}
         />
       ))}
@@ -71,8 +72,9 @@ const Projects = () => {
         onRequestClose={handleModalClose}
         style={modalStyles}
       >
+        <Carousel images={modalInfo.images} />
         <p>Title: {modalInfo.title}</p>
-        <p>Alt: {modalInfo.alt}</p>
+        <p>Description: {modalInfo.description}</p>
         <button onClick={handleModalClose}>Close</button>
       </Modal>
     </StyledProjects>
