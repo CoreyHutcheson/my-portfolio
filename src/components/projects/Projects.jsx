@@ -24,7 +24,15 @@ const StyledProjects = styled.div`
 
 const modalStyles = {
   overlay: {},
-  content: {},
+  content: {
+    top: "0",
+    left: "0",
+    bottom: "0",
+    right: "0",
+    width: "90%",
+    maxWidth: "900px",
+    margin: "5% auto",
+  },
 };
 
 const Projects = () => {
