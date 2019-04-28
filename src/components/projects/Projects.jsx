@@ -8,16 +8,17 @@ import Panel from "./panel";
 const StyledProjects = styled.div`
   width: 100%;
   margin: 0 auto;
-  background: #aaa;
+  background: inherit;
 
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 300px));
   justify-items: center;
+  justify-content: center;
   align-items: center;
-  grid-gap: 0.5rem;
 
   @media (min-width: 400px) {
     width: 90%;
+    max-width: 900px;
   }
 `;
 
