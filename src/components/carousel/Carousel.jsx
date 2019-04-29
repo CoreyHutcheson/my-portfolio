@@ -26,22 +26,23 @@ const StyledImage = styled(Img)`
   transform: translate(${props => `${props.translateAmount}%`});
 `;
 
+function notFirstSlide(num) {
+  return num + 100 <= 0;
+}
+
+function notLastSlide(num, slides) {
+  return num - 100 >= (slides - 1) * -100;
+}
+
 const Carousel = ({ images = [] }) => {
   const [translateAmount, setTranslateAmount] = useState(0);
 
-  const handlePrevClick = () => {
-    let newTranslate = translateAmount + 100;
-    if (newTranslate <= 0) {
-      setTranslateAmount(newTranslate);
-    }
-  };
+  const handlePrevClick = () =>
+    notFirstSlide(translateAmount) && setTranslateAmount(translateAmount + 100);
 
-  const handleNextClick = () => {
-    let newTranslate = translateAmount - 100;
-    if (newTranslate >= (images.length - 1) * -100) {
-      setTranslateAmount(newTranslate);
-    }
-  };
+  const handleNextClick = () =>
+    notLastSlide(translateAmount, images.length) &&
+    setTranslateAmount(translateAmount - 100);
 
   return (
     <StyledCarousel>

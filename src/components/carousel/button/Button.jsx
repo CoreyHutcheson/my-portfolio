@@ -9,6 +9,7 @@ const StyledButton = styled.div`
   font-size: 1.3rem;
   font-weight: 600;
   text-transform: uppercase;
+  user-select: none;
 
   position: absolute;
   bottom: 0;
