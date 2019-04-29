@@ -1,6 +1,11 @@
 import React from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
+import {
+  faChevronLeft,
+  faChevronRight,
+} from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const StyledButton = styled.div`
   background: rgba(0, 0, 0, 0.6);
@@ -22,10 +27,13 @@ const StyledButton = styled.div`
   }
 `;
 
-const Button = ({ text, handleClick }) => {
+const Button = ({ text, handleClick, className }) => {
   return (
-    <StyledButton text={text} onClick={handleClick}>
-      {text}
+    <StyledButton text={text} onClick={handleClick} className={className}>
+      <FontAwesomeIcon
+        icon={text === "Prev" ? "faChevronLeft" : "faChevronRight"}
+        size="2x"
+      />
     </StyledButton>
   );
 };
@@ -33,6 +41,7 @@ const Button = ({ text, handleClick }) => {
 Button.propTypes = {
   text: PropTypes.string.isRequired,
   handleClick: PropTypes.func.isRequired,
+  className: PropTypes.string,
 };
 
 export default Button;
