@@ -39,8 +39,8 @@ const Carousel = ({ images = [] }) => {
         ))}
       </Window>
 
-      <Button prev />
-      <Button next />
+      <Button text="Prev" handleClick={() => console.log("previous")} />
+      <Button text="Next" handleClick={() => console.log("next")} />
     </StyledCarousel>
   );
 };

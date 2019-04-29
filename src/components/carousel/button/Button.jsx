@@ -12,18 +12,36 @@ const StyledButton = styled.div`
 
   position: absolute;
   bottom: 0;
-  left: ${props => (props.left ? "0" : "auto")};
-  right: ${props => (props.right ? "0" : "auto")};
+
+  color: ${props =>
+    props.text === "Prev" ? "red" : props.text === "Next" ? "blue" : "green"};
+
+  left: ${props => (props.text === "Prev" ? "0" : "auto")};
+  right: ${props => (props.text === "Next" ? "0" : "auto")};
 `;
 
-const Button = props => {
-  console.log(props);
+// const LeftButton = styled(StyledButton)`
+//   left: 0;
+// `;
 
-  return <StyledButton>Test</StyledButton>;
+// const RightButton = styled(StyledButton)`
+//   right: 0;
+// `;
+
+const Button = ({ text, handleClick }) => {
+  console.log(text);
+  // return text === "Prev" ? (
+  //   <LeftButton onClick={handleClick}>Prev</LeftButton>
+  // ) : (
+  //   <RightButton onClick={handleClick}>Next</RightButton>
+  // );
+
+  return <StyledButton onClick={handleClick}>{text}</StyledButton>;
 };
 
-// Button.propTypes = {
-//   text: PropTypes.string.isRequired,
-// };
+Button.propTypes = {
+  text: PropTypes.string.isRequired,
+  handleClick: PropTypes.func.isRequired,
+};
 
 export default Button;
