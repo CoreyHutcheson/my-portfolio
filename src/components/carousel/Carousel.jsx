@@ -44,6 +44,13 @@ const Carousel = ({ images = [] }) => {
     notLastSlide(translateAmount, images.length) &&
     setTranslateAmount(translateAmount - 100);
 
+  const buttons = (
+    <>
+      <Button text="Prev" handleClick={handlePrevClick} />
+      <Button text="Next" handleClick={handleNextClick} />
+    </>
+  );
+
   return (
     <StyledCarousel>
       <Window>
@@ -57,8 +64,7 @@ const Carousel = ({ images = [] }) => {
         ))}
       </Window>
 
-      <Button text="Prev" handleClick={handlePrevClick} />
-      <Button text="Next" handleClick={handleNextClick} />
+      {images.length > 1 ? buttons : null}
     </StyledCarousel>
   );
 };
