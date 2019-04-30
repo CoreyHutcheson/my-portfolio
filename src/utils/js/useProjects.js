@@ -8,7 +8,9 @@ export const useProjects = () => {
           node {
             id
             title
+            tag
             description
+            link
             images {
               alt_text
               src {

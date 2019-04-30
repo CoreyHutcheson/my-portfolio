@@ -1,7 +1,9 @@
 [
   {
     "title": "Mayhem",
+    "tag": "Business Website",
     "description": "Custom Mayhem Wrestling site",
+    "link": "https://www.facebook.com",
     "images": [
       {
         "src": "../assets/images/bronze-ticket.jpg",
@@ -19,24 +21,19 @@
   },
   {
     "title": "Mayhem",
+    "tag": "Business Website",
     "description": "Test 2",
+    "link": "https://www.facebook.com",
     "images": [
       {
         "src": "../assets/images/silver-ticket.jpg",
         "alt_text": "Silver Ticket"
-      },
-      {
-        "src": "../assets/images/bronze-ticket.jpg",
-        "alt_text": "Bronze Ticket"
-      },
-      {
-        "src": "../assets/images/gold-ticket.jpg",
-        "alt_text": "Gold Ticket"
       }
     ]
   },
   {
     "title": "Mayhem",
+    "tag": "Business Website",
     "description": "Test 3",
     "images": [
       {
