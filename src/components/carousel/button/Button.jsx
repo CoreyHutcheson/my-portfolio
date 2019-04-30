@@ -31,7 +31,7 @@ const Button = ({ text, handleClick, className }) => {
   return (
     <StyledButton text={text} onClick={handleClick} className={className}>
       <FontAwesomeIcon
-        icon={text === "Prev" ? "faChevronLeft" : "faChevronRight"}
+        icon={text === "Prev" ? faChevronLeft : faChevronRight}
         size="2x"
       />
     </StyledButton>
