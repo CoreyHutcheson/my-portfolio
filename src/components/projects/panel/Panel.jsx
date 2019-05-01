@@ -3,6 +3,8 @@ import PropTypes from "prop-types";
 import Img from "gatsby-image";
 import styled from "styled-components";
 
+import Button from "src/components/button";
+
 const StyledPanel = styled.div`
   width: 300px;
   height: 300px;
@@ -50,17 +52,7 @@ const Title = styled.div`
   }
 `;
 
-const Button = styled.div`
-  width: 170px;
-  background: #f5f5f5;
-  color: #e31b6d;
-  border: 2px solid #e31b6d;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  font-weight: 600;
-  text-align: center;
-  padding: 10px 0px;
-
+const StyledButton = styled(Button)`
   position: absolute;
   bottom: 0%;
   left: 50%;
@@ -69,11 +61,6 @@ const Button = styled.div`
   transition: all 0.3s ease-in-out;
   opacity: 0;
 
-  &:hover {
-    color: #f5f5f5;
-    background: #e31b6d;
-  }
-
   ${StyledPanel}:hover & {
     bottom: 20%;
     transform: translate(-50%, 0%);
@@ -81,10 +68,12 @@ const Button = styled.div`
   }
 `;
 
-const Panel = ({ title, description, images, openModal }) => {
+const Panel = ({ title, tag, description, link = "", images, openModal }) => {
   const modalInfo = {
     title,
+    tag,
     description,
+    link,
     images,
   };
 
@@ -95,14 +84,18 @@ const Panel = ({ title, description, images, openModal }) => {
         alt={images[0].alt_text}
       />
       <Title>{title}</Title>
-      <Button onClick={() => openModal(modalInfo)}>Learn More</Button>
+      <StyledButton handleClick={() => openModal(modalInfo)}>
+        Learn More
+      </StyledButton>
     </StyledPanel>
   );
 };
 
 Panel.propTypes = {
   title: PropTypes.string.isRequired,
+  tag: PropTypes.string,
   description: PropTypes.string.isRequired,
+  link: PropTypes.string,
   images: PropTypes.array.isRequired,
   openModal: PropTypes.func.isRequired,
 };
