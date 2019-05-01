@@ -59,15 +59,7 @@ const Projects = () => {
   return (
     <StyledProjects>
       {projectData.map(({ node }) => (
-        <Panel
-          key={node.id}
-          title={node.title}
-          tag={node.tag}
-          description={node.description}
-          link={node.link}
-          images={node.images}
-          openModal={handleModalOpen}
-        />
+        <Panel {...node} openModal={handleModalOpen} />
       ))}
 
       <Modal
