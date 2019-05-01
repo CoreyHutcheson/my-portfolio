@@ -78,13 +78,7 @@ const Projects = () => {
       >
         <Carousel images={info.images} />
 
-        <ModalContent
-          title={info.title}
-          tag={info.tag}
-          description={info.description}
-          link={info.link}
-          handleModalClose={handleModalClose}
-        />
+        <ModalContent {...info} handleModalClose={handleModalClose} />
       </Modal>
     </StyledProjects>
   );
