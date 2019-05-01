@@ -5,6 +5,7 @@ import Modal from "react-modal";
 import { useProjects } from "src/utils/js/useProjects";
 import Panel from "./panel";
 import Carousel from "src/components/carousel";
+import ModalContent from "./modal-content";
 
 const StyledProjects = styled.div`
   width: 100%;
@@ -33,21 +34,22 @@ const modalStyles = {
     width: "90%",
     maxWidth: "900px",
     margin: "5% auto",
+    padding: "0",
   },
 };
 
 const Projects = () => {
   const projectData = useProjects();
   const [showModal, setShowModal] = useState(false);
-  const [modalInfo, setModalInfo] = useState({});
+  const [info, setInfo] = useState({});
 
   const handleModalOpen = info => {
-    setModalInfo(info);
+    setInfo(info);
     setShowModal(true);
   };
 
   const handleModalClose = () => {
-    setModalInfo({});
+    setInfo({});
     setShowModal(false);
   };
 
@@ -60,7 +62,9 @@ const Projects = () => {
         <Panel
           key={node.id}
           title={node.title}
+          tag={node.tag}
           description={node.description}
+          link={node.link}
           images={node.images}
           openModal={handleModalOpen}
         />
@@ -72,10 +76,15 @@ const Projects = () => {
         onRequestClose={handleModalClose}
         style={modalStyles}
       >
-        <Carousel images={modalInfo.images} />
-        <p>Title: {modalInfo.title}</p>
-        <p>Description: {modalInfo.description}</p>
-        <button onClick={handleModalClose}>Close</button>
+        <Carousel images={info.images} />
+
+        <ModalContent
+          title={info.title}
+          tag={info.tag}
+          description={info.description}
+          link={info.link}
+          handleModalClose={handleModalClose}
+        />
       </Modal>
     </StyledProjects>
   );
