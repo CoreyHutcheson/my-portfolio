@@ -38,6 +38,22 @@ const modalStyles = {
   },
 };
 
+const CarouselContainer = styled.div`
+  height: 50%;
+
+  @media (min-width: 600px) {
+    height: 60%;
+  }
+`;
+
+const ContentContainer = styled.div`
+  height: 50%;
+
+  @media (min-width: 600px) {
+    height: 40%;
+  }
+`;
+
 const Projects = () => {
   const projectData = useProjects();
   const [showModal, setShowModal] = useState(false);
@@ -68,9 +84,13 @@ const Projects = () => {
         onRequestClose={handleModalClose}
         style={modalStyles}
       >
-        <Carousel images={info.images} />
+        <CarouselContainer>
+          <Carousel images={info.images} />
+        </CarouselContainer>
 
-        <ModalContent {...info} handleModalClose={handleModalClose} />
+        <ContentContainer>
+          <ModalContent {...info} handleModalClose={handleModalClose} />
+        </ContentContainer>
       </Modal>
     </StyledProjects>
   );
