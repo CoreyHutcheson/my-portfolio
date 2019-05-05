@@ -1,21 +1,22 @@
 [
   {
-    "title": "Mayhem",
+    "title": "4-Sixes Liquor Store",
     "tag": "Business Website",
-    "description": "Custom Mayhem Wrestling site",
-    "link": "https://www.facebook.com",
+    "description": "Website built for a local small business. Uses WordPress as a headless CMS, Gatsby as the static site generator, and deploys to Netlify.",
+    "technologies": "Wordpress, Gatsby, Netlify, React, GraphQL, Sass",
+    "link": "https://www.4sixes.coreyhutcheson.com",
     "images": [
       {
-        "src": "../assets/images/bronze-ticket.jpg",
-        "alt_text": "Bronze Ticket"
+        "src": "../assets/images/projects/4sixes_1.jpg",
+        "alt_text": "Main Page"
       },
       {
-        "src": "../assets/images/silver-ticket.jpg",
-        "alt_text": "Silver Ticket"
+        "src": "../assets/images/projects/4sixes_2.jpg",
+        "alt_text": "Product Page"
       },
       {
-        "src": "../assets/images/gold-ticket.jpg",
-        "alt_text": "Gold Ticket"
+        "src": "../assets/images/projects/4sixes_3.jpg",
+        "alt_text": "FAQ Page"
       }
     ]
   },
