@@ -96,9 +96,9 @@ const ModalContent = ({
 };
 
 ModalContent.propTypes = {
-  title: PropTypes.string.isRequired,
+  title: PropTypes.string,
   tag: PropTypes.string,
-  description: PropTypes.string.isRequired,
+  description: PropTypes.string,
   technologies: PropTypes.string,
   link: PropTypes.string,
   handleModalClose: PropTypes.func.isRequired,

@@ -1,6 +1,6 @@
 [
   {
-    "title": "4-Sixes Liquor Store",
+    "title": "4-Sixes Liquors",
     "tag": "Business Website",
     "description": "Website built for a local small business. Uses WordPress as a headless CMS, Gatsby as the static site generator, and deploys to Netlify.",
     "technologies": "Wordpress, Gatsby, Netlify, React, GraphQL, Sass",
