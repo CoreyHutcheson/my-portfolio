@@ -10,6 +10,7 @@ export const useProjects = () => {
             title
             tag
             description
+            technologies
             link
             images {
               alt_text
