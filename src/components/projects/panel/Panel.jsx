@@ -8,7 +8,6 @@ import Button from "src/components/button";
 const StyledPanel = styled.div`
   width: 300px;
   height: 300px;
-  border: 1px solid red;
   position: relative;
   cursor: pointer;
 
@@ -92,7 +91,9 @@ const Panel = ({
         fluid={images[0].src.childImageSharp.fluid}
         alt={images[0].alt_text}
       />
+
       <Title>{title}</Title>
+
       <StyledButton handleClick={() => openModal(modalInfo)}>
         Learn More
       </StyledButton>
@@ -104,6 +105,7 @@ Panel.propTypes = {
   title: PropTypes.string.isRequired,
   tag: PropTypes.string,
   description: PropTypes.string.isRequired,
+  technologies: PropTypes.string,
   link: PropTypes.string,
   images: PropTypes.array.isRequired,
   openModal: PropTypes.func.isRequired,
