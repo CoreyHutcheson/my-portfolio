@@ -27,7 +27,17 @@ const Tag = styled.div`
   margin-bottom: 1rem;
 `;
 
-const Description = styled.p``;
+const Description = styled.p`
+  line-height: 1.3;
+`;
+
+const StyledTech = styled.div`
+  margin-bottom: 1rem;
+
+  & > span {
+    font-weight: bold;
+  }
+`;
 
 const CloseButton = styled.div`
   color: rgba(0, 0, 0, 0.7);
@@ -39,33 +49,48 @@ const CloseButton = styled.div`
   }
 `;
 
+const InfoContainer = styled.div`
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+`;
+
+const ButtonContainer = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+`;
+
 const ModalContent = ({
   title,
   tag,
   description,
+  technologies,
   link = "",
   handleModalClose,
 }) => {
   return (
     <StyledModalContent>
-      <div>
-        <Title>{title}</Title>
-        <Tag>{tag}</Tag>
-        <Description>{description}</Description>
-      </div>
+      <InfoContainer>
+        <div>
+          <Title>{title}</Title>
+          <Tag>{tag}</Tag>
+          <Description>{description}</Description>
+        </div>
 
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "space-between",
-          alignItems: "center",
-        }}
-      >
+        <StyledTech>
+          <span>Uses:</span> {technologies}
+        </StyledTech>
+      </InfoContainer>
+
+      <ButtonContainer>
         {link ? <VisitSiteLink link={link} /> : null}
+
         <CloseButton onClick={handleModalClose}>
           <FontAwesomeIcon icon={faTimes} size="2x" />
         </CloseButton>
-      </div>
+      </ButtonContainer>
     </StyledModalContent>
   );
 };
@@ -74,6 +99,7 @@ ModalContent.propTypes = {
   title: PropTypes.string.isRequired,
   tag: PropTypes.string,
   description: PropTypes.string.isRequired,
+  technologies: PropTypes.string,
   link: PropTypes.string,
   handleModalClose: PropTypes.func.isRequired,
 };
