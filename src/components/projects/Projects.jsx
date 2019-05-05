@@ -7,6 +7,24 @@ import Panel from "./panel";
 import Carousel from "src/components/carousel";
 import ModalContent from "./modal-content";
 
+const modalStyles = {
+  overlay: {},
+  content: {
+    top: "0",
+    left: "0",
+    bottom: "0",
+    right: "0",
+    width: "90%",
+    maxWidth: "900px",
+    margin: "5% auto",
+    padding: "0",
+  },
+};
+
+const StyledSection = styled.section`
+  width: 100%;
+`;
+
 const StyledProjects = styled.div`
   width: 100%;
   margin: 0 auto;
@@ -24,19 +42,13 @@ const StyledProjects = styled.div`
   }
 `;
 
-const modalStyles = {
-  overlay: {},
-  content: {
-    top: "0",
-    left: "0",
-    bottom: "0",
-    right: "0",
-    width: "90%",
-    maxWidth: "900px",
-    margin: "5% auto",
-    padding: "0",
-  },
-};
+const Header = styled.h2`
+  text-align: center;
+  font-size: 2rem;
+  text-transform: uppercase;
+  font-weight: bold;
+  margin-bottom: 3rem;
+`;
 
 const CarouselContainer = styled.div`
   height: 50%;
@@ -73,26 +85,30 @@ const Projects = () => {
   Modal.setAppElement("#___gatsby");
 
   return (
-    <StyledProjects>
-      {projectData.map(({ node }) => (
-        <Panel {...node} openModal={handleModalOpen} />
-      ))}
+    <StyledSection>
+      <Header>Projects</Header>
 
-      <Modal
-        isOpen={showModal}
-        contentLabel="Project Modal"
-        onRequestClose={handleModalClose}
-        style={modalStyles}
-      >
-        <CarouselContainer>
-          <Carousel images={info.images} />
-        </CarouselContainer>
+      <StyledProjects>
+        {projectData.map(({ node }) => (
+          <Panel key={node.id} {...node} openModal={handleModalOpen} />
+        ))}
 
-        <ContentContainer>
-          <ModalContent {...info} handleModalClose={handleModalClose} />
-        </ContentContainer>
-      </Modal>
-    </StyledProjects>
+        <Modal
+          isOpen={showModal}
+          contentLabel="Project Modal"
+          onRequestClose={handleModalClose}
+          style={modalStyles}
+        >
+          <CarouselContainer>
+            <Carousel {...info} />
+          </CarouselContainer>
+
+          <ContentContainer>
+            <ModalContent {...info} handleModalClose={handleModalClose} />
+          </ContentContainer>
+        </Modal>
+      </StyledProjects>
+    </StyledSection>
   );
 };
 
