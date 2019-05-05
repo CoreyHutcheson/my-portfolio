@@ -68,11 +68,20 @@ const StyledButton = styled(Button)`
   }
 `;
 
-const Panel = ({ title, tag, description, link = "", images, openModal }) => {
+const Panel = ({
+  title,
+  tag,
+  description,
+  technologies,
+  link = "",
+  images,
+  openModal,
+}) => {
   const modalInfo = {
     title,
     tag,
     description,
+    technologies,
     link,
     images,
   };
