@@ -9,7 +9,7 @@ import VisitSiteLink from "./VisitSiteLink";
 const StyledModalContent = styled.div`
   font-family: "Raleway", sans-serif;
   padding: 20px;
-  height: 40%;
+  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
