@@ -7,7 +7,8 @@ import Button from "./button";
 
 const StyledCarousel = styled.div`
   position: relative;
-  height: 60%;
+  width: 100%;
+  height: 100%;
   overflow: hidden;
 `;
 
@@ -70,7 +71,7 @@ const Carousel = ({ images = [] }) => {
 };
 
 Carousel.propTypes = {
-  images: PropTypes.array,
+  images: PropTypes.array.isRequired,
 };
 
 export default Carousel;
