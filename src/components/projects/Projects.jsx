@@ -21,11 +21,7 @@ const modalStyles = {
   },
 };
 
-const StyledSection = styled.section`
-  width: 100%;
-`;
-
-const StyledProjects = styled.div`
+const StyledProjects = styled.section`
   width: 100%;
   margin: 0 auto;
   background: inherit;
@@ -40,14 +36,6 @@ const StyledProjects = styled.div`
     width: 90%;
     max-width: 900px;
   }
-`;
-
-const Header = styled.h2`
-  text-align: center;
-  font-size: 2rem;
-  text-transform: uppercase;
-  font-weight: bold;
-  margin-bottom: 3rem;
 `;
 
 const CarouselContainer = styled.div`
@@ -85,30 +73,26 @@ const Projects = () => {
   Modal.setAppElement("#___gatsby");
 
   return (
-    <StyledSection>
-      <Header>Projects</Header>
+    <StyledProjects>
+      {projectData.map(({ node }) => (
+        <Panel key={node.id} {...node} openModal={handleModalOpen} />
+      ))}
 
-      <StyledProjects>
-        {projectData.map(({ node }) => (
-          <Panel key={node.id} {...node} openModal={handleModalOpen} />
-        ))}
+      <Modal
+        isOpen={showModal}
+        contentLabel="Project Modal"
+        onRequestClose={handleModalClose}
+        style={modalStyles}
+      >
+        <CarouselContainer>
+          <Carousel {...info} />
+        </CarouselContainer>
 
-        <Modal
-          isOpen={showModal}
-          contentLabel="Project Modal"
-          onRequestClose={handleModalClose}
-          style={modalStyles}
-        >
-          <CarouselContainer>
-            <Carousel {...info} />
-          </CarouselContainer>
-
-          <ContentContainer>
-            <ModalContent {...info} handleModalClose={handleModalClose} />
-          </ContentContainer>
-        </Modal>
-      </StyledProjects>
-    </StyledSection>
+        <ContentContainer>
+          <ModalContent {...info} handleModalClose={handleModalClose} />
+        </ContentContainer>
+      </Modal>
+    </StyledProjects>
   );
 };
 
