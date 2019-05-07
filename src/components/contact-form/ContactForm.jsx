@@ -4,7 +4,7 @@ import styled from "styled-components";
 import Input from "./input";
 import SectionTitle from "src/components/section-title";
 
-const FormContainer = styled.section`
+const FormContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
