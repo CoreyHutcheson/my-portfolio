@@ -12,6 +12,7 @@ export const useProjects = () => {
             description
             technologies
             link
+            github
             images {
               alt_text
               src {

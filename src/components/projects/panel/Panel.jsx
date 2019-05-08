@@ -73,6 +73,7 @@ const Panel = ({
   description,
   technologies,
   link = "",
+  github = "",
   images,
   openModal,
 }) => {
@@ -82,6 +83,7 @@ const Panel = ({
     description,
     technologies,
     link,
+    github,
     images,
   };
 
@@ -107,6 +109,7 @@ Panel.propTypes = {
   description: PropTypes.string.isRequired,
   technologies: PropTypes.string,
   link: PropTypes.string,
+  github: PropTypes.string,
   images: PropTypes.array.isRequired,
   openModal: PropTypes.func.isRequired,
 };

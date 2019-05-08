@@ -5,6 +5,7 @@ import { faTimes } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import VisitSiteLink from "./VisitSiteLink";
+import GithubLink from "./GithubLink";
 
 const StyledModalContent = styled.div`
   font-family: "Raleway", sans-serif;
@@ -68,6 +69,7 @@ const ModalContent = ({
   description,
   technologies,
   link = "",
+  github = "",
   handleModalClose,
 }) => {
   return (
@@ -87,6 +89,8 @@ const ModalContent = ({
       <ButtonContainer>
         {link ? <VisitSiteLink link={link} /> : null}
 
+        {github ? <GithubLink url={github} /> : null}
+
         <CloseButton onClick={handleModalClose}>
           <FontAwesomeIcon icon={faTimes} size="2x" />
         </CloseButton>
@@ -101,6 +105,7 @@ ModalContent.propTypes = {
   description: PropTypes.string,
   technologies: PropTypes.string,
   link: PropTypes.string,
+  github: PropTypes.string,
   handleModalClose: PropTypes.func.isRequired,
 };
 

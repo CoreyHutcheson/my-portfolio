@@ -5,6 +5,7 @@
     "description": "Website built for a local small business. Uses WordPress as a headless CMS, Gatsby as the static site generator, and deploys to Netlify.",
     "technologies": "Wordpress, Gatsby, Netlify, React, GraphQL, Sass",
     "link": "https://www.4sixes.coreyhutcheson.com",
+    "github": "https://github.com/CoreyHutcheson/4-sixes",
     "images": [
       {
         "src": "../assets/images/projects/4sixes_1.jpg",
