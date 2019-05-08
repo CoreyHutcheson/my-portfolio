@@ -7,6 +7,7 @@ const StyledTitle = styled.h2`
   font-size: 2.5rem;
   font-weight: bold;
   text-transform: uppercase;
+  margin-bottom: ${props => props.theme.sectionBorderSpacer};
 
   // Creates border underneath
   &:after {
@@ -29,13 +30,16 @@ const StyledTitle = styled.h2`
   // }
 `;
 
-const SectionTitle = ({ color, children }) => (
-  <StyledTitle color={color}>{children}</StyledTitle>
+const SectionTitle = ({ color, children, className }) => (
+  <StyledTitle className={className} color={color}>
+    {children}
+  </StyledTitle>
 );
 
 SectionTitle.propTypes = {
   color: PropTypes.string,
   children: PropTypes.node.isRequired,
+  className: PropTypes.string,
 };
 
 export default SectionTitle;
