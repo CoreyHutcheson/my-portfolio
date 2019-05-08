@@ -55,6 +55,7 @@ const Message = styled.textarea`
 `;
 
 const ContactText = styled.p`
+  color: white;
   text-align: center;
   font-size: 1.1rem;
   margin: 2rem 0;
@@ -70,7 +71,7 @@ const FieldContainerFull = styled.div`
 
 const ContactForm = () => (
   <FormContainer>
-    <SectionTitle>Contact</SectionTitle>
+    <SectionTitle color="white">Contact</SectionTitle>
 
     <ContactText>Have a question or want to work together?</ContactText>
 
