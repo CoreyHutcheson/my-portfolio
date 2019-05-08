@@ -25,6 +25,10 @@ const StyledForm = styled.form`
   grid-gap: 10px;
   padding: 10px;
   text-align: left;
+
+  & label {
+    font-weight: bold;
+  }
 `;
 
 const ButtonContainer = styled.div`
@@ -55,7 +59,7 @@ const Message = styled.textarea`
 `;
 
 const ContactText = styled.p`
-  color: white;
+  color: lightblue;
   text-align: center;
   font-size: 1.1rem;
   margin: 0 0 ${props => props.theme.sectionBorderSpacer};
@@ -73,7 +77,7 @@ const ContactForm = () => (
   <FormContainer>
     <SectionTitle color="white">Contact</SectionTitle>
 
-    <ContactText>Have a question or want to work together?</ContactText>
+    <ContactText>Message Away!</ContactText>
 
     <StyledForm
       name="contact"

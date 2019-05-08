@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import styled from "styled-components";
 
 const FieldContainer = styled.div`
@@ -31,5 +32,10 @@ const Input = ({ title, placeholder }) => (
     <FormField type="text" name={title} id={title} placeholder={placeholder} />
   </FieldContainer>
 );
+
+Input.propTypes = {
+  title: PropTypes.string.isRequired,
+  placeholder: PropTypes.string.isRequired,
+};
 
 export default Input;
