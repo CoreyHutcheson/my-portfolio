@@ -1,34 +1,45 @@
 import React from "react";
 import styled, { ThemeProvider } from "styled-components";
 
+import theme from "src/utils/styles/theme.js";
 import PageWrapper from "src/components/page-wrapper";
+import SectionTitle from "src/components/section-title";
 import Projects from "src/components/projects";
 import ContactForm from "src/components/contact-form";
 
-const spacer = "4rem";
-
-const FormSection = styled.section`
-  background: #252934;
+const Section = styled.section`
+  background: ${props => props.theme.primaryBackground};
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding-bottom: ${spacer};
+  padding: ${props => props.theme.sectionPadding} 0;
+`;
+
+const FormSection = styled(Section)`
+  background: ${props => props.theme.secondaryBackground};
+  padding-top: 0;
+  padding-bottom: ${props => props.theme.sectionPadding};
 `;
 
 const StyledSvg = styled.svg`
   width: 100%;
   height: 50px;
-  margin-bottom: ${spacer};
-  fill: ${props => props.primaryBackground || "white"};
+  margin-bottom: ${props => props.theme.sectionPadding};
+  fill: ${props => props.theme.primaryBackground || "white"};
 `;
 
 const IndexPage = () => {
   return (
     <ThemeProvider theme={theme}>
       <PageWrapper>
-        <Projects />
+        {/* Projects */}
+        <Section>
+          <SectionTitle>Projects</SectionTitle>
+          <Projects />
+        </Section>
 
+        {/* Contact Form */}
         <FormSection>
           <StyledSvg
             viewBox="0 0 100 100"
