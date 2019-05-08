@@ -58,7 +58,7 @@ const ContactText = styled.p`
   color: white;
   text-align: center;
   font-size: 1.1rem;
-  margin: 2rem 0;
+  margin: 0 0 ${props => props.theme.sectionBorderSpacer};
 `;
 
 const FieldContainerFull = styled.div`
