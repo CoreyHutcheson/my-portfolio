@@ -1,11 +1,12 @@
 import React, { useState } from "react";
 import { Link } from "gatsby";
 import styled from "styled-components";
+import { lighten } from "polished";
 
 import Toggler from "./Toggler";
 
 const NavContainer = styled.nav`
-  background: pink;
+  background: ${props => props.theme.secondaryBackground};
   width: 100%;
   min-height: 50px;
   display: flex;
@@ -16,7 +17,7 @@ const NavContainer = styled.nav`
 
 const LinkContainer = styled.div`
   display: ${props => (props.isOpen ? "flex" : "none")};
-  background: yellow;
+  background: ${props => lighten(0.05, props.theme.secondaryBackground)};
   flex-direction: column;
   width: 100%;
   position: absolute;
@@ -24,20 +25,22 @@ const LinkContainer = styled.div`
 
   @media (min-width: 600px) {
     display: block;
+    background: inherit;
     position: relative;
     top: 0;
   }
 `;
 
 const StyledLink = styled(Link)`
+  color: #ddd;
+  letter-spacing: 2px;
   text-decoration: none;
-  font-size: 1.2rem;
   font-weight: bold;
   padding: 0.5rem 0 0.5rem 1rem;
-  border-bottom: 2px solid black;
+  border-bottom: 2px solid grey;
 
   &:first-child {
-    border-top: 2px solid black;
+    // border-top: 2px solid grey;
   }
 
   @media (min-width: 600px) {
