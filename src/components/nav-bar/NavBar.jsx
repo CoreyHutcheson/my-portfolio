@@ -1,11 +1,12 @@
 import React, { useState } from "react";
 import { Link } from "gatsby";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { lighten } from "polished";
 
 import Toggler from "./Toggler";
 
 const NavContainer = styled.nav`
+  position: relative;
   background: ${props => props.theme.secondaryBackground};
   width: 100%;
   min-height: 50px;
@@ -16,18 +17,23 @@ const NavContainer = styled.nav`
 `;
 
 const LinkContainer = styled.div`
-  display: ${props => (props.isOpen ? "flex" : "none")};
+  display: flex;
   background: ${props => lighten(0.05, props.theme.secondaryBackground)};
   flex-direction: column;
   width: 100%;
   position: absolute;
   top: 50px;
+  transition: transform 0.3s ease-out;
+  transform: translateX(${props => (props.open ? "0" : "-100%")});
 
   @media (min-width: 600px) {
     display: block;
     background: inherit;
     position: relative;
     top: 0;
+
+    transition: none;
+    transform: translateX(0%);
   }
 `;
 
@@ -72,7 +78,7 @@ function NavBar() {
     <NavContainer>
       <Toggler handleClick={handleTogglerClick} />
 
-      <LinkContainer isOpen={open} onClick={handleLinkClick}>
+      <LinkContainer open={open} onClick={handleLinkClick}>
         <StyledLink to="/">Home</StyledLink>
         <StyledLink to="/#projects">Projects</StyledLink>
         <StyledLink to="/#contact">Contact</StyledLink>
