@@ -4,10 +4,10 @@ import styled from "styled-components";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-const StyledToggler = styled.div`
+const StyledFontAwesomeIcon = styled(FontAwesomeIcon)`
+  color: white;
   margin-left: auto;
   margin-right: 1rem;
-  border: 1px solid red;
 
   @media (min-width: 600px) {
     display: none;
@@ -15,9 +15,7 @@ const StyledToggler = styled.div`
 `;
 
 const Toggler = ({ handleClick }) => (
-  <StyledToggler>
-    <FontAwesomeIcon icon={faBars} size="2x" onClick={handleClick} />
-  </StyledToggler>
+  <StyledFontAwesomeIcon icon={faBars} size="2x" onClick={handleClick} />
 );
 
 Toggler.propTypes = {
