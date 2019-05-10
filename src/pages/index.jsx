@@ -1,7 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import styled, { ThemeProvider } from "styled-components";
 
-import theme from "src/utils/styles/theme.js";
+import lightTheme from "src/utils/styles/lightTheme.js";
+import darkTheme from "src/utils/styles/darkTheme.js";
+
+import SliderButton from "src/components/slider-button";
 import PageWrapper from "src/components/page-wrapper";
 import SectionTitle from "src/components/section-title";
 import Projects from "src/components/projects";
@@ -30,9 +33,17 @@ const StyledSvg = styled.svg`
 `;
 
 const IndexPage = () => {
+  const [theme, setTheme] = useState(lightTheme);
+
+  const handleThemeChange = e => {
+    e.target.checked ? setTheme(darkTheme) : setTheme(lightTheme);
+  };
+
   return (
     <ThemeProvider theme={theme}>
       <PageWrapper>
+        <SliderButton handleChange={handleThemeChange} />
+
         {/* Projects */}
         <Section id="projects">
           <SectionTitle>Projects</SectionTitle>
