@@ -34,13 +34,13 @@ const IndexPage = () => {
     <ThemeProvider theme={theme}>
       <PageWrapper>
         {/* Projects */}
-        <Section>
+        <Section id="projects">
           <SectionTitle>Projects</SectionTitle>
           <Projects />
         </Section>
 
         {/* Contact Form */}
-        <FormSection>
+        <FormSection id="contact">
           <StyledSvg
             viewBox="0 0 100 100"
             preserveAspectRatio="none"
