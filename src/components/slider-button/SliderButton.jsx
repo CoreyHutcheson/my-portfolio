@@ -62,8 +62,13 @@ const Checkbox = styled.input`
   }
 `;
 
-const SliderButton = ({ handleChange, preText = "Off", postText = "On" }) => (
-  <SliderButtonContainer>
+const SliderButton = ({
+  handleChange,
+  preText = "Off",
+  postText = "On",
+  className,
+}) => (
+  <SliderButtonContainer className={className}>
     <span>{preText}</span>
     <Container>
       <Checkbox type="checkbox" onChange={e => handleChange(e)} />
@@ -77,6 +82,7 @@ SliderButton.propTypes = {
   handleChange: PropTypes.func.isRequired,
   preText: PropTypes.node,
   postText: PropTypes.node,
+  className: PropTypes.string,
 };
 
 export default SliderButton;
