@@ -11,7 +11,8 @@ const StyledPanel = styled.div`
   position: relative;
   cursor: pointer;
 
-  background: #f5f5f5;
+  // background: #f5f5f5;
+  background: ${props => props.theme.background_PrimaryDark};
 `;
 
 const Image = styled(Img)`
@@ -33,7 +34,6 @@ const Title = styled.div`
   left: 50%;
   transform: translate(-50%);
 
-  font-family: "Raleway";
   font-size: 1.5rem;
   font-weight: 600;
 

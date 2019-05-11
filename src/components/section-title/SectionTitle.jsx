@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import styled from "styled-components";
 
 const StyledTitle = styled.h2`
-  color: ${props => props.color || "black"};
+  color: ${props => props.theme.font_Primary};
   font-size: 2.5rem;
   font-weight: bold;
   text-transform: uppercase;
@@ -16,7 +16,7 @@ const StyledTitle = styled.h2`
     margin: 0 auto;
     width: 50%;
     padding-top: 1rem;
-    border-bottom: 4px solid ${props => props.color || "black"};
+    border-bottom: 4px solid ${props => props.theme.font_Primary};
   }
 
   // Animates border slide-in
@@ -30,14 +30,11 @@ const StyledTitle = styled.h2`
   // }
 `;
 
-const SectionTitle = ({ color, children, className }) => (
-  <StyledTitle className={className} color={color}>
-    {children}
-  </StyledTitle>
+const SectionTitle = ({ children, className }) => (
+  <StyledTitle className={className}>{children}</StyledTitle>
 );
 
 SectionTitle.propTypes = {
-  color: PropTypes.string,
   children: PropTypes.node.isRequired,
   className: PropTypes.string,
 };

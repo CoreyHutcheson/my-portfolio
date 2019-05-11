@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
+import { lighten, darken } from "polished";
 import { faTimes } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
@@ -8,7 +9,8 @@ import VisitSiteLink from "./VisitSiteLink";
 import GithubLink from "./GithubLink";
 
 const StyledModalContent = styled.div`
-  font-family: "Raleway", sans-serif;
+  background: ${props => props.theme.background_Primary};
+  color: ${props => props.theme.font_Primary};
   padding: 20px;
   height: 100%;
   display: flex;
@@ -22,7 +24,10 @@ const Title = styled.h2`
 `;
 
 const Tag = styled.div`
-  color: rgba(0, 0, 0, 0.5);
+  color: ${props =>
+    props.theme.name === "light"
+      ? lighten(0.3, props.theme.font_Primary)
+      : darken(0.3, props.theme.font_Primary)};
   font-weight: bold;
   letter-spacing: 3px;
   margin-bottom: 1rem;
@@ -41,12 +46,14 @@ const StyledTech = styled.div`
 `;
 
 const CloseButton = styled.div`
-  color: rgba(0, 0, 0, 0.7);
   cursor: pointer;
   margin-left: auto;
 
   &:hover {
-    color: rgba(0, 0, 0, 1);
+    color: ${props =>
+      props.theme.name === "light"
+        ? lighten(0.3, props.theme.font_Primary)
+        : darken(0.3, props.theme.font_Primary)};
   }
 `;
 
@@ -59,7 +66,6 @@ const InfoContainer = styled.div`
 
 const ButtonContainer = styled.div`
   display: flex;
-  justify-content: space-between;
   align-items: center;
 `;
 

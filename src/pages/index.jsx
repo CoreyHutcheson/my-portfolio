@@ -12,16 +12,14 @@ import Projects from "src/components/projects";
 import ContactForm from "src/components/contact-form";
 
 const Section = styled.section`
-  background: ${props => props.theme.primaryBackground};
-  display: flex;
+  background: ${props => props.theme.background_PrimaryLight};
+  ${props => props.theme.flexCenterMixin}
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
   padding: ${props => props.theme.sectionPadding} 0;
 `;
 
 const FormSection = styled(Section)`
-  background: ${props => props.theme.secondaryBackground};
+  background: ${props => props.theme.background_Primary};
   padding-top: 0;
   padding-bottom: ${props => props.theme.sectionPadding};
 `;
@@ -30,7 +28,7 @@ const StyledSvg = styled.svg`
   width: 100%;
   height: 50px;
   margin-bottom: ${props => props.theme.sectionPadding};
-  fill: ${props => props.theme.primaryBackground || "white"};
+  fill: ${props => props.theme.background_PrimaryLight};
 `;
 
 const IndexPage = () => {

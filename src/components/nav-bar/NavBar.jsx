@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
-import { lighten } from "polished";
 import { faMoon, faSun } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
@@ -10,7 +9,7 @@ import NavLinks from "./NavLinks";
 import SliderButton from "src/components/slider-button";
 
 const NavContainer = styled.nav`
-  background: ${props => props.theme.secondaryBackground};
+  background: ${props => props.theme.background_Primary};
   position: relative;
   width: 100%;
   min-height: 50px;
@@ -19,7 +18,7 @@ const NavContainer = styled.nav`
 `;
 
 const LinkContainer = styled.div`
-  background: ${props => lighten(0.05, props.theme.secondaryBackground)};
+  background: ${props => props.theme.background_PrimaryLight};
   display: flex;
   flex-direction: column;
   width: 100%;

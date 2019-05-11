@@ -5,7 +5,7 @@ import { faBars } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const StyledFontAwesomeIcon = styled(FontAwesomeIcon)`
-  color: white;
+  color: ${props => props.theme.font_Primary};
   margin-left: auto;
   margin-right: 1rem;
 

@@ -6,7 +6,7 @@ import styled from "styled-components";
 import links from "src/data/navLinks.js";
 
 const StyledLink = styled(Link)`
-  color: #ddd;
+  color: ${props => props.theme.font_Primary};
   letter-spacing: 2px;
   text-decoration: none;
   font-weight: bold;
