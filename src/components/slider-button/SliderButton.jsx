@@ -75,8 +75,8 @@ const SliderButton = ({ handleChange, preText = "Off", postText = "On" }) => (
 
 SliderButton.propTypes = {
   handleChange: PropTypes.func.isRequired,
-  preText: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
-  postText: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
+  preText: PropTypes.node,
+  postText: PropTypes.node,
 };
 
 export default SliderButton;
