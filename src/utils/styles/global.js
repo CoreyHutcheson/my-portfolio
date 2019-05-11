@@ -5,7 +5,7 @@ const GlobalStyle = createGlobalStyle`
 
   body {
     font-family: "Raleway";
-    color: ${props => props.theme.fontColor};
+    color: ${props => props.theme.font_Primary};
   }
 
   html,
