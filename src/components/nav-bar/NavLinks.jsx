@@ -36,11 +36,15 @@ const StyledLink = styled(Link)`
 `;
 
 const NavLinks = ({ handleClick }) => {
-  return Object.keys(links).map(link => (
-    <StyledLink to={links[link]} onClick={handleClick}>
-      {link}
-    </StyledLink>
-  ));
+  return Object.keys(links).map(link => {
+    const url = links[link] !== "/" ? `/${links[link]}` : "/";
+
+    return (
+      <StyledLink key={link} to={url} onClick={handleClick}>
+        {link}
+      </StyledLink>
+    );
+  });
 };
 
 NavLinks.propTypes = {
