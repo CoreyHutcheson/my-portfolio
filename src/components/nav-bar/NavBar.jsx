@@ -10,19 +10,17 @@ import NavLinks from "./NavLinks";
 import SliderButton from "src/components/slider-button";
 
 const NavContainer = styled.nav`
-  position: relative;
   background: ${props => props.theme.secondaryBackground};
+  position: relative;
   width: 100%;
   min-height: 50px;
-  display: flex;
+  ${props => props.theme.flexCenterMixin}
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
 `;
 
 const LinkContainer = styled.div`
-  display: flex;
   background: ${props => lighten(0.05, props.theme.secondaryBackground)};
+  display: flex;
   flex-direction: column;
   width: 100%;
   position: absolute;
@@ -31,13 +29,20 @@ const LinkContainer = styled.div`
   transform: translateX(${props => (props.open ? "0" : "-100%")});
 
   @media (min-width: 600px) {
-    display: block;
+    ${props => props.theme.flexCenterMixin}
+    flex-direction: row;
     background: inherit;
     position: relative;
     top: 0;
-
     transition: none;
     transform: translateX(0%);
+  }
+`;
+
+const StyledSlider = styled(SliderButton)`
+  @media (min-width: 600px) {
+    margin-left: auto;
+    margin-right: 15%;
   }
 `;
 
@@ -55,7 +60,7 @@ const NavBar = ({ handleThemeChange }) => {
       <LinkContainer open={open}>
         <NavLinks handleClick={handleLinkClick} />
 
-        <SliderButton
+        <StyledSlider
           handleChange={handleThemeChange}
           preText={<FontAwesomeIcon icon={faSun} />}
           postText={<FontAwesomeIcon icon={faMoon} />}
