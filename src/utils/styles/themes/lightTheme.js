@@ -1,4 +1,5 @@
 const lightTheme = {
+  fontColor: "black",
   primaryBackground: "white",
   secondaryBackground: "#252934",
 };
