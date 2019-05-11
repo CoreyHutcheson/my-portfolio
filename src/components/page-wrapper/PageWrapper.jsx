@@ -4,10 +4,10 @@ import PropTypes from "prop-types";
 import NavBar from "src/components/nav-bar";
 import Footer from "src/components/footer";
 
-const PageWrapper = ({ children }) => (
+const PageWrapper = ({ children, handleThemeChange }) => (
   <>
     <header>
-      <NavBar />
+      <NavBar handleThemeChange={handleThemeChange} />
     </header>
     <main>{children}</main>
     <Footer />
@@ -16,6 +16,7 @@ const PageWrapper = ({ children }) => (
 
 PageWrapper.propTypes = {
   children: PropTypes.node.isRequired,
+  handleThemeChange: PropTypes.func.isRequired,
 };
 
 export default PageWrapper;
