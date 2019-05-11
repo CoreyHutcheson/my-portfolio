@@ -1,9 +1,11 @@
 import React, { useState } from "react";
-import { Link } from "gatsby";
+import PropTypes from "prop-types";
 import styled from "styled-components";
 import { lighten } from "polished";
 
 import Toggler from "./Toggler";
+import Links from "./Links";
+import SliderButton from "src/components/slider-button";
 
 const NavContainer = styled.nav`
   position: relative;
@@ -37,37 +39,7 @@ const LinkContainer = styled.div`
   }
 `;
 
-const StyledLink = styled(Link)`
-  color: #ddd;
-  letter-spacing: 2px;
-  text-decoration: none;
-  font-weight: bold;
-  padding: 0.5rem 0 0.5rem 1rem;
-  border-bottom: 2px solid grey;
-
-  &:first-child {
-    // border-top: 2px solid grey;
-  }
-
-  @media (min-width: 600px) {
-    padding: 0;
-    border-bottom: none;
-
-    &:first-child {
-      border-top: none;
-    }
-
-    &:first-child {
-      margin-left: 15%;
-    }
-
-    &:not(:last-child) {
-      margin-right: 1rem;
-    }
-  }
-`;
-
-function NavBar() {
+const NavBar = ({ handleThemeChange }) => {
   const [open, setOpen] = useState(false);
 
   const handleTogglerClick = () => setOpen(!open);
@@ -78,13 +50,17 @@ function NavBar() {
     <NavContainer>
       <Toggler handleClick={handleTogglerClick} />
 
-      <LinkContainer open={open} onClick={handleLinkClick}>
-        <StyledLink to="/">Home</StyledLink>
-        <StyledLink to="/#projects">Projects</StyledLink>
-        <StyledLink to="/#contact">Contact</StyledLink>
+      <LinkContainer open={open}>
+        <Links handleClick={handleLinkClick} />
+
+        <SliderButton handleChange={handleThemeChange} />
       </LinkContainer>
     </NavContainer>
   );
-}
+};
+
+NavBar.propTypes = {
+  handleThemeChange: PropTypes.func.isRequired,
+};
 
 export default NavBar;
