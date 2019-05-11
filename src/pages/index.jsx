@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import styled, { ThemeProvider } from "styled-components";
 
-import lightTheme from "src/utils/styles/lightTheme.js";
-import darkTheme from "src/utils/styles/darkTheme.js";
+import baseTheme from "src/utils/styles/themes/baseTheme.js";
+import lightTheme from "src/utils/styles/themes/lightTheme.js";
+import darkTheme from "src/utils/styles/themes/darkTheme.js";
 
 import SliderButton from "src/components/slider-button";
 import PageWrapper from "src/components/page-wrapper";
@@ -33,10 +34,12 @@ const StyledSvg = styled.svg`
 `;
 
 const IndexPage = () => {
-  const [theme, setTheme] = useState(lightTheme);
+  const [theme, setTheme] = useState({ ...baseTheme, ...lightTheme });
 
   const handleThemeChange = e => {
-    e.target.checked ? setTheme(darkTheme) : setTheme(lightTheme);
+    e.target.checked
+      ? setTheme({ ...baseTheme, ...darkTheme })
+      : setTheme({ ...baseTheme, ...lightTheme });
   };
 
   return (
@@ -44,13 +47,11 @@ const IndexPage = () => {
       <PageWrapper>
         <SliderButton handleChange={handleThemeChange} />
 
-        {/* Projects */}
         <Section id="projects">
           <SectionTitle>Projects</SectionTitle>
           <Projects />
         </Section>
 
-        {/* Contact Form */}
         <FormSection id="contact">
           <StyledSvg
             viewBox="0 0 100 100"
