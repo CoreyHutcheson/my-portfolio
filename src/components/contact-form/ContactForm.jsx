@@ -5,10 +5,8 @@ import Input from "./input";
 import SectionTitle from "src/components/section-title";
 
 const FormContainer = styled.div`
-  display: flex;
+  ${props => props.theme.flexCenterMixin}
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
   width: 100%;
   min-width: calc(300px - 2rem);
   max-width: 500px;
