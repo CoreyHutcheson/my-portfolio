@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
 import { lighten } from "polished";
+import { faMoon, faSun } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import Toggler from "./Toggler";
 import NavLinks from "./NavLinks";
@@ -53,7 +55,11 @@ const NavBar = ({ handleThemeChange }) => {
       <LinkContainer open={open}>
         <NavLinks handleClick={handleLinkClick} />
 
-        <SliderButton handleChange={handleThemeChange} />
+        <SliderButton
+          handleChange={handleThemeChange}
+          preText={<FontAwesomeIcon icon={faSun} />}
+          postText={<FontAwesomeIcon icon={faMoon} />}
+        />
       </LinkContainer>
     </NavContainer>
   );
