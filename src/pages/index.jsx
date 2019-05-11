@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import styled, { ThemeProvider } from "styled-components";
 
+import GlobalStyle from "src/utils/styles/global.js";
 import baseTheme from "src/utils/styles/themes/baseTheme.js";
 import lightTheme from "src/utils/styles/themes/lightTheme.js";
 import darkTheme from "src/utils/styles/themes/darkTheme.js";
@@ -43,23 +44,27 @@ const IndexPage = () => {
 
   return (
     <ThemeProvider theme={theme}>
-      <PageWrapper handleThemeChange={handleThemeChange}>
-        <Section id="projects">
-          <SectionTitle>Projects</SectionTitle>
-          <Projects />
-        </Section>
+      <>
+        <GlobalStyle />
 
-        <FormSection id="contact">
-          <StyledSvg
-            viewBox="0 0 100 100"
-            preserveAspectRatio="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <polygon points="0 0, 50 100, 100 0" />
-          </StyledSvg>
-          <ContactForm />
-        </FormSection>
-      </PageWrapper>
+        <PageWrapper handleThemeChange={handleThemeChange}>
+          <Section id="projects">
+            <SectionTitle>Projects</SectionTitle>
+            <Projects />
+          </Section>
+
+          <FormSection id="contact">
+            <StyledSvg
+              viewBox="0 0 100 100"
+              preserveAspectRatio="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <polygon points="0 0, 50 100, 100 0" />
+            </StyledSvg>
+            <ContactForm />
+          </FormSection>
+        </PageWrapper>
+      </>
     </ThemeProvider>
   );
 };
