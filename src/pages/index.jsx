@@ -5,7 +5,6 @@ import baseTheme from "src/utils/styles/themes/baseTheme.js";
 import lightTheme from "src/utils/styles/themes/lightTheme.js";
 import darkTheme from "src/utils/styles/themes/darkTheme.js";
 
-import SliderButton from "src/components/slider-button";
 import PageWrapper from "src/components/page-wrapper";
 import SectionTitle from "src/components/section-title";
 import Projects from "src/components/projects";
@@ -44,9 +43,7 @@ const IndexPage = () => {
 
   return (
     <ThemeProvider theme={theme}>
-      <PageWrapper>
-        <SliderButton handleChange={handleThemeChange} />
-
+      <PageWrapper handleThemeChange={handleThemeChange}>
         <Section id="projects">
           <SectionTitle>Projects</SectionTitle>
           <Projects />
