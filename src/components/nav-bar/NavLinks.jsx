@@ -3,6 +3,8 @@ import PropTypes from "prop-types";
 import { Link } from "gatsby";
 import styled from "styled-components";
 
+import links from "src/data/navLinks.js";
+
 const StyledLink = styled(Link)`
   color: #ddd;
   letter-spacing: 2px;
@@ -12,7 +14,7 @@ const StyledLink = styled(Link)`
   border-bottom: 2px solid grey;
 
   &:first-child {
-    // border-top: 2px solid grey;
+    border-top: 2px solid grey;
   }
 
   @media (min-width: 600px) {
@@ -33,22 +35,16 @@ const StyledLink = styled(Link)`
   }
 `;
 
-const Links = ({ handleClick }) => {
-  const linksList = {
-    Home: "/",
-    Projects: "#projects",
-    Contact: "#contact",
-  };
-
-  return Object.keys(linksList).map(link => (
-    <StyledLink to={linksList[link]} onClick={handleClick}>
+const NavLinks = ({ handleClick }) => {
+  return Object.keys(links).map(link => (
+    <StyledLink to={links[link]} onClick={handleClick}>
       {link}
     </StyledLink>
   ));
 };
 
-Links.propTypes = {
+NavLinks.propTypes = {
   handleClick: PropTypes.func.isRequired,
 };
 
-export default Links;
+export default NavLinks;

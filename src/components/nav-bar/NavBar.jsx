@@ -4,7 +4,7 @@ import styled from "styled-components";
 import { lighten } from "polished";
 
 import Toggler from "./Toggler";
-import Links from "./Links";
+import NavLinks from "./NavLinks";
 import SliderButton from "src/components/slider-button";
 
 const NavContainer = styled.nav`
@@ -51,7 +51,7 @@ const NavBar = ({ handleThemeChange }) => {
       <Toggler handleClick={handleTogglerClick} />
 
       <LinkContainer open={open}>
-        <Links handleClick={handleLinkClick} />
+        <NavLinks handleClick={handleLinkClick} />
 
         <SliderButton handleChange={handleThemeChange} />
       </LinkContainer>
