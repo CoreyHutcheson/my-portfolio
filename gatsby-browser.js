@@ -8,4 +8,3 @@
  * Import global scss files here
  */
 import "css-reset-and-normalize/css/reset-and-normalize.min.css";
-// import "src/utils/styles/global.css";
