@@ -20,12 +20,13 @@ const StyledLink = styled(Button)`
   }
 `;
 
-const VisitSiteLink = ({ link }) => (
+const VisitSiteLink = ({ link, className }) => (
   <a
     style={{ textDecoration: "none" }}
     href={link}
     target="_blank"
     rel="noreferrer noopener"
+    className={className}
   >
     <StyledLink>
       <FontAwesomeIcon icon={faExternalLinkAlt} />
@@ -36,6 +37,7 @@ const VisitSiteLink = ({ link }) => (
 
 VisitSiteLink.propTypes = {
   link: PropTypes.string.isRequired,
+  className: PropTypes.string,
 };
 
 export default VisitSiteLink;

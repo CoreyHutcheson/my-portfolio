@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import PropTypes from "prop-types";
 import styled from "styled-components";
 import Modal from "react-modal";
 
@@ -55,7 +56,7 @@ const ContentContainer = styled.div`
   }
 `;
 
-const Projects = () => {
+const Projects = ({ className }) => {
   const projectData = useProjects();
   const [showModal, setShowModal] = useState(false);
   const [info, setInfo] = useState({});
@@ -74,7 +75,7 @@ const Projects = () => {
   Modal.setAppElement("#___gatsby");
 
   return (
-    <StyledProjects>
+    <StyledProjects className={className}>
       {projectData.map(({ node }) => (
         <Panel key={node.id} {...node} openModal={handleModalOpen} />
       ))}
@@ -95,6 +96,10 @@ const Projects = () => {
       </Modal>
     </StyledProjects>
   );
+};
+
+Projects.propTypes = {
+  className: PropTypes.string,
 };
 
 export default Projects;

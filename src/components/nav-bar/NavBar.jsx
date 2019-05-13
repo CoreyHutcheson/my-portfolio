@@ -45,7 +45,7 @@ const StyledSlider = styled(SliderButton)`
   }
 `;
 
-const NavBar = ({ handleThemeChange }) => {
+const NavBar = ({ handleThemeChange, className }) => {
   const [open, setOpen] = useState(false);
 
   const handleTogglerClick = () => setOpen(!open);
@@ -53,7 +53,7 @@ const NavBar = ({ handleThemeChange }) => {
   const handleLinkClick = () => setOpen(false);
 
   return (
-    <NavContainer>
+    <NavContainer className={className}>
       <Toggler handleClick={handleTogglerClick} />
 
       <LinkContainer open={open}>
@@ -71,6 +71,7 @@ const NavBar = ({ handleThemeChange }) => {
 
 NavBar.propTypes = {
   handleThemeChange: PropTypes.func.isRequired,
+  className: PropTypes.string,
 };
 
 export default NavBar;

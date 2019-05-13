@@ -14,12 +14,18 @@ const StyledFontAwesomeIcon = styled(FontAwesomeIcon)`
   }
 `;
 
-const Toggler = ({ handleClick }) => (
-  <StyledFontAwesomeIcon icon={faBars} size="2x" onClick={handleClick} />
+const Toggler = ({ handleClick, className }) => (
+  <StyledFontAwesomeIcon
+    icon={faBars}
+    size="2x"
+    onClick={handleClick}
+    className={className}
+  />
 );
 
 Toggler.propTypes = {
   handleClick: PropTypes.func.isRequired,
+  className: PropTypes.string,
 };
 
 export default Toggler;

@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import styled from "styled-components";
 
 import Input from "./input";
@@ -72,8 +73,8 @@ const FieldContainerFull = styled.div`
   }
 `;
 
-const ContactForm = () => (
-  <FormContainer>
+const ContactForm = ({ className }) => (
+  <FormContainer className={className}>
     <ContactText>Message Away!</ContactText>
 
     <StyledForm
@@ -105,5 +106,9 @@ const ContactForm = () => (
     </StyledForm>
   </FormContainer>
 );
+
+ContactForm.propTypes = {
+  className: PropTypes.string,
+};
 
 export default ContactForm;

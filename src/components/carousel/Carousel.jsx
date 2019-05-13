@@ -34,7 +34,7 @@ function notLastSlide(num, slides) {
   return num - 100 >= (slides - 1) * -100;
 }
 
-const Carousel = ({ images = [] }) => {
+const Carousel = ({ images = [], className }) => {
   const [translateAmount, setTranslateAmount] = useState(0);
 
   const handlePrevClick = () =>
@@ -52,7 +52,7 @@ const Carousel = ({ images = [] }) => {
   );
 
   return (
-    <StyledCarousel>
+    <StyledCarousel className={className}>
       <Window>
         {images.map(img => (
           <StyledImage
@@ -71,6 +71,7 @@ const Carousel = ({ images = [] }) => {
 
 Carousel.propTypes = {
   images: PropTypes.array,
+  className: PropTypes.string,
 };
 
 export default Carousel;

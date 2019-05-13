@@ -72,9 +72,10 @@ const ModalContent = ({
   link = "",
   github = "",
   handleModalClose,
+  className,
 }) => {
   return (
-    <StyledModalContent>
+    <StyledModalContent className={className}>
       <InfoContainer>
         <div>
           <Title>{title}</Title>
@@ -108,6 +109,7 @@ ModalContent.propTypes = {
   link: PropTypes.string,
   github: PropTypes.string,
   handleModalClose: PropTypes.func.isRequired,
+  className: PropTypes.string,
 };
 
 export default ModalContent;

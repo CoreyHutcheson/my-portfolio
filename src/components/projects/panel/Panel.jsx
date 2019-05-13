@@ -75,6 +75,7 @@ const Panel = ({
   github = "",
   images,
   openModal,
+  className,
 }) => {
   const modalInfo = {
     title,
@@ -87,7 +88,7 @@ const Panel = ({
   };
 
   return (
-    <StyledPanel>
+    <StyledPanel className={className}>
       <Image
         fluid={images[0].src.childImageSharp.fluid}
         alt={images[0].alt_text}
@@ -111,6 +112,7 @@ Panel.propTypes = {
   github: PropTypes.string,
   images: PropTypes.array.isRequired,
   openModal: PropTypes.func.isRequired,
+  className: PropTypes.string,
 };
 
 export default Panel;

@@ -24,9 +24,9 @@ const FormField = styled.input`
   }
 `;
 
-const Input = ({ title, placeholder }) => (
+const Input = ({ title, placeholder, className }) => (
   <FieldContainer>
-    <label htmlFor={title}>
+    <label htmlFor={title} className={className}>
       {title.charAt(0).toUpperCase() + title.substring(1)}
     </label>
     <FormField type="text" name={title} id={title} placeholder={placeholder} />
@@ -36,6 +36,7 @@ const Input = ({ title, placeholder }) => (
 Input.propTypes = {
   title: PropTypes.string.isRequired,
   placeholder: PropTypes.string.isRequired,
+  className: PropTypes.string,
 };
 
 export default Input;

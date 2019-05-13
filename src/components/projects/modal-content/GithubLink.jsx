@@ -15,14 +15,20 @@ const StyledGithub = styled.a`
   }
 `;
 
-const GithubLink = ({ url }) => (
-  <StyledGithub href={url} target="_blank" rel="noreferrer noopener">
+const GithubLink = ({ url, className }) => (
+  <StyledGithub
+    href={url}
+    target="_blank"
+    rel="noreferrer noopener"
+    className={className}
+  >
     <FontAwesomeIcon icon={faGithub} size="2x" />
   </StyledGithub>
 );
 
 GithubLink.propTypes = {
   url: PropTypes.string.isRequired,
+  className: PropTypes.string,
 };
 
 export default GithubLink;

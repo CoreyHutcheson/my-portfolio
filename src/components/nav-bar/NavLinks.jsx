@@ -35,12 +35,17 @@ const StyledLink = styled(Link)`
   }
 `;
 
-const NavLinks = ({ handleClick }) => {
+const NavLinks = ({ handleClick, className }) => {
   return Object.keys(links).map(link => {
     const url = links[link] !== "/" ? `/${links[link]}` : "/";
 
     return (
-      <StyledLink key={link} to={url} onClick={handleClick}>
+      <StyledLink
+        key={link}
+        to={url}
+        onClick={handleClick}
+        className={className}
+      >
         {link}
       </StyledLink>
     );
@@ -49,6 +54,7 @@ const NavLinks = ({ handleClick }) => {
 
 NavLinks.propTypes = {
   handleClick: PropTypes.func.isRequired,
+  className: PropTypes.string,
 };
 
 export default NavLinks;
