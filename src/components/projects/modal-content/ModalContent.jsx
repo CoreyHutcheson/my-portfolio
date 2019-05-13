@@ -8,7 +8,9 @@ import VisitSiteLink from "./VisitSiteLink";
 import GithubLink from "./GithubLink";
 
 const StyledModalContent = styled.div`
-  font-family: "Raleway", sans-serif;
+  background: ${props =>
+    props.theme.name === "light" ? "#fff" : props.theme.color_primary};
+  color: ${props => props.theme.font_onPrimary1};
   padding: 20px;
   height: 100%;
   display: flex;
@@ -22,7 +24,7 @@ const Title = styled.h2`
 `;
 
 const Tag = styled.div`
-  color: rgba(0, 0, 0, 0.5);
+  color: ${props => props.theme.font_onPrimary2};
   font-weight: bold;
   letter-spacing: 3px;
   margin-bottom: 1rem;
@@ -41,12 +43,12 @@ const StyledTech = styled.div`
 `;
 
 const CloseButton = styled.div`
-  color: rgba(0, 0, 0, 0.7);
+  color: ${props => props.theme.font_onPrimary2};
   cursor: pointer;
   margin-left: auto;
 
   &:hover {
-    color: rgba(0, 0, 0, 1);
+    color: ${props => props.theme.font_onPrimary1};
   }
 `;
 
@@ -59,7 +61,6 @@ const InfoContainer = styled.div`
 
 const ButtonContainer = styled.div`
   display: flex;
-  justify-content: space-between;
   align-items: center;
 `;
 

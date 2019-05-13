@@ -8,10 +8,10 @@ const StyledGithub = styled.a`
   text-decoration: none;
   margin-right: auto;
   margin-left: 1rem;
-  color: rgba(0, 0, 0, 0.7);
+  color: ${props => props.theme.font_onPrimary2};
 
   &:hover {
-    color: rgba(0, 0, 0, 1);
+    color: ${props => props.theme.font_onPrimary1};
   }
 `;
 

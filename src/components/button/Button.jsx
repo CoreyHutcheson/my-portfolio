@@ -3,10 +3,9 @@ import styled from "styled-components";
 import PropTypes from "prop-types";
 
 const StyledButton = styled.div`
+  background: ${props => props.theme.color_primary};
+  color: ${props => props.theme.font_onPrimary1};
   width: 170px;
-  background: #f5f5f5;
-  color: #e31b6d;
-  border: 2px solid #e31b6d;
   text-transform: uppercase;
   letter-spacing: 2px;
   font-weight: 600;
@@ -14,8 +13,8 @@ const StyledButton = styled.div`
   padding: 10px 0px;
 
   &:hover {
-    color: #f5f5f5;
-    background: #e31b6d;
+    background: ${props => props.theme.font_onPrimary1};
+    color: ${props => props.theme.color_primaryLight};
   }
 `;
 

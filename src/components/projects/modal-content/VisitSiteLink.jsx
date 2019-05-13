@@ -7,12 +7,12 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Button from "src/components/button";
 
 const StyledLink = styled(Button)`
-  color: #f5f5f5;
-  background: #e31b6d;
+  background: ${props => props.theme.color_primaryLight};
+  color: ${props => props.theme.font_onPrimary1};
 
   &:hover {
-    background: #f5f5f5;
-    color: #e31b6d;
+    background: ${props => props.theme.font_onPrimary1};
+    color: ${props => props.theme.color_primaryLight};
   }
 
   & > span {

@@ -8,8 +8,8 @@ import {
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const StyledButton = styled.div`
-  background: rgba(0, 0, 0, 0.6);
-  color: rgba(255, 255, 255, 0.7);
+  background: rgba(0, 0, 0, 0.4);
+  color: rgba(255, 255, 255, 0.87);
   padding: 20px;
   font-size: 1.3rem;
   font-weight: 600;
@@ -21,8 +21,8 @@ const StyledButton = styled.div`
   right: ${({ text }) => text === "Next" && "0"};
 
   &:hover {
-    background: rgba(0, 0, 0, 0.4);
-    color: rgba(255, 255, 255, 1);
+    background: rgba(255, 255, 255, 0.4);
+    color: rgba(0, 0, 0, 0.87);
     cursor: pointer;
   }
 `;

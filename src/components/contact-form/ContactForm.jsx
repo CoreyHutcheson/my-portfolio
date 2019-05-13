@@ -2,23 +2,22 @@ import React from "react";
 import styled from "styled-components";
 
 import Input from "./input";
-import SectionTitle from "src/components/section-title";
 
 const FormContainer = styled.div`
-  display: flex;
+  ${props => props.theme.flexCenterMixin}
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
   width: 100%;
   min-width: calc(300px - 2rem);
   max-width: 500px;
+  padding: 0 1rem;
 `;
 
 const StyledForm = styled.form`
-  width: 100%;
-  background: #eee;
-  border: 1px solid #aaa;
+  background: ${props => props.theme.color_primaryLight};
+  color: ${props => props.theme.font_onPrimary1};
+  border: 1px solid ${props => props.theme.font_onPrimary1};
   border-radius: 5px;
+  width: 100%;
   box-shadow: 3px 3px 7px 0px rgba(0, 0, 0, 0.75);
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -59,7 +58,7 @@ const Message = styled.textarea`
 `;
 
 const ContactText = styled.p`
-  color: lightblue;
+  color: ${props => props.theme.font_onPrimary2};
   text-align: center;
   font-size: 1.1rem;
   margin: 0 0 ${props => props.theme.sectionBorderSpacer};
@@ -75,8 +74,6 @@ const FieldContainerFull = styled.div`
 
 const ContactForm = () => (
   <FormContainer>
-    <SectionTitle color="white">Contact</SectionTitle>
-
     <ContactText>Message Away!</ContactText>
 
     <StyledForm

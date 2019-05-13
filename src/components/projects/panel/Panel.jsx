@@ -6,12 +6,11 @@ import styled from "styled-components";
 import Button from "src/components/button";
 
 const StyledPanel = styled.div`
+  background: ${props => props.theme.color_primaryDark};
   width: 300px;
   height: 300px;
   position: relative;
   cursor: pointer;
-
-  background: #f5f5f5;
 `;
 
 const Image = styled(Img)`
@@ -28,12 +27,12 @@ const Image = styled(Img)`
 `;
 
 const Title = styled.div`
+  color: ${props => props.theme.font_onPrimary1};
   position: absolute;
   top: 0%;
   left: 50%;
   transform: translate(-50%);
 
-  font-family: "Raleway";
   font-size: 1.5rem;
   font-weight: 600;
 
