@@ -22,7 +22,7 @@ const modalStyles = {
   },
 };
 
-const StyledProjects = styled.section`
+const StyledProjects = styled.div`
   width: 100%;
   margin: 0 auto;
   background: inherit;
