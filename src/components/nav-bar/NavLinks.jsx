@@ -6,15 +6,15 @@ import styled from "styled-components";
 import links from "src/data/navLinks.js";
 
 const StyledLink = styled(Link)`
-  color: ${props => props.theme.font_Primary};
+  color: ${props => props.theme.font_onPrimary1};
   letter-spacing: 2px;
   text-decoration: none;
   font-weight: bold;
   padding: 0.5rem 0 0.5rem 1rem;
-  border-bottom: 2px solid grey;
+  /* border-bottom: 2px solid grey; */
 
   &:first-child {
-    border-top: 2px solid grey;
+    /* border-top: 2px solid grey; */
   }
 
   @media (min-width: 600px) {

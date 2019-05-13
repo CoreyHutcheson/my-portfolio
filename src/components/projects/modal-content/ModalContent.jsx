@@ -9,8 +9,8 @@ import VisitSiteLink from "./VisitSiteLink";
 import GithubLink from "./GithubLink";
 
 const StyledModalContent = styled.div`
-  background: ${props => props.theme.background_Primary};
-  color: ${props => props.theme.font_Primary};
+  background: ${props => props.theme.color_primary};
+  color: ${props => props.theme.font_onPrimary1};
   padding: 20px;
   height: 100%;
   display: flex;
@@ -24,10 +24,7 @@ const Title = styled.h2`
 `;
 
 const Tag = styled.div`
-  color: ${props =>
-    props.theme.name === "light"
-      ? lighten(0.3, props.theme.font_Primary)
-      : darken(0.3, props.theme.font_Primary)};
+  color: ${props => props.theme.font_onPrimary2};
   font-weight: bold;
   letter-spacing: 3px;
   margin-bottom: 1rem;
@@ -50,10 +47,7 @@ const CloseButton = styled.div`
   margin-left: auto;
 
   &:hover {
-    color: ${props =>
-      props.theme.name === "light"
-        ? lighten(0.3, props.theme.font_Primary)
-        : darken(0.3, props.theme.font_Primary)};
+    color: ${props => props.theme.font_onPrimary1};
   }
 `;
 

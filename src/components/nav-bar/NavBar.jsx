@@ -9,7 +9,7 @@ import NavLinks from "./NavLinks";
 import SliderButton from "src/components/slider-button";
 
 const NavContainer = styled.nav`
-  background: ${props => props.theme.background_Primary};
+  background: ${props => props.theme.color_primary};
   position: relative;
   width: 100%;
   min-height: 50px;
@@ -18,7 +18,7 @@ const NavContainer = styled.nav`
 `;
 
 const LinkContainer = styled.div`
-  background: ${props => props.theme.background_PrimaryLight};
+  background: ${props => props.theme.color_primaryAlt};
   display: flex;
   flex-direction: column;
   width: 100%;

@@ -3,20 +3,19 @@ import PropTypes from "prop-types";
 import styled from "styled-components";
 
 const StyledTitle = styled.h2`
-  color: ${props => props.theme.font_Primary};
+  color: ${props => props.theme.font_onOther1};
   font-size: 2.5rem;
   font-weight: bold;
   text-transform: uppercase;
   margin-bottom: ${props => props.theme.sectionBorderSpacer};
 
-  // Creates border underneath
   &:after {
     content: "";
     display: block;
     margin: 0 auto;
     width: 50%;
     padding-top: 1rem;
-    border-bottom: 4px solid ${props => props.theme.font_Primary};
+    border-bottom: 4px solid ${props => props.theme.font_onOther1};
   }
 
   // Animates border slide-in

@@ -1,17 +1,21 @@
 const lightTheme = {
   name: "light",
-  font_Primary: "black",
-  font_Secondary: "#444",
-  font_Alt: "white",
-  background_Primary: "#bbdefb",
-  background_PrimaryLight: "#eeffff",
-  background_PrimaryDark: "#8aacc8",
-  background_Secondary: "#ef9a9a",
-  background_SecondaryLight: "#ffcccb",
-  background_SecondaryDark: "#ba6b6c",
-
-  // primaryBackground: "#bbdefb",
-  // secondaryBackground: "#252934",
+  color_primary: "#6200EE",
+  color_primaryAlt: "#3700B3",
+  color_secondary: "#03DAC6",
+  color_secondaryAlt: "#018786",
+  color_background: "#eeeeee",
+  color_backgroundLight: "#ffffff",
+  color_backgroundDark: "#cccccc",
+  color_surface: "#ffffff",
+  color_error: "#B00020",
+  // Font Colors
+  font_onPrimary1: "rgba(255, 255, 255, 0.87)",
+  font_onPrimary2: "rgba(255, 255, 255, 0.6)",
+  font_onPrimary3: "rgba(255, 255, 255, 0.38)",
+  font_onOther1: "rgba(0, 0, 0, 0.87)",
+  font_onOther2: "rgba(0, 0, 0, 0.6)",
+  font_onOther3: "rgba(0, 0, 0, 0.38)",
 };
 
 export default lightTheme;

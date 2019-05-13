@@ -13,7 +13,7 @@ const Container = styled.label`
   display: inline-block;
   width: 60px;
   height: 34px;
-  margin: 0 5px;
+  margin: 0 10px;
 `;
 
 const Slider = styled.span`
@@ -24,7 +24,7 @@ const Slider = styled.span`
   right: 0;
   bottom: 0;
   border-radius: 34px;
-  background-color: #ccc;
+  background-color: ${props => props.theme.color_backgroundLight};
   -webkit-transition: 0.4s;
   transition: 0.4s;
 
@@ -36,7 +36,7 @@ const Slider = styled.span`
     left: 4px;
     bottom: 4px;
     border-radius: 50%;
-    background-color: white;
+    background-color: ${props => props.theme.color_secondary};
     -webkit-transition: 0.4s;
     transition: 0.4s;
   }
@@ -48,7 +48,7 @@ const Checkbox = styled.input`
   height: 0;
 
   :checked + ${Slider} {
-    background-color: #2196f3;
+    background-color: ${props => props.theme.color_background};
   }
 
   :focus + ${Slider} {
@@ -62,6 +62,10 @@ const Checkbox = styled.input`
   }
 `;
 
+const Text = styled.span`
+  color: ${props => props.theme.font_onPrimary1};
+`;
+
 const SliderButton = ({
   handleChange,
   preText = "Off",
@@ -69,12 +73,12 @@ const SliderButton = ({
   className,
 }) => (
   <SliderButtonContainer className={className}>
-    <span>{preText}</span>
+    <Text>{preText}</Text>
     <Container>
       <Checkbox type="checkbox" onChange={e => handleChange(e)} />
       <Slider />
     </Container>
-    <span>{postText}</span>
+    <Text>{postText}</Text>
   </SliderButtonContainer>
 );
 

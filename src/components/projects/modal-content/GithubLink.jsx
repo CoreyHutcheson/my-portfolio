@@ -12,10 +12,7 @@ const StyledGithub = styled.a`
   color: inherit;
 
   &:hover {
-    color: ${props =>
-      props.theme.name === "light"
-        ? lighten(0.3, props.theme.font_Primary)
-        : darken(0.3, props.theme.font_Primary)};
+    color: ${props => props.theme.font_onPrimary1};
   }
 `;
 

@@ -12,23 +12,23 @@ import Projects from "src/components/projects";
 import ContactForm from "src/components/contact-form";
 
 const Section = styled.section`
-  background: ${props => props.theme.background_PrimaryLight};
+  background: ${props => props.theme.color_background};
   ${props => props.theme.flexCenterMixin}
   flex-direction: column;
   padding: ${props => props.theme.sectionPadding} 0;
 `;
 
 const FormSection = styled(Section)`
-  background: ${props => props.theme.background_Primary};
+  background: ${props => props.theme.color_backgroundDark};
   padding-top: 0;
   padding-bottom: ${props => props.theme.sectionPadding};
 `;
 
 const StyledSvg = styled.svg`
+  fill: ${props => props.theme.color_background};
   width: 100%;
   height: 50px;
   margin-bottom: ${props => props.theme.sectionPadding};
-  fill: ${props => props.theme.background_PrimaryLight};
 `;
 
 const IndexPage = () => {

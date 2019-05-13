@@ -11,8 +11,7 @@ const StyledPanel = styled.div`
   position: relative;
   cursor: pointer;
 
-  // background: #f5f5f5;
-  background: ${props => props.theme.background_PrimaryDark};
+  background: ${props => props.theme.color_secondary};
 `;
 
 const Image = styled(Img)`

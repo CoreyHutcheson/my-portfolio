@@ -3,10 +3,10 @@ import styled from "styled-components";
 import PropTypes from "prop-types";
 
 const StyledButton = styled.div`
+  background: ${props => props.theme.color_secondary};
+  color: ${props => props.theme.font_onOther1};
+  border: 2px solid ${props => props.theme.font_onOther1};
   width: 170px;
-  background: ${props => props.theme.background_Secondary};
-  color: ${props => props.theme.font_Primary};
-  border: 2px solid ${props => props.theme.font_Primary};
   text-transform: uppercase;
   letter-spacing: 2px;
   font-weight: 600;
@@ -14,8 +14,8 @@ const StyledButton = styled.div`
   padding: 10px 0px;
 
   &:hover {
-    color: ${props => props.theme.background_Secondary};
-    background: ${props => props.theme.font_Primary};
+    background: ${props => props.theme.font_onOther1};
+    color: ${props => props.theme.color_secondary};
   }
 `;
 

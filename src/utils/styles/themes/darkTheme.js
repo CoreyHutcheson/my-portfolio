@@ -1,17 +1,20 @@
-const lightTheme = {
+const darkTheme = {
   name: "dark",
-  font_Primary: "white",
-  font_Secondary: "#bddae7",
-  font_Alt: "black",
-  background_Primary: "#252934",
-  background_PrimaryLight: "#4d515e",
-  background_PrimaryDark: "#00000d",
-  background_Secondary: "#455a64",
-  background_SecondaryLight: "#718792",
-  background_SecondaryDark: "#1c313a",
-
-  // primaryBackground: "yellow",
-  // secondaryBackground: "#252934",
+  color_primary: "#BB86FC",
+  color_primaryAlt: "#3700B3",
+  color_secondary: "#03DAC6",
+  color_background: "#121212",
+  color_backgroundLight: "#383838",
+  color_backgroundDark: "#000000",
+  color_surface: "#121212",
+  color_error: "#CF6679",
+  // Font Colors
+  font_onPrimary1: "rgba(0, 0, 0, 0.87)",
+  font_onPrimary2: "rgba(0, 0, 0, 0.6)",
+  font_onPrimary3: "rgba(0, 0, 0, 0.38)",
+  font_onOther1: "rgba(255, 255, 255, 0.87)",
+  font_onOther2: "rgba(255, 255, 255, 0.6)",
+  font_onOther3: "rgba(255, 255, 255, 0.38)",
 };
 
-export default lightTheme;
+export default darkTheme;
