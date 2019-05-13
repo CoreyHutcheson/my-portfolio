@@ -1,7 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
-import { lighten, darken } from "polished";
 import { faTimes } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
@@ -9,7 +8,8 @@ import VisitSiteLink from "./VisitSiteLink";
 import GithubLink from "./GithubLink";
 
 const StyledModalContent = styled.div`
-  background: ${props => props.theme.color_primary};
+  background: ${props =>
+    props.theme.name === "light" ? "#fff" : props.theme.color_primary};
   color: ${props => props.theme.font_onPrimary1};
   padding: 20px;
   height: 100%;
@@ -43,6 +43,7 @@ const StyledTech = styled.div`
 `;
 
 const CloseButton = styled.div`
+  color: ${props => props.theme.font_onPrimary2};
   cursor: pointer;
   margin-left: auto;
 

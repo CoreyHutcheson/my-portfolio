@@ -18,7 +18,7 @@ const NavContainer = styled.nav`
 `;
 
 const LinkContainer = styled.div`
-  background: ${props => props.theme.color_primaryAlt};
+  background: ${props => props.theme.color_primaryDark};
   display: flex;
   flex-direction: column;
   width: 100%;

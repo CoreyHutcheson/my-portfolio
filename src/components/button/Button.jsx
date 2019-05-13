@@ -3,9 +3,8 @@ import styled from "styled-components";
 import PropTypes from "prop-types";
 
 const StyledButton = styled.div`
-  background: ${props => props.theme.color_secondary};
-  color: ${props => props.theme.font_onOther1};
-  border: 2px solid ${props => props.theme.font_onOther1};
+  background: ${props => props.theme.color_primary};
+  color: ${props => props.theme.font_onPrimary1};
   width: 170px;
   text-transform: uppercase;
   letter-spacing: 2px;
@@ -14,8 +13,8 @@ const StyledButton = styled.div`
   padding: 10px 0px;
 
   &:hover {
-    background: ${props => props.theme.font_onOther1};
-    color: ${props => props.theme.color_secondary};
+    background: ${props => props.theme.font_onPrimary1};
+    color: ${props => props.theme.color_primaryLight};
   }
 `;
 

@@ -11,10 +11,10 @@ const StyledLink = styled(Link)`
   text-decoration: none;
   font-weight: bold;
   padding: 0.5rem 0 0.5rem 1rem;
-  /* border-bottom: 2px solid grey; */
+  border-bottom: 1px solid ${props => props.theme.color_primaryLight};
 
   &:first-child {
-    /* border-top: 2px solid grey; */
+    border-top: 1px solid ${props => props.theme.color_primaryLight};
   }
 
   @media (min-width: 600px) {

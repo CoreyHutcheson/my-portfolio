@@ -3,9 +3,14 @@ import PropTypes from "prop-types";
 import styled from "styled-components";
 
 const SliderButtonContainer = styled.div`
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
+  ${props => props.theme.flexCenterMixin}
+  padding: 0.5rem 0;
+  border-bottom: 1px solid ${props => props.theme.color_primaryLight};
+
+  @media (min-width: 600px) {
+    padding: 0;
+    border-bottom: none;
+  }
 `;
 
 const Container = styled.label`
@@ -17,6 +22,7 @@ const Container = styled.label`
 `;
 
 const Slider = styled.span`
+  background: ${props => props.theme.color_primaryLight};
   position: absolute;
   cursor: pointer;
   top: 0;
@@ -24,11 +30,11 @@ const Slider = styled.span`
   right: 0;
   bottom: 0;
   border-radius: 34px;
-  background-color: ${props => props.theme.color_backgroundLight};
   -webkit-transition: 0.4s;
   transition: 0.4s;
 
   &:before {
+    background: ${props => props.theme.color_accent};
     position: absolute;
     content: "";
     height: 26px;
@@ -36,7 +42,6 @@ const Slider = styled.span`
     left: 4px;
     bottom: 4px;
     border-radius: 50%;
-    background-color: ${props => props.theme.color_secondary};
     -webkit-transition: 0.4s;
     transition: 0.4s;
   }
@@ -48,7 +53,7 @@ const Checkbox = styled.input`
   height: 0;
 
   :checked + ${Slider} {
-    background-color: ${props => props.theme.color_background};
+    /* background: ${props => props.theme.color_background}; */
   }
 
   :focus + ${Slider} {

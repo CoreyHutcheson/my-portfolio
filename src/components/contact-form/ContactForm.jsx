@@ -14,9 +14,9 @@ const FormContainer = styled.div`
 `;
 
 const StyledForm = styled.form`
-  background: ${props => props.theme.color_background};
-  color: ${props => props.theme.font_onOther1};
-  border: 1px solid ${props => props.theme.font_onOther1};
+  background: ${props => props.theme.color_primaryLight};
+  color: ${props => props.theme.font_onPrimary1};
+  border: 1px solid ${props => props.theme.font_onPrimary1};
   border-radius: 5px;
   width: 100%;
   box-shadow: 3px 3px 7px 0px rgba(0, 0, 0, 0.75);
@@ -59,7 +59,7 @@ const Message = styled.textarea`
 `;
 
 const ContactText = styled.p`
-  color: ${props => props.theme.font_onOther1};
+  color: ${props => props.theme.font_onPrimary2};
   text-align: center;
   font-size: 1.1rem;
   margin: 0 0 ${props => props.theme.sectionBorderSpacer};

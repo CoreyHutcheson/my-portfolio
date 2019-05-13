@@ -18,6 +18,7 @@ const modalStyles = {
     maxWidth: "900px",
     margin: "5% auto",
     padding: "0",
+    boxShadow: "5px 5px 10px 0px rgba(0,0,0,0.75)",
   },
 };
 

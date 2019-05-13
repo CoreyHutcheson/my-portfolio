@@ -1,7 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
-import { lighten, darken } from "polished";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
@@ -9,7 +8,7 @@ const StyledGithub = styled.a`
   text-decoration: none;
   margin-right: auto;
   margin-left: 1rem;
-  color: inherit;
+  color: ${props => props.theme.font_onPrimary2};
 
   &:hover {
     color: ${props => props.theme.font_onPrimary1};
