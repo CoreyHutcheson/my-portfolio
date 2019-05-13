@@ -2,7 +2,6 @@ import React from "react";
 import styled from "styled-components";
 
 import Input from "./input";
-import SectionTitle from "src/components/section-title";
 
 const FormContainer = styled.div`
   ${props => props.theme.flexCenterMixin}
@@ -75,8 +74,6 @@ const FieldContainerFull = styled.div`
 
 const ContactForm = () => (
   <FormContainer>
-    <SectionTitle>Contact</SectionTitle>
-
     <ContactText>Message Away!</ContactText>
 
     <StyledForm
