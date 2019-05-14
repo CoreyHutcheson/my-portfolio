@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import styled from "styled-components";
 
 import Input from "./input";
+import getRandomMessage from "src/utils/js/getRandomMessage.js";
 
 const FormContainer = styled.div`
   ${props => props.theme.flexCenterMixin}
@@ -61,7 +62,7 @@ const Message = styled.textarea`
 const ContactText = styled.p`
   color: ${props => props.theme.font_onPrimary2};
   text-align: center;
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   margin: 0 0 ${props => props.theme.sectionBorderSpacer};
 `;
 
@@ -75,7 +76,7 @@ const FieldContainerFull = styled.div`
 
 const ContactForm = ({ className }) => (
   <FormContainer className={className}>
-    <ContactText>Message Away!</ContactText>
+    <ContactText>{getRandomMessage()}</ContactText>
 
     <StyledForm
       name="contact"
