@@ -9,6 +9,7 @@ import Button from "src/components/button";
 const StyledLink = styled(Button)`
   background: ${props => props.theme.color_primaryLight};
   color: ${props => props.theme.font_onPrimary1};
+  border: 1px solid ${props => props.theme.font_onPrimary1};
 
   &:hover {
     background: ${props => props.theme.font_onPrimary1};
