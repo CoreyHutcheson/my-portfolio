@@ -1,20 +1,36 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { Link } from "gatsby";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 import links from "src/data/navLinks.js";
 
+const contentBorderMixin = styles => css`
+  ${styles || ""};
+  content: "";
+  display: block;
+  width: 0;
+  position: absolute;
+  border-bottom: 2px solid ${props => props.theme.font_onPrimary1};
+  transition: 0.3s ease;
+`;
+
 const StyledLink = styled(Link)`
-  color: ${props => props.theme.font_onPrimary1};
+  color: ${props => props.theme.font_onPrimary2};
+  border-bottom: 1px solid ${props => props.theme.color_primaryLight};
   letter-spacing: 2px;
   text-decoration: none;
   font-weight: bold;
   padding: 0.5rem 0 0.5rem 1rem;
-  border-bottom: 1px solid ${props => props.theme.color_primaryLight};
+  position: relative;
 
   &:first-child {
     border-top: 1px solid ${props => props.theme.color_primaryLight};
+  }
+
+  :hover {
+    background: ${props => props.theme.color_primaryLight};
+    color: ${props => props.theme.font_onPrimary1};
   }
 
   @media (min-width: 600px) {
@@ -23,14 +39,29 @@ const StyledLink = styled(Link)`
 
     &:first-child {
       border-top: none;
-    }
-
-    &:first-child {
       margin-left: 15%;
     }
 
     &:not(:last-child) {
       margin-right: 1rem;
+    }
+
+    :after {
+      ${contentBorderMixin("bottom: -4px; left: 0;")};
+    }
+
+    :before {
+      ${contentBorderMixin("top: -4px; right: 0;")};
+    }
+
+    :hover {
+      background: inherit;
+      color: ${props => props.theme.font_onPrimary1};
+
+      :after,
+      :before {
+        width: 100%;
+      }
     }
   }
 `;
