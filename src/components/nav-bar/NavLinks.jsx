@@ -15,9 +15,11 @@ const contentBorderMixin = styles => css`
   transition: 0.3s ease;
 `;
 
-const StyledLink = styled(Link)`
+const StyledLink = styled(Link).attrs(props => ({
+  border: `1px solid ${props.theme.color_primaryLight}`,
+}))`
   color: ${props => props.theme.font_onPrimary2};
-  border-bottom: 1px solid ${props => props.theme.color_primaryLight};
+  border-bottom: ${props => props.border};
   letter-spacing: 2px;
   text-decoration: none;
   font-weight: bold;
@@ -25,7 +27,7 @@ const StyledLink = styled(Link)`
   position: relative;
 
   &:first-child {
-    border-top: 1px solid ${props => props.theme.color_primaryLight};
+    border-top: ${props => props.border};
   }
 
   :hover {
