@@ -46,6 +46,10 @@ const StyledSlider = styled(SliderButton)`
   }
 `;
 
+function vhToPixels(vh) {
+  return Math.round(window.innerHeight / (100 / vh));
+}
+
 const NavBar = ({ handleThemeChange, className }) => {
   const [open, setOpen] = useState(false);
 
@@ -54,7 +58,7 @@ const NavBar = ({ handleThemeChange, className }) => {
   const handleLinkClick = () => setOpen(false);
 
   return (
-    <Headroom>
+    <Headroom pinStart={vhToPixels(100)}>
       <NavContainer className={className}>
         <Toggler handleClick={handleTogglerClick} />
 
