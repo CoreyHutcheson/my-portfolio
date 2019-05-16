@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
+import Headroom from "react-headroom";
 import { faMoon, faSun } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
@@ -53,19 +54,21 @@ const NavBar = ({ handleThemeChange, className }) => {
   const handleLinkClick = () => setOpen(false);
 
   return (
-    <NavContainer className={className}>
-      <Toggler handleClick={handleTogglerClick} />
+    <Headroom>
+      <NavContainer className={className}>
+        <Toggler handleClick={handleTogglerClick} />
 
-      <LinkContainer open={open}>
-        <NavLinks handleClick={handleLinkClick} />
+        <LinkContainer open={open}>
+          <NavLinks handleClick={handleLinkClick} />
 
-        <StyledSlider
-          handleChange={handleThemeChange}
-          preText={<FontAwesomeIcon icon={faSun} />}
-          postText={<FontAwesomeIcon icon={faMoon} />}
-        />
-      </LinkContainer>
-    </NavContainer>
+          <StyledSlider
+            handleChange={handleThemeChange}
+            preText={<FontAwesomeIcon icon={faSun} />}
+            postText={<FontAwesomeIcon icon={faMoon} />}
+          />
+        </LinkContainer>
+      </NavContainer>
+    </Headroom>
   );
 };
 
