@@ -1,11 +1,13 @@
 import React from "react";
 import PropTypes from "prop-types";
 
+import LandingPage from "src/components/landing-page";
 import NavBar from "src/components/nav-bar";
 import Footer from "src/components/footer";
 
 const PageWrapper = ({ children, handleThemeChange }) => (
   <>
+    <LandingPage />
     <header>
       <NavBar handleThemeChange={handleThemeChange} />
     </header>
