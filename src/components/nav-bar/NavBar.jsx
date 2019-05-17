@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
 import Headroom from "react-headroom";
@@ -8,7 +8,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Toggler from "./Toggler";
 import NavLinks from "./NavLinks";
 import SliderButton from "src/components/slider-button";
-import useLandingPageHeight from "src/utils/js/landingPageFunctions.js";
+import usePinStartHeight from "src/utils/js/usePinStartHeight.js";
 
 const NavContainer = styled.nav`
   background: ${props => props.theme.color_primary};
@@ -49,21 +49,11 @@ const StyledSlider = styled(SliderButton)`
 
 const NavBar = ({ handleThemeChange, className }) => {
   const [open, setOpen] = useState(false);
-  const [pinStartHeight, setPinStartHeight] = useState(useLandingPageHeight());
+  const pinStartHeight = usePinStartHeight();
 
   const handleTogglerClick = () => setOpen(!open);
 
   const handleLinkClick = () => setOpen(false);
-
-  useEffect(() => {
-    const handleResize = () => setPinStartHeight(useLandingPageHeight());
-
-    window.addEventListener("resize", handleResize);
-
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  });
 
   return (
     <Headroom pinStart={pinStartHeight}>
