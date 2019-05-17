@@ -2,19 +2,21 @@ import { useState, useEffect } from "react";
 import baseTheme from "src/utils/styles/themes/baseTheme.js";
 
 export default function useLandingPageHeight() {
-  const [pinStartHeight, setPinStartHeight] = useState(getHeight());
+  if (typeof window !== `undefined`) {
+    const [pinStartHeight, setPinStartHeight] = useState(getHeight());
 
-  useEffect(() => {
-    const handleResize = () => setPinStartHeight(getHeight());
+    useEffect(() => {
+      const handleResize = () => setPinStartHeight(getHeight());
 
-    window.addEventListener("resize", handleResize);
+      window.addEventListener("resize", handleResize);
 
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  });
+      return () => {
+        window.removeEventListener("resize", handleResize);
+      };
+    });
 
-  return pinStartHeight;
+    return pinStartHeight;
+  }
 }
 
 function getHeight() {
