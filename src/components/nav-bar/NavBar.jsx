@@ -49,11 +49,21 @@ const StyledSlider = styled(SliderButton)`
 
 const NavBar = ({ handleThemeChange, className }) => {
   const [open, setOpen] = useState(false);
-  const pinStartHeight = useLandingPageHeight();
+  const [pinStartHeight, setPinStartHeight] = useState(useLandingPageHeight());
 
   const handleTogglerClick = () => setOpen(!open);
 
   const handleLinkClick = () => setOpen(false);
+
+  useEffect(() => {
+    const handleResize = () => setPinStartHeight(useLandingPageHeight());
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  });
 
   return (
     <Headroom pinStart={pinStartHeight}>
