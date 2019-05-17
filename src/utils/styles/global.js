@@ -6,6 +6,10 @@ const GlobalStyle = createGlobalStyle`
   body {
     font-family: "Raleway";
     color: ${props => props.theme.font_Primary};
+
+    &.ReactModal__Body--open {
+      overflow: hidden;
+    }
   }
 
   html,
