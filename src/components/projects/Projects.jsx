@@ -9,7 +9,9 @@ import Carousel from "src/components/carousel";
 import ModalContent from "./modal-content";
 
 const modalStyles = {
-  overlay: {},
+  overlay: {
+    zIndex: "1",
+  },
   content: {
     top: "0",
     left: "0",
