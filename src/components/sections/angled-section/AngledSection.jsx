@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
+import Fade from "../Fade";
 
 import SectionTitle from "src/components/section-title";
 
@@ -28,7 +29,10 @@ const AngledSection = ({ children, id, title, className }) => (
       <polygon points="0 0, 50 100, 100 0" />
     </StyledSvg>
 
-    <SectionTitle>{title}</SectionTitle>
+    <Fade>
+      <SectionTitle>{title}</SectionTitle>
+    </Fade>
+
     {children}
   </StyledSection>
 );

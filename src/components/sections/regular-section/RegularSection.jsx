@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
+import Fade from "../Fade";
 
 import SectionTitle from "src/components/section-title";
 
@@ -13,7 +14,10 @@ const StyledSection = styled.section`
 
 const RegularSection = ({ children, id, title, className }) => (
   <StyledSection id={id} className={className}>
-    <SectionTitle>{title}</SectionTitle>
+    <Fade>
+      <SectionTitle>{title}</SectionTitle>
+    </Fade>
+
     {children}
   </StyledSection>
 );
