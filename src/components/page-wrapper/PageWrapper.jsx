@@ -8,7 +8,7 @@ import Footer from "src/components/footer";
 const PageWrapper = ({ children, handleThemeChange }) => (
   <>
     <LandingPage />
-    <header>
+    <header id="navbar">
       <NavBar handleThemeChange={handleThemeChange} />
     </header>
     <main>{children}</main>
