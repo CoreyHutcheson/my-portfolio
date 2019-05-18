@@ -1,14 +1,14 @@
 import React from "react";
-import { Link } from "gatsby";
 import styled from "styled-components";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { vhToPixels } from "src/utils/js/usePinStartHeight.js";
 
 const Icon = styled(FontAwesomeIcon)`
   transition: 0.3s ease;
 `;
 
-const StyledButton = styled(Link)`
+const StyledButton = styled.div`
   width: 60px;
   height: 50px;
   background: green;
@@ -25,7 +25,7 @@ const StyledButton = styled(Link)`
 `;
 
 const ScrollDownButton = () => (
-  <StyledButton to="/#navbar">
+  <StyledButton onClick={() => window.scrollTo(0, vhToPixels(100) - 50)}>
     <Icon icon={faArrowRight} size="2x" />
   </StyledButton>
 );
