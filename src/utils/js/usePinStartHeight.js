@@ -28,7 +28,7 @@ function getHeight() {
   return landingPageHeight - navbarHeight;
 }
 
-function vhToPixels(vh) {
+export function vhToPixels(vh) {
   return Math.round(window.innerHeight / (100 / vh));
 }
 
