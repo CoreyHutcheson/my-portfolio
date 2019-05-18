@@ -11,8 +11,7 @@ import RegularSection from "src/components/sections/regular-section";
 import AngledSection from "src/components/sections/angled-section";
 import Projects from "src/components/projects";
 import ContactForm from "src/components/contact-form";
-import ScrollUpButton from "react-scroll-up-button";
-import { vhToPixels } from "src/utils/js/usePinStartHeight.js";
+import ScrollUpButton from "src/components/scroll-up-button";
 
 const IndexPage = () => {
   const [theme, setTheme] = useState({ ...baseTheme, ...lightTheme });
@@ -39,7 +38,7 @@ const IndexPage = () => {
             <ContactForm />
           </RegularSection>
 
-          <ScrollUpButton ShowAtPosition={vhToPixels(100)} />
+          <ScrollUpButton />
         </PageWrapper>
       </>
     </ThemeProvider>
