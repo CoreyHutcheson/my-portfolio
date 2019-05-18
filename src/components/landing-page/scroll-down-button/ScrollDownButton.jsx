@@ -31,8 +31,6 @@ const ScrollDownButton = () => (
   </StyledButton>
 );
 
-ScrollDownButton.propTypes = {
-  handleClick: PropTypes.func.isRequired,
-};
+ScrollDownButton.propTypes = {};
 
 export default ScrollDownButton;
