@@ -6,7 +6,7 @@ import styled from "styled-components";
 import Button from "src/components/button";
 
 const StyledPanel = styled.div`
-  background: ${props => props.theme.color_primaryDark};
+  background: ${props => props.theme.color_primaryLight};
   width: 300px;
   height: 300px;
   position: relative;

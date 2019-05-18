@@ -15,7 +15,7 @@ const FormContainer = styled.div`
 `;
 
 const StyledForm = styled.form`
-  background: ${props => props.theme.color_primaryLight};
+  background: ${props => props.theme.color_primaryDark};
   color: ${props => props.theme.font_onPrimary1};
   border: 1px solid ${props => props.theme.font_onPrimary1};
   border-radius: 5px;
