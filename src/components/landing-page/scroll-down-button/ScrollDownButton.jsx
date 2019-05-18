@@ -25,7 +25,15 @@ const StyledButton = styled.div`
 `;
 
 const ScrollDownButton = () => (
-  <StyledButton onClick={() => window.scrollTo(0, vhToPixels(100) - 50)}>
+  <StyledButton
+    onClick={() =>
+      window.scrollTo({
+        top: vhToPixels(100) - 50,
+        left: 0,
+        behavior: "smooth",
+      })
+    }
+  >
     <Icon icon={faArrowRight} size="2x" />
   </StyledButton>
 );
