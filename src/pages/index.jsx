@@ -27,13 +27,15 @@ const IndexPage = () => {
         <GlobalStyle />
 
         <PageWrapper handleThemeChange={handleThemeChange}>
-          <RegularSection id="projects" title="Projects">
-            <Projects />
-          </RegularSection>
+          <RegularSection id="about" title="About" />
 
-          <AngledSection id="contact" title="Contact">
-            <ContactForm />
+          <AngledSection id="projects" title="Projects">
+            <Projects />
           </AngledSection>
+
+          <RegularSection id="contact" title="Contact">
+            <ContactForm />
+          </RegularSection>
         </PageWrapper>
       </>
     </ThemeProvider>
