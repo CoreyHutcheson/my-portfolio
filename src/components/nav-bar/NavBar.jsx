@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
 import Headroom from "react-headroom";
@@ -47,13 +47,33 @@ const StyledSlider = styled(SliderButton)`
   }
 `;
 
+const getHash = str => {
+  if (!str.includes("#")) {
+    return "/";
+  }
+
+  str = str.split("#");
+
+  return `/#${str[1]}`;
+};
+
 const NavBar = ({ handleThemeChange, className }) => {
   const [open, setOpen] = useState(false);
   const pinStartHeight = usePinStartHeight();
+  const [activeLink, setActiveLink] = useState("/");
 
-  const handleTogglerClick = () => setOpen(!open);
+  const handleTogglerClick = () => {
+    setOpen(!open);
+  };
 
-  const handleLinkClick = () => setOpen(false);
+  const handleLinkClick = href => {
+    setActiveLink(getHash(href));
+    setOpen(false);
+  };
+
+  useEffect(() => {
+    setActiveLink(getHash(window.location.href));
+  });
 
   return (
     <Headroom pinStart={pinStartHeight}>
@@ -61,7 +81,7 @@ const NavBar = ({ handleThemeChange, className }) => {
         <Toggler handleClick={handleTogglerClick} />
 
         <LinkContainer open={open}>
-          <NavLinks handleClick={handleLinkClick} />
+          <NavLinks handleClick={handleLinkClick} activeLink={activeLink} />
 
           <StyledSlider
             handleChange={handleThemeChange}

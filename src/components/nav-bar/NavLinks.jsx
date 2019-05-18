@@ -26,6 +26,11 @@ const StyledLink = styled(Link).attrs(props => ({
   padding: 0.5rem 0 0.5rem 1rem;
   position: relative;
 
+  &[isactive="true"] {
+    background: ${props => props.theme.color_primaryLight};
+    color: ${props => props.theme.font_onPrimary1};
+  }
+
   &:first-child {
     border-top: ${props => props.border};
   }
@@ -38,6 +43,15 @@ const StyledLink = styled(Link).attrs(props => ({
   @media (min-width: 600px) {
     padding: 0;
     border-bottom: none;
+
+    &[isactive="true"] {
+      background: inherit;
+
+      :after,
+      :before {
+        width: 100%;
+      }
+    }
 
     &:first-child {
       border-top: none;
@@ -68,7 +82,7 @@ const StyledLink = styled(Link).attrs(props => ({
   }
 `;
 
-const NavLinks = ({ handleClick, className }) => {
+const NavLinks = ({ handleClick, className, activeLink }) => {
   return Object.keys(links).map(link => {
     const url = links[link] !== "/" ? `/${links[link]}` : "/";
 
@@ -76,8 +90,9 @@ const NavLinks = ({ handleClick, className }) => {
       <StyledLink
         key={link}
         to={url}
-        onClick={handleClick}
+        onClick={() => handleClick(window.location.href)}
         className={className}
+        isactive={activeLink === url ? "true" : "false"}
       >
         {link}
       </StyledLink>
