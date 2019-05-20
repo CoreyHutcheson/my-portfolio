@@ -90,7 +90,7 @@ const NavLinks = ({ handleClick, className, activeLink }) => {
       <StyledLink
         key={link}
         to={url}
-        onClick={() => handleClick(window.location.href)}
+        onClick={handleClick}
         className={className}
         isactive={activeLink === url ? "true" : "false"}
       >
@@ -103,6 +103,7 @@ const NavLinks = ({ handleClick, className, activeLink }) => {
 NavLinks.propTypes = {
   handleClick: PropTypes.func.isRequired,
   className: PropTypes.string,
+  activeLink: PropTypes.string,
 };
 
 export default NavLinks;
