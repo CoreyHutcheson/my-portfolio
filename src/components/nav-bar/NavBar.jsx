@@ -66,8 +66,7 @@ const NavBar = ({ handleThemeChange, className }) => {
     setOpen(!open);
   };
 
-  const handleLinkClick = href => {
-    setActiveLink(getHash(href));
+  const handleLinkClick = () => {
     setOpen(false);
   };
 
