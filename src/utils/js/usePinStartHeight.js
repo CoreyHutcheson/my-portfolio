@@ -29,7 +29,9 @@ function getHeight() {
 }
 
 export function vhToPixels(vh) {
-  return Math.round(window.innerHeight / (100 / vh));
+  if (typeof window !== `undefined`) {
+    return Math.round(window.innerHeight / (100 / vh));
+  }
 }
 
 function convertToNumber(str) {
