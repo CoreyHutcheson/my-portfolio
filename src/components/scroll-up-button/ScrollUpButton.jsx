@@ -8,7 +8,7 @@ const ScrollUpButton = props => {
     color: props.theme.font_onPrimary1,
   };
 
-  return <ScrollButton ShowAtPosition={vhToPixels(100)} style={styles} />;
+  return <ScrollButton ShowAtPosition={vhToPixels(100) - 51} style={styles} />;
 };
 
 export default withTheme(ScrollUpButton);
