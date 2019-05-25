@@ -7,6 +7,9 @@ const StyledLandingPage = styled.div`
   height: ${props =>
     `calc(${props.theme.landingPageHeight} - ${props.theme.navbarHeight})`};
   background: ${props => props.theme.color_primaryDark};
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
 
 const LandingPage = () => {
