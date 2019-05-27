@@ -13,14 +13,18 @@ const Container = styled.div`
 `;
 
 const List = styled.ol`
-  border-bottom: 1px solid #ccc;
   padding-left: 0;
 `;
 
 const Content = styled.div`
-  width: 50%;
-  min-height: 100px;
+  background: ${props => props.theme.color_primaryDark};
+  border: 1px solid ${props => props.theme.font_onPrimary1};
+  width: 100%;
+  max-width: 400px;
+  min-height: 200px;
   text-align: center;
+  margin-top: -1px;
+  padding: 1rem;
 `;
 
 const Tabs = ({ children, className }) => {

@@ -35,6 +35,10 @@ const sortObjects = (obj, sortBy) => {
   });
 };
 
+const Tech = styled.div`
+  padding: 0.5rem;
+`;
+
 const SkillContent = () => {
   let skills = [faWordpress, faReact, faSass, faPhp, faCode];
   skills = sortObjects(skills, "iconName");
@@ -46,10 +50,10 @@ const SkillContent = () => {
         title = title[0].toUpperCase() + title.substring(1);
 
         return (
-          <div>
+          <Tech key={title}>
             <FontAwesomeIcon icon={skill} size="2x" />
             <div>{title}</div>
-          </div>
+          </Tech>
         );
       })}
     </StyledContent>
