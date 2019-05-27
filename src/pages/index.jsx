@@ -9,6 +9,8 @@ import darkTheme from "src/utils/styles/themes/darkTheme.js";
 import PageWrapper from "src/components/page-wrapper";
 import RegularSection from "src/components/sections/regular-section";
 import AngledSection from "src/components/sections/angled-section";
+
+import About from "src/components/sections/about";
 import Projects from "src/components/projects";
 import ContactForm from "src/components/contact-form";
 import ScrollUpButton from "src/components/scroll-up-button";
@@ -28,7 +30,9 @@ const IndexPage = () => {
         <GlobalStyle />
 
         <PageWrapper handleThemeChange={handleThemeChange}>
-          <RegularSection id="about" title="About" />
+          <RegularSection id="about" title="About">
+            <About />
+          </RegularSection>
 
           <AngledSection id="projects" title="Projects">
             <Projects />
