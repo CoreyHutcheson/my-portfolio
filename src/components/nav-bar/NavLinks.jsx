@@ -5,14 +5,26 @@ import styled, { css } from "styled-components";
 
 import links from "src/data/navLinks.js";
 
-const contentBorderMixin = (styles, color) => css`
-  ${styles || ""};
-  content: "";
-  display: block;
-  width: 0;
-  position: absolute;
-  border-bottom: 2px solid ${props => color || props.theme.color_accent};
-  transition: 0.3s ease;
+const contentBorderMixin = color => css`
+  :after,
+  :before {
+    content: "";
+    display: block;
+    width: 0;
+    position: absolute;
+    border-bottom: 2px solid ${props => color || props.theme.font_onPrimary1};
+    transition: 0.3s ease;
+  }
+
+  :after {
+    bottom: -4px;
+    left: 0;
+  }
+
+  :before {
+    top: -4px;
+    right: 0;
+  }
 `;
 
 const StyledLink = styled(Link).attrs(props => ({
@@ -44,15 +56,6 @@ const StyledLink = styled(Link).attrs(props => ({
     padding: 0;
     border-bottom: none;
 
-    &[isactive="true"] {
-      background: inherit;
-
-      :after,
-      :before {
-        width: 100%;
-      }
-    }
-
     &:first-child {
       border-top: none;
       margin-left: 15%;
@@ -62,38 +65,29 @@ const StyledLink = styled(Link).attrs(props => ({
       margin-right: 1rem;
     }
 
-    &:not([isactive="true"]):hover {
+    &:not([isactive="true"]) {
+      :hover {
+        background: inherit;
+        color: ${props => props.theme.font_onPrimary1};
+
+        :after,
+        :before {
+          width: 100%;
+        }
+      }
+
+      ${props => contentBorderMixin(props.theme.font_onPrimary1)};
+    }
+
+    &[isactive="true"] {
       background: inherit;
-      color: ${props => props.theme.font_onPrimary1};
 
-      :after {
-        ${props =>
-          contentBorderMixin(
-            "bottom: -4px; left: 0;",
-            props.theme.font_onPrimary1
-          )};
-      }
-
-      :before {
-        ${props =>
-          contentBorderMixin(
-            "top: -4px; right: 0;",
-            props.theme.font_onPrimary1
-          )};
-      }
+      ${props => contentBorderMixin(props.theme.color_accent)};
 
       :after,
       :before {
         width: 100%;
       }
-    }
-
-    :after {
-      ${contentBorderMixin("bottom: -4px; left: 0;")};
-    }
-
-    :before {
-      ${contentBorderMixin("top: -4px; right: 0;")};
     }
   }
 `;
