@@ -10,7 +10,8 @@ const ListItem = styled.li`
   cursor: pointer;
   border: solid ${props => props.theme.font_onPrimary1};
   border-width: 1px 1px 0 0;
-  border-radius: 5px 5px 0 0;
+  border-top-left-radius: ${props => props.theme.borderRadius};
+  border-top-right-radius: ${props => props.theme.borderRadius};
 
   :first-of-type {
     border-left-width: 1px;
@@ -22,6 +23,7 @@ const ListItem = styled.li`
     css`
       border-bottom: 1px solid transparent;
       position: relative;
+      font-weight: bold;
     `}
 `;
 

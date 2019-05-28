@@ -18,9 +18,9 @@ const StyledForm = styled.form`
   background: ${props => props.theme.color_primaryDark};
   color: ${props => props.theme.font_onPrimary1};
   border: 1px solid ${props => props.theme.font_onPrimary1};
-  border-radius: 5px;
+  border-radius: ${props => props.theme.borderRadius};
   width: 100%;
-  box-shadow: 3px 3px 7px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: ${props => props.theme.boxShadow};
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: 10px;
