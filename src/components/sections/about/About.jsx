@@ -9,7 +9,6 @@ import portrait from "src/assets/images/corey1.jpg";
 const AboutContainer = styled.div`
   width: 100%;
   padding: 1rem;
-  border: 1px solid red;
   display: flex;
   flex-direction: column;
   justify-content: center;
