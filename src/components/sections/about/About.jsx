@@ -6,20 +6,32 @@ import SkillsContent from "./SkillsContent";
 
 import portrait from "src/assets/images/corey1.jpg";
 
-const Container = styled.div`
-  width: 95%;
+const AboutContainer = styled.div`
+  width: 100%;
+  padding: 1rem;
   border: 1px solid red;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
   color: ${props => props.theme.font_onPrimary1};
+
+  & > div {
+    flex: 1;
+    text-align: center;
+  }
+
+  @media (min-width: 600px) {
+    max-width: 900px;
+    flex-direction: row;
+    align-items: center;
+  }
 `;
 
 const ImageContainer = styled.div`
   width: 250px;
   height: 250px;
   overflow: hidden;
+  margin: 0 auto;
   margin-bottom: 1rem;
 `;
 
@@ -30,25 +42,44 @@ const Image = styled.img`
   border-radius: 50%;
 `;
 
+const Blurb = styled.div`
+  display: none;
+
+  @media (min-width: 600px) {
+    display: block;
+    max-width: 200px;
+    margin: 0 auto;
+  }
+`;
+
 const About = () => {
   return (
-    <Container>
-      <ImageContainer>
-        <Image src={portrait} alt="Corey Portrait" />
-      </ImageContainer>
+    <AboutContainer>
+      <div>
+        <ImageContainer>
+          <Image src={portrait} alt="Corey Portrait" />
+        </ImageContainer>
 
-      <Tabs>
-        <div label="About">My name is Corey Hutcheson.</div>
+        <Blurb>
+          This is a blurb! This is a blurb! This is a blurb! This is a blurb!
+          This is a blurb!
+        </Blurb>
+      </div>
 
-        <div label="Skills">
-          <SkillsContent />
-        </div>
+      <div>
+        <Tabs>
+          <div label="About">My name is Corey Hutcheson.</div>
 
-        <div label="Hobbies">
-          Nothing to see here, this tab is <em>extinct</em>!
-        </div>
-      </Tabs>
-    </Container>
+          <div label="Skills">
+            <SkillsContent />
+          </div>
+
+          <div label="Hobbies">
+            Nothing to see here, this tab is <em>extinct</em>!
+          </div>
+        </Tabs>
+      </div>
+    </AboutContainer>
   );
 };
 
