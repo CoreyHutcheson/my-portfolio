@@ -11,7 +11,7 @@
     "dev-m": "gatsby develop -o -H 0.0.0.0",
     "start": "npm run dev",
     "serve": "gatsby serve",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\""
+    "test": "jest"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.17",
@@ -42,8 +42,13 @@
     "styled-components": "^4.2.0"
   },
   "devDependencies": {
+    "babel-jest": "^24.8.0",
+    "babel-preset-gatsby": "^0.1.11",
     "gatsby-plugin-root-import": "^2.0.5",
-    "prettier": "^1.16.4"
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^24.8.0",
+    "prettier": "^1.16.4",
+    "react-test-renderer": "^16.8.6"
   },
   "keywords": [
     "gatsby"
