@@ -29,6 +29,7 @@ const Content = styled.div`
   margin-top: -1px;
   padding: 1rem;
   box-shadow: ${props => props.theme.boxShadow};
+  ${props => props.theme.flexCenterMixin};
 `;
 
 const Tabs = ({ children, className }) => {
@@ -51,9 +52,11 @@ const Tabs = ({ children, className }) => {
         })}
       </List>
       <Content className={className}>
-        {children.map(child =>
-          child.props.label === activeTab ? child.props.children : undefined
-        )}
+        <div>
+          {children.map(child =>
+            child.props.label === activeTab ? child.props.children : undefined
+          )}
+        </div>
       </Content>
     </Container>
   );

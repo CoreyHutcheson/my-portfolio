@@ -74,7 +74,7 @@ const About = () => {
           </div>
 
           <div label="Hobbies">
-            Nothing to see here, this tab is <em>extinct</em>!
+            Nothing to see here, this tab is <strong>extinct</strong>!
           </div>
         </Tabs>
       </div>
