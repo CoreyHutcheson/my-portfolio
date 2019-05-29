@@ -65,19 +65,17 @@ const StyledLink = styled(Link).attrs(props => ({
       margin-right: 1rem;
     }
 
-    &:not([isactive="true"]) {
-      :hover {
-        background: inherit;
-        color: ${props => props.theme.font_onPrimary1};
+    :hover {
+      background: inherit;
+      color: ${props => props.theme.font_onPrimary1};
 
-        :after,
-        :before {
-          width: 100%;
-        }
+      :after,
+      :before {
+        width: 100%;
       }
-
-      ${props => contentBorderMixin(props.theme.font_onPrimary1)};
     }
+
+    ${props => contentBorderMixin(props.theme.font_onPrimary1)};
 
     &[isactive="true"] {
       background: inherit;
