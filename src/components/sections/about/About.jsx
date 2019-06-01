@@ -1,10 +1,11 @@
 import React from "react";
 import styled from "styled-components";
+import Img from "gatsby-image";
 
 import Tabs from "src/components/tabs";
 import SkillsContent from "./SkillsContent";
 
-import portrait from "src/assets/images/corey1.jpg";
+import { useProfilePic } from "src/utils/js/useProfilePic";
 
 const AboutContainer = styled.div`
   width: 100%;
@@ -34,7 +35,7 @@ const ImageContainer = styled.div`
   margin-bottom: 1rem;
 `;
 
-const Image = styled.img`
+const Image = styled(Img)`
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -52,11 +53,16 @@ const Blurb = styled.div`
 `;
 
 const About = () => {
+  const profilePic = useProfilePic();
+
   return (
     <AboutContainer>
       <div>
         <ImageContainer>
-          <Image src={portrait} alt="Corey Portrait" />
+          <Image
+            fluid={profilePic.src.childImageSharp.fluid}
+            alt={profilePic.alt_text}
+          />
         </ImageContainer>
 
         <Blurb>
