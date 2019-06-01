@@ -13,15 +13,13 @@ const ScrollUpButton = props => {
   const [showButton, setShowButton] = useState(true);
 
   const handleScroll = () => {
-    if (typeof window !== `undefined`) {
-      let hideHeight = document.body.clientHeight - window.innerHeight - 150;
-      let scrollHeight = window.scrollY;
+    let hideHeight = document.body.clientHeight - window.innerHeight - 150;
+    let scrollHeight = window.scrollY;
 
-      if (scrollHeight > hideHeight) {
-        setShowButton(false);
-      } else {
-        setShowButton(true);
-      }
+    if (scrollHeight > hideHeight) {
+      setShowButton(false);
+    } else {
+      setShowButton(true);
     }
   };
 
@@ -37,13 +35,11 @@ const ScrollUpButton = props => {
   }, 250);
 
   useEffect(() => {
-    if (typeof window !== `undefined`) {
-      window.addEventListener("scroll", scrollingEvent);
+    window.addEventListener("scroll", scrollingEvent);
 
-      return () => {
-        window.removeEventListener("scroll", scrollingEvent);
-      };
-    }
+    return () => {
+      window.removeEventListener("scroll", scrollingEvent);
+    };
   });
 
   const styles = {
