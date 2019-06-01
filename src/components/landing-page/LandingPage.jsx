@@ -28,7 +28,7 @@ const StyledLandingPage = styled.span`
 const LandingPage = () => {
   return (
     <StyledLandingPage>
-      <Text>Hi, I'm Corey Hutcheson. I'm a web developer!</Text>
+      <Text>My name is Corey Hutcheson and I'm a web developer!</Text>
       <ScrollDownButton />
     </StyledLandingPage>
   );
