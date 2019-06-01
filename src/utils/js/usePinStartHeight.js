@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import baseTheme from "src/utils/styles/themes/baseTheme.js";
 
 export default function useLandingPageHeight() {
+  // window wrapper for netlify build process
   if (typeof window !== `undefined`) {
     const [pinStartHeight, setPinStartHeight] = useState(getHeight());
 
