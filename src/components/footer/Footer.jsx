@@ -6,6 +6,9 @@ import {
   faFacebook,
   faCodepen,
 } from "@fortawesome/free-brands-svg-icons";
+import { faAngleDoubleUp } from "@fortawesome/free-solid-svg-icons";
+
+import scrollTo from "src/utils/js/scrollTo";
 
 const StyledFooter = styled.footer`
   height: 90px;
@@ -13,6 +16,7 @@ const StyledFooter = styled.footer`
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative;
 `;
 
 const IconContainer = styled.div`
@@ -26,23 +30,41 @@ const IconContainer = styled.div`
 const StyledIcon = styled(FontAwesomeIcon)``;
 
 const Link = styled.a`
-  background: ${props => props.theme.color_primaryDark};
   color: ${props => props.theme.font_onPrimary1};
   padding: 0.5rem;
   text-decoration: none;
   overflow: hidden;
 
   &:hover {
-    background: ${props => props.theme.color_accent};
     color: ${props => props.theme.font_onAccent1};
 
     & ${StyledIcon} {
-      animation: slideDown 0.1s;
+      color: ${props => props.theme.color_accent};
+      transform: scale(1.1);
+    }
+  }
+`;
 
-      @keyframes slideDown {
-        0% {
-          transform: translatex(-100px);
-        }
+const UpButton = styled.div`
+  width: 40px;
+  height: 40px;
+  background: ${props => props.theme.color_primaryDark};
+  color: ${props => props.theme.font_onPrimary1};
+  position: absolute;
+  top: 0;
+  left: 90%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  :hover > svg {
+    animation: wiggle 0.5s infinite;
+
+    @keyframes wiggle {
+      100% {
+        transform: translatey(-10%);
       }
     }
   }
@@ -63,6 +85,10 @@ const Footer = () => (
         <StyledIcon icon={faCodepen} size="3x" />
       </Link>
     </IconContainer>
+
+    <UpButton onClick={() => scrollTo(0)}>
+      <FontAwesomeIcon icon={faAngleDoubleUp} size="2x" />
+    </UpButton>
   </StyledFooter>
 );
 
