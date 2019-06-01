@@ -3,6 +3,7 @@ import styled, { css } from "styled-components";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { vhToPixels } from "src/utils/js/usePinStartHeight.js";
+import scrollTo from "src/utils/js/scrollTo";
 
 const transition = css`
   transition: 0.3s ease;
@@ -33,15 +34,7 @@ const StyledButton = styled.div`
 `;
 
 const ScrollDownButton = () => (
-  <StyledButton
-    onClick={() =>
-      window.scrollTo({
-        top: vhToPixels(100) - 50,
-        left: 0,
-        behavior: "smooth",
-      })
-    }
-  >
+  <StyledButton onClick={() => scrollTo(vhToPixels(100) - 50)}>
     <Icon icon={faArrowRight} size="2x" className="scroll-down-btn" />
   </StyledButton>
 );
