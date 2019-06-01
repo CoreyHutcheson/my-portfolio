@@ -63,6 +63,9 @@ const UpButton = styled.div`
     animation: wiggle 0.5s infinite;
 
     @keyframes wiggle {
+      0% {
+        transform: translatey(10%);
+      }
       100% {
         transform: translatey(-10%);
       }
