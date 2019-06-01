@@ -9,11 +9,10 @@ const Container = styled.div`
 `;
 
 const ScrollUpButton = props => {
-  let scrolling = false;
   const [showButton, setShowButton] = useState(true);
 
   const handleScroll = () => {
-    let hideHeight = document.body.clientHeight - window.innerHeight - 150;
+    let hideHeight = document.body.clientHeight - window.innerHeight - 90;
     let scrollHeight = window.scrollY;
 
     if (scrollHeight > hideHeight) {
@@ -23,22 +22,11 @@ const ScrollUpButton = props => {
     }
   };
 
-  const scrollingEvent = () => {
-    scrolling = true;
-  };
-
-  setInterval(() => {
-    if (scrolling) {
-      scrolling = false;
-      handleScroll();
-    }
-  }, 250);
-
   useEffect(() => {
-    window.addEventListener("scroll", scrollingEvent);
+    window.addEventListener("scroll", handleScroll);
 
     return () => {
-      window.removeEventListener("scroll", scrollingEvent);
+      window.removeEventListener("scroll", handleScroll);
     };
   });
 
