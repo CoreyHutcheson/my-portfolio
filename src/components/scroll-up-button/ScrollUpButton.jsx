@@ -9,10 +9,11 @@ const Container = styled.div`
 `;
 
 const ScrollUpButton = props => {
-  let scrolling = false;
+  let timeout = null;
+  const [scrolling, setScrolling] = useState(false);
   const [showButton, setShowButton] = useState(true);
 
-  const handleScroll = () => {
+  const handleShowLogic = () => {
     if (typeof window !== `undefined`) {
       let hideHeight = document.body.clientHeight - window.innerHeight - 150;
       let scrollHeight = window.scrollY;
@@ -25,26 +26,27 @@ const ScrollUpButton = props => {
     }
   };
 
-  const scrollingEvent = () => {
-    scrolling = true;
+  const onScroll = () => {
+    if (!scrolling) {
+      setScrolling(true);
+
+      clearTimeout(timeout);
+
+      timeout = setTimeout(() => {
+        handleShowLogic();
+        setScrolling(false);
+      }, 200);
+    }
   };
 
-  setInterval(() => {
-    if (scrolling) {
-      scrolling = false;
-      handleScroll();
-    }
-  }, 250);
+  // window wrapper for netlify build process
+  if (typeof window !== `undefined`) {
+    useEffect(() => {
+      window.addEventListener("scroll", onScroll);
 
-  useEffect(() => {
-    if (typeof window !== `undefined`) {
-      window.addEventListener("scroll", scrollingEvent);
-
-      return () => {
-        window.removeEventListener("scroll", scrollingEvent);
-      };
-    }
-  });
+      return () => window.removeEventListener("scroll", onScroll);
+    });
+  }
 
   const styles = {
     color: props.theme.font_onPrimary1,
