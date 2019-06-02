@@ -79,8 +79,8 @@ const SliderButton = ({
 }) => (
   <SliderButtonContainer className={className}>
     <Text>{preText}</Text>
-    <Container>
-      <Checkbox type="checkbox" onChange={e => handleChange(e)} />
+    <Container for="slider">
+      <Checkbox type="checkbox" id="slider" onChange={e => handleChange(e)} />
       <Slider />
     </Container>
     <Text>{postText}</Text>
