@@ -27,7 +27,7 @@ const lightTheme = {
   /* cOOlers palette */
   color_primary: "#70C1B3",
   color_primaryLight: "#B2DBBF",
-  color_primaryDark: "#247BA0",
+  color_primaryDark: "#1E6585",
   color_accent: "#FF1654",
   font_onPrimary1: "rgba(0, 0, 0, 0.87)",
   font_onPrimary2: "rgba(0, 0, 0, 0.6)",
@@ -35,6 +35,7 @@ const lightTheme = {
   font_onAccent1: "rgba(0, 0, 0, 0.87)",
   font_onAccent2: "rgba(0, 0, 0, 0.6)",
   font_onAccent3: "rgba(0, 0, 0, 0.38)",
+  font_onDark: "rgba(255, 255, 255, 0.87)",
 };
 
 export default lightTheme;
