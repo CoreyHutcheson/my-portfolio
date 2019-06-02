@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { ThemeProvider } from "styled-components";
+import { Helmet } from "react-helmet";
 
 import GlobalStyle from "src/utils/styles/global.js";
 import baseTheme from "src/utils/styles/themes/baseTheme.js";
@@ -28,6 +29,12 @@ const IndexPage = () => {
     <ThemeProvider theme={theme}>
       <>
         <GlobalStyle />
+
+        <Helmet>
+          <meta charSet="utf-8" />
+          <title>Corey Portfolio</title>
+          <html lang="en" />
+        </Helmet>
 
         <PageWrapper handleThemeChange={handleThemeChange}>
           <RegularSection id="about" title="About">
