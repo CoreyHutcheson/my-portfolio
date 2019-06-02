@@ -76,15 +76,15 @@ const UpButton = styled.div`
 const Footer = () => (
   <StyledFooter>
     <IconContainer>
-      <Link href="#0">
+      <Link href="https://github.com/CoreyHutcheson" target="_blank">
         <StyledIcon icon={faGithub} size="3x" />
       </Link>
 
-      <Link href="#0">
+      <Link href="https://www.facebook.com/cjhutch" target="_blank">
         <StyledIcon icon={faFacebook} size="3x" />
       </Link>
 
-      <Link href="#0">
+      <Link href="https://codepen.io/CoreyHutcheson/" target="_blank">
         <StyledIcon icon={faCodepen} size="3x" />
       </Link>
     </IconContainer>
