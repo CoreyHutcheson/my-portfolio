@@ -12,11 +12,17 @@ const FormContainer = styled.div`
   min-width: calc(300px - 2rem);
   max-width: 500px;
   padding: 0 1rem;
+
+  /* Adds margin between label and input block */
+  & input[type="text"],
+  & textarea {
+    margin-top: 3px;
+  }
 `;
 
 const StyledForm = styled.form`
   background: ${props => props.theme.color_primaryDark};
-  color: ${props => props.theme.font_onPrimary1};
+  color: ${props => props.theme.font_onDark};
   border: 1px solid ${props => props.theme.font_onPrimary1};
   border-radius: ${props => props.theme.borderRadius};
   width: 100%;

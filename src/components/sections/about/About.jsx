@@ -13,7 +13,7 @@ const AboutContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  color: ${props => props.theme.font_onPrimary1};
+  color: ${props => props.theme.font_onDark};
 
   & > div {
     flex: 1;
@@ -43,6 +43,7 @@ const Image = styled(Img)`
 `;
 
 const Blurb = styled.div`
+  color: ${props => props.theme.font_onPrimary1};
   display: none;
 
   @media (min-width: 600px) {

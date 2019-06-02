@@ -30,7 +30,7 @@ const contentBorderMixin = color => css`
 const StyledLink = styled(Link).attrs(props => ({
   border: `1px solid ${props.theme.color_primaryLight}`,
 }))`
-  color: ${props => props.theme.font_onPrimary2};
+  color: ${props => props.theme.font_onPrimary1};
   border-bottom: ${props => props.border};
   letter-spacing: 2px;
   text-decoration: none;
@@ -40,7 +40,6 @@ const StyledLink = styled(Link).attrs(props => ({
 
   &[isactive="true"] {
     background: ${props => props.theme.color_primaryLight};
-    color: ${props => props.theme.font_onPrimary1};
   }
 
   &:first-child {
@@ -49,7 +48,6 @@ const StyledLink = styled(Link).attrs(props => ({
 
   :hover {
     background: ${props => props.theme.color_primaryLight};
-    color: ${props => props.theme.font_onPrimary1};
   }
 
   @media (min-width: 600px) {
@@ -67,7 +65,6 @@ const StyledLink = styled(Link).attrs(props => ({
 
     :hover {
       background: inherit;
-      color: ${props => props.theme.font_onPrimary1};
 
       :after,
       :before {
