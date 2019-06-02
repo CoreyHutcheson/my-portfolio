@@ -79,7 +79,7 @@ const SliderButton = ({
 }) => (
   <SliderButtonContainer className={className}>
     <Text>{preText}</Text>
-    <Container for="slider">
+    <Container htmlFor="slider">
       <Checkbox type="checkbox" id="slider" onChange={e => handleChange(e)} />
       <Slider />
     </Container>
