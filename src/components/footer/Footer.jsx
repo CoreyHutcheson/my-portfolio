@@ -78,17 +78,17 @@ const Footer = () => {
     {
       icon: faGithub,
       href: "https://github.com/CoreyHutcheson",
-      "aria-label": "Corey's Github",
+      ariaLabel: "Corey's Github",
     },
     {
       icon: faFacebook,
       href: "https://www.facebook.com/cjhutch",
-      "aria-label": "Corey's Facebook",
+      ariaLabel: "Corey's Facebook",
     },
     {
       icon: faCodepen,
       href: "https://codepen.io/CoreyHutcheson/",
-      "aria-label": "Corey's Codepen",
+      ariaLabel: "Corey's Codepen",
     },
   ];
 
@@ -97,10 +97,11 @@ const Footer = () => {
       <IconContainer>
         {footerLinks.map(link => (
           <Link
-            key={link["aria-label"]}
+            key={link.ariaLabel}
             href={link.href}
             target="_blank"
-            aria-label={link["aria-label"]}
+            rel="noreferrer noopener"
+            aria-label={link.ariaLabel}
           >
             <StyledIcon icon={link.icon} size="3x" />
           </Link>
