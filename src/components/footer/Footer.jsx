@@ -73,26 +73,45 @@ const UpButton = styled.div`
   }
 `;
 
-const Footer = () => (
-  <StyledFooter>
-    <IconContainer>
-      <Link href="https://github.com/CoreyHutcheson" target="_blank">
-        <StyledIcon icon={faGithub} size="3x" />
-      </Link>
+const Footer = () => {
+  const footerLinks = [
+    {
+      icon: faGithub,
+      href: "https://github.com/CoreyHutcheson",
+      "aria-label": "Corey's Github",
+    },
+    {
+      icon: faFacebook,
+      href: "https://www.facebook.com/cjhutch",
+      "aria-label": "Corey's Facebook",
+    },
+    {
+      icon: faCodepen,
+      href: "https://codepen.io/CoreyHutcheson/",
+      "aria-label": "Corey's Codepen",
+    },
+  ];
 
-      <Link href="https://www.facebook.com/cjhutch" target="_blank">
-        <StyledIcon icon={faFacebook} size="3x" />
-      </Link>
+  return (
+    <StyledFooter>
+      <IconContainer>
+        {footerLinks.map(link => (
+          <Link
+            key={link["aria-label"]}
+            href={link.href}
+            target="_blank"
+            aria-label={link["aria-label"]}
+          >
+            <StyledIcon icon={link.icon} size="3x" />
+          </Link>
+        ))}
+      </IconContainer>
 
-      <Link href="https://codepen.io/CoreyHutcheson/" target="_blank">
-        <StyledIcon icon={faCodepen} size="3x" />
-      </Link>
-    </IconContainer>
-
-    <UpButton onClick={() => scrollTo(0)}>
-      <FontAwesomeIcon icon={faAngleDoubleUp} size="2x" />
-    </UpButton>
-  </StyledFooter>
-);
+      <UpButton onClick={() => scrollTo(0)}>
+        <FontAwesomeIcon icon={faAngleDoubleUp} size="2x" />
+      </UpButton>
+    </StyledFooter>
+  );
+};
 
 export default Footer;
