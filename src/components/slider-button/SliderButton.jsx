@@ -80,7 +80,7 @@ const SliderButton = ({
   <SliderButtonContainer className={className}>
     <Text>{preText}</Text>
     <Container htmlFor="slider">
-      <Checkbox type="checkbox" id="slider" onChange={e => handleChange(e)} />
+      <Checkbox type="checkbox" id="slider" aria-label="theme toggle button" onChange={e => handleChange(e)} />
       <Slider />
     </Container>
     <Text>{postText}</Text>
