@@ -32,6 +32,10 @@ const IndexPage = () => {
 
         <Helmet>
           <meta charSet="utf-8" />
+          <meta
+            name="description"
+            content="Portfolio describing Corey Hutcheson's projects and skills."
+          />
           <title>Corey Portfolio</title>
           <html lang="en" />
         </Helmet>
