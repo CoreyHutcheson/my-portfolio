@@ -51,12 +51,11 @@ const Tabs = ({ children, className }) => {
           );
         })}
       </List>
+
       <Content className={className}>
-        <div>
-          {children.map(child =>
-            child.props.label === activeTab ? child.props.children : undefined
-          )}
-        </div>
+        {children.map(child =>
+          child.props.label === activeTab ? child.props.children : undefined
+        )}
       </Content>
     </Container>
   );
