@@ -3,8 +3,8 @@ import styled from "styled-components";
 import Img from "gatsby-image";
 
 import Tabs from "src/components/tabs";
-import SkillsContent from "./SkillsContent";
-import Hobbies from "src/components/hobbies";
+import Skills from "./skills";
+import Hobbies from "./hobbies";
 
 import { useProfilePic } from "src/utils/js/useProfilePic";
 
@@ -78,7 +78,7 @@ const About = () => {
           <div label="About">My name is Corey Hutcheson.</div>
 
           <div label="Skills">
-            <SkillsContent />
+            <Skills />
           </div>
 
           <div label="Hobbies">
