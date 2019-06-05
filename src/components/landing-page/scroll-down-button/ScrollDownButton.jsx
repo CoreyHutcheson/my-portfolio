@@ -2,8 +2,8 @@ import React from "react";
 import styled, { css } from "styled-components";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { vhToPixels } from "src/utils/js/usePinStartHeight.js";
-import scrollTo from "src/utils/js/scrollTo";
+import { vhToPixels } from "src/utils/js/helperFunctions";
+import { scrollTo } from "src/utils/js/helperFunctions";
 
 const transition = css`
   transition: 0.3s ease;

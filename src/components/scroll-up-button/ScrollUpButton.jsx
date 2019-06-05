@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import { withTheme } from "styled-components";
 import ScrollButton from "react-scroll-up-button";
-import { vhToPixels } from "src/utils/js/usePinStartHeight.js";
+import { vhToPixels } from "src/utils/js/helperFunctions";
 
 const Container = styled.div`
   display: ${props => (props.show ? "block" : "none")};

@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import styled from "styled-components";
 
 import Input from "./input";
-import getRandomMessage from "src/utils/js/getRandomMessage.js";
+import { getRandomMessage } from "src/utils/js/helperFunctions";
 
 const FormContainer = styled.div`
   ${props => props.theme.flexCenterMixin}

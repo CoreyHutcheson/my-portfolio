@@ -8,7 +8,7 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 import { faAngleDoubleUp } from "@fortawesome/free-solid-svg-icons";
 
-import scrollTo from "src/utils/js/scrollTo";
+import { scrollTo } from "src/utils/js/helperFunctions";
 
 const StyledFooter = styled.footer`
   height: 90px;
