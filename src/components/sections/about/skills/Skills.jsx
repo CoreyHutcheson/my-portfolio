@@ -20,26 +20,26 @@ const IconContainer = styled.div`
   padding: 0.5rem;
 `;
 
-const getTitle = iconName => {
-  const replacements = {
-    code: "jsx",
+const Skills = () => {
+  const sortObjects = (obj, sortBy) => {
+    return obj.sort((a, b) => {
+      let propA = a[sortBy].toUpperCase();
+      let propB = b[sortBy].toUpperCase();
+
+      return propA < propB ? -1 : propA > propB ? 1 : 0;
+    });
   };
 
-  return replacements.hasOwnProperty(iconName)
-    ? replacements[iconName]
-    : iconName;
-};
+  const getTitle = iconName => {
+    const replacements = {
+      code: "jsx",
+    };
 
-const sortObjects = (obj, sortBy) => {
-  return obj.sort((a, b) => {
-    let propA = a[sortBy].toUpperCase();
-    let propB = b[sortBy].toUpperCase();
+    return replacements.hasOwnProperty(iconName)
+      ? replacements[iconName]
+      : iconName;
+  };
 
-    return propA < propB ? -1 : propA > propB ? 1 : 0;
-  });
-};
-
-const SkillContent = () => {
   let skills = [faWordpress, faReact, faSass, faPhp, faCode];
   skills = sortObjects(skills, "iconName");
 
@@ -60,4 +60,4 @@ const SkillContent = () => {
   );
 };
 
-export default SkillContent;
+export default Skills;
