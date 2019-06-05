@@ -4,6 +4,7 @@ import Img from "gatsby-image";
 
 import Tabs from "src/components/tabs";
 import SkillsContent from "./SkillsContent";
+import Hobbies from "src/components/hobbies";
 
 import { useProfilePic } from "src/utils/js/useProfilePic";
 
@@ -81,7 +82,7 @@ const About = () => {
           </div>
 
           <div label="Hobbies">
-            Nothing to see here, this tab is <strong>extinct</strong>!
+            <Hobbies />
           </div>
         </Tabs>
       </div>
