@@ -9,11 +9,15 @@ import {
 import { faCode } from "@fortawesome/free-solid-svg-icons";
 import styled from "styled-components";
 
-const StyledContent = styled.div`
+const SkillsContainer = styled.div`
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
   text-align: center;
+`;
+
+const IconContainer = styled.div`
+  padding: 0.5rem;
 `;
 
 const getTitle = iconName => {
@@ -35,28 +39,24 @@ const sortObjects = (obj, sortBy) => {
   });
 };
 
-const Tech = styled.div`
-  padding: 0.5rem;
-`;
-
 const SkillContent = () => {
   let skills = [faWordpress, faReact, faSass, faPhp, faCode];
   skills = sortObjects(skills, "iconName");
 
   return (
-    <StyledContent>
+    <SkillsContainer>
       {skills.map(skill => {
         let title = getTitle(skill.iconName);
         title = title[0].toUpperCase() + title.substring(1);
 
         return (
-          <Tech key={title}>
+          <IconContainer key={title}>
             <FontAwesomeIcon icon={skill} size="2x" />
             <div>{title}</div>
-          </Tech>
+          </IconContainer>
         );
       })}
-    </StyledContent>
+    </SkillsContainer>
   );
 };
 
