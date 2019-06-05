@@ -1,4 +1,5 @@
 import React from "react";
+import styled from "styled-components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faWordpress,
@@ -7,7 +8,7 @@ import {
   faPhp,
 } from "@fortawesome/free-brands-svg-icons";
 import { faCode } from "@fortawesome/free-solid-svg-icons";
-import styled from "styled-components";
+import { sortObjects, getTitle } from "src/utils/js/helperFunctions";
 
 const SkillsContainer = styled.div`
   display: flex;
@@ -21,25 +22,6 @@ const IconContainer = styled.div`
 `;
 
 const Skills = () => {
-  const sortObjects = (obj, sortBy) => {
-    return obj.sort((a, b) => {
-      let propA = a[sortBy].toUpperCase();
-      let propB = b[sortBy].toUpperCase();
-
-      return propA < propB ? -1 : propA > propB ? 1 : 0;
-    });
-  };
-
-  const getTitle = iconName => {
-    const replacements = {
-      code: "jsx",
-    };
-
-    return replacements.hasOwnProperty(iconName)
-      ? replacements[iconName]
-      : iconName;
-  };
-
   let skills = [faWordpress, faReact, faSass, faPhp, faCode];
   skills = sortObjects(skills, "iconName");
 
