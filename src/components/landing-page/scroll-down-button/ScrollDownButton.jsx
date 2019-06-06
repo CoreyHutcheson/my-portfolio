@@ -1,27 +1,23 @@
 import React from "react";
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { vhToPixels } from "src/utils/js/helperFunctions";
 import { scrollTo } from "src/utils/js/helperFunctions";
 
-const transition = css`
-  transition: 0.3s ease;
-`;
-
 const Icon = styled(FontAwesomeIcon)`
-  ${transition};
+  transition: transform 0.3s ease;
 `;
 
 const StyledButton = styled.div`
+  ${props => props.theme.flexCenterMixin};
+  background: inherit;
+  color: ${props => props.theme.font_onPrimary1};
+  border: 3px solid ${props => props.theme.font_onPrimary1};
   width: 120px;
   height: 50px;
-  border: 3px solid ${props => props.theme.font_onPrimary1};
-  color: ${props => props.theme.font_onPrimary1};
-  ${props => props.theme.flexCenterMixin};
   cursor: pointer;
   text-decoration: none;
-  ${transition};
 
   :hover {
     background: ${props => props.theme.color_accent};
