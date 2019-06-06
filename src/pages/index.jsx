@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { ThemeProvider } from "styled-components";
-import { Helmet } from "react-helmet";
+import HeadMeta from "src/components/head-meta";
 
 import GlobalStyle from "src/utils/styles/global.js";
 import baseTheme from "src/utils/styles/themes/baseTheme.js";
@@ -30,15 +30,7 @@ const IndexPage = () => {
       <>
         <GlobalStyle />
 
-        <Helmet>
-          <meta charSet="utf-8" />
-          <meta
-            name="description"
-            content="Portfolio describing Corey Hutcheson's projects and skills."
-          />
-          <title>Corey Portfolio</title>
-          <html lang="en" />
-        </Helmet>
+        <HeadMeta />
 
         <PageWrapper handleThemeChange={handleThemeChange}>
           <RegularSection id="about" title="About">
