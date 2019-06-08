@@ -10,7 +10,7 @@ import ModalContent from "./modal-content";
 
 const modalStyles = {
   overlay: {
-    zIndex: "1",
+    zIndex: "1000",
   },
   content: {
     top: "0",
