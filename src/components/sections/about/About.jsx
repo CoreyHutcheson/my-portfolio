@@ -1,12 +1,10 @@
 import React from "react";
 import styled from "styled-components";
+import { useStaticQuery, graphql } from "gatsby";
 import Img from "gatsby-image";
 
 import Tabs from "src/components/tabs";
-import Skills from "./skills";
-import Hobbies from "./hobbies";
-
-import { useProfilePic } from "src/utils/js/useProfilePic";
+import IconList from "./icon-list";
 
 const AboutContainer = styled.div`
   width: 100%;
@@ -55,34 +53,69 @@ const Blurb = styled.div`
 `;
 
 const About = () => {
-  const profilePic = useProfilePic();
+  const aboutData = useStaticQuery(graphql`
+    query AboutData {
+      dataJson {
+        about_text
+        blurb
+        profile_pic {
+          alt_text
+          src {
+            childImageSharp {
+              fluid {
+                base64
+                tracedSVG
+                aspectRatio
+                src
+                srcSet
+                srcWebp
+                srcSetWebp
+                sizes
+                originalImg
+                originalName
+                presentationWidth
+                presentationHeight
+              }
+            }
+          }
+        }
+        hobbies {
+          name
+          viewbox
+          path
+        }
+        skills {
+          name
+          prefix
+          icon
+        }
+      }
+    }
+  `).dataJson;
 
   return (
     <AboutContainer>
       <div>
         <ImageContainer>
           <Image
-            fluid={profilePic.src.childImageSharp.fluid}
-            alt={profilePic.alt_text}
+            fluid={aboutData.profile_pic.src.childImageSharp.fluid}
+            alt={aboutData.profile_pic.alt_text}
           />
         </ImageContainer>
 
-        <Blurb>
-          This is a blurb! This is a blurb! This is a blurb! This is a blurb!
-          This is a blurb!
-        </Blurb>
+        <Blurb>{aboutData.blurb}</Blurb>
       </div>
 
       <div>
         <Tabs>
-          <div label="About">My name is Corey Hutcheson.</div>
+          <div label="About">{aboutData.about_text}</div>
 
           <div label="Skills">
-            <Skills />
+            <IconList list={aboutData.skills} />
           </div>
 
           <div label="Hobbies">
-            <Hobbies />
+            <IconList list={aboutData.hobbies} />
           </div>
         </Tabs>
       </div>
