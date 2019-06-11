@@ -10,6 +10,7 @@ const darkTheme = {
   font_onAccent1: "rgba(0, 0, 0, 0.87)",
   font_onAccent2: "rgba(0, 0, 0, 0.6)",
   font_onAccent3: "rgba(0, 0, 0, 0.38)",
+  font_onDark: "rgba(255, 255, 255, 0.87)",
 };
 
 export default darkTheme;

@@ -1,7 +1,9 @@
 import { useState, useEffect } from "react";
 import baseTheme from "src/utils/styles/themes/baseTheme.js";
+import { vhToPixels } from "src/utils/js/helperFunctions";
 
 export default function useLandingPageHeight() {
+  // window wrapper for netlify build process
   if (typeof window !== `undefined`) {
     const [pinStartHeight, setPinStartHeight] = useState(getHeight());
 
@@ -26,12 +28,6 @@ function getHeight() {
   navbarHeight = convertToNumber(navbarHeight);
 
   return landingPageHeight - navbarHeight;
-}
-
-export function vhToPixels(vh) {
-  if (typeof window !== `undefined`) {
-    return Math.round(window.innerHeight / (100 / vh));
-  }
 }
 
 function convertToNumber(str) {

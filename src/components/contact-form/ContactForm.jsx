@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import styled from "styled-components";
 
 import Input from "./input";
-import getRandomMessage from "src/utils/js/getRandomMessage.js";
+import { getRandomMessage } from "src/utils/js/helperFunctions";
 
 const FormContainer = styled.div`
   ${props => props.theme.flexCenterMixin}
@@ -12,11 +12,17 @@ const FormContainer = styled.div`
   min-width: calc(300px - 2rem);
   max-width: 500px;
   padding: 0 1rem;
+
+  /* Adds margin between label and input block */
+  & input[type="text"],
+  & textarea {
+    margin-top: 3px;
+  }
 `;
 
 const StyledForm = styled.form`
   background: ${props => props.theme.color_primaryDark};
-  color: ${props => props.theme.font_onPrimary1};
+  color: ${props => props.theme.font_onDark};
   border: 1px solid ${props => props.theme.font_onPrimary1};
   border-radius: ${props => props.theme.borderRadius};
   width: 100%;

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { ThemeProvider } from "styled-components";
+import HeadMeta from "src/components/head-meta";
 
 import GlobalStyle from "src/utils/styles/global.js";
 import baseTheme from "src/utils/styles/themes/baseTheme.js";
@@ -28,6 +29,8 @@ const IndexPage = () => {
     <ThemeProvider theme={theme}>
       <>
         <GlobalStyle />
+
+        <HeadMeta />
 
         <PageWrapper handleThemeChange={handleThemeChange}>
           <RegularSection id="about" title="About">

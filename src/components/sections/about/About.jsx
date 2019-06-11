@@ -1,10 +1,10 @@
 import React from "react";
 import styled from "styled-components";
+import { useStaticQuery, graphql } from "gatsby";
+import Img from "gatsby-image";
 
 import Tabs from "src/components/tabs";
-import SkillsContent from "./SkillsContent";
-
-import portrait from "src/assets/images/corey1.jpg";
+import IconList from "./icon-list";
 
 const AboutContainer = styled.div`
   width: 100%;
@@ -12,7 +12,7 @@ const AboutContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  color: ${props => props.theme.font_onPrimary1};
+  color: ${props => props.theme.font_onDark};
 
   & > div {
     flex: 1;
@@ -34,7 +34,7 @@ const ImageContainer = styled.div`
   margin-bottom: 1rem;
 `;
 
-const Image = styled.img`
+const Image = styled(Img)`
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -42,6 +42,7 @@ const Image = styled.img`
 `;
 
 const Blurb = styled.div`
+  color: ${props => props.theme.font_onPrimary1};
   display: none;
 
   @media (min-width: 600px) {
@@ -52,29 +53,69 @@ const Blurb = styled.div`
 `;
 
 const About = () => {
+  const aboutData = useStaticQuery(graphql`
+    query AboutData {
+      dataJson {
+        about_text
+        blurb
+        profile_pic {
+          alt_text
+          src {
+            childImageSharp {
+              fluid {
+                base64
+                tracedSVG
+                aspectRatio
+                src
+                srcSet
+                srcWebp
+                srcSetWebp
+                sizes
+                originalImg
+                originalName
+                presentationWidth
+                presentationHeight
+              }
+            }
+          }
+        }
+        hobbies {
+          name
+          viewbox
+          path
+        }
+        skills {
+          name
+          prefix
+          icon
+        }
+      }
+    }
+  `).dataJson;
+
   return (
     <AboutContainer>
       <div>
         <ImageContainer>
-          <Image src={portrait} alt="Corey Portrait" />
+          <Image
+            fluid={aboutData.profile_pic.src.childImageSharp.fluid}
+            alt={aboutData.profile_pic.alt_text}
+          />
         </ImageContainer>
 
-        <Blurb>
-          This is a blurb! This is a blurb! This is a blurb! This is a blurb!
-          This is a blurb!
-        </Blurb>
+        <Blurb>{aboutData.blurb}</Blurb>
       </div>
 
       <div>
         <Tabs>
-          <div label="About">My name is Corey Hutcheson.</div>
+          <div label="About">{aboutData.about_text}</div>
 
           <div label="Skills">
-            <SkillsContent />
+            <IconList list={aboutData.skills} />
           </div>
 
           <div label="Hobbies">
-            Nothing to see here, this tab is <strong>extinct</strong>!
+            <IconList list={aboutData.hobbies} />
           </div>
         </Tabs>
       </div>
