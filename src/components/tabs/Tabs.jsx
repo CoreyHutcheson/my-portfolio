@@ -30,6 +30,7 @@ const Content = styled.div`
   padding: 1rem;
   box-shadow: ${props => props.theme.boxShadow};
   ${props => props.theme.flexCenterMixin};
+  line-height: 1.4rem;
 `;
 
 const Tabs = ({ children, className }) => {
