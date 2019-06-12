@@ -4,6 +4,7 @@ import styled from "styled-components";
 
 const StyledTitle = styled.h2`
   color: ${props => props.theme.font_onPrimary1};
+  font-family: "Rubik", sans-serif;
   font-size: 2.5rem;
   font-weight: bold;
   text-transform: uppercase;
@@ -17,16 +18,6 @@ const StyledTitle = styled.h2`
     padding-top: 1rem;
     border-bottom: 4px solid ${props => props.theme.font_onPrimary1};
   }
-
-  /** Animates border slide-in
-  &:after {
-    transform: translate(calc(50vw + 100%));
-    transition: 1s ease;
-  }
-
-  &:hover:after {
-    transform: translate(0);
-  } */
 `;
 
 const SectionTitle = ({ children, className }) => (

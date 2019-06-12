@@ -1,10 +1,10 @@
 import { createGlobalStyle } from "styled-components";
 
 const GlobalStyle = createGlobalStyle`
-  @import url("https://fonts.googleapis.com/css?family=Raleway:400,600&display=swap");
+  @import url("https://fonts.googleapis.com/css?family=Karla:400,700|Rubik:400,700&display=swap");
 
   body {
-    font-family: "Raleway";
+    font-family: "Karla", sans-serif;
     color: ${props => props.theme.font_Primary};
 
     &.ReactModal__Body--open {
