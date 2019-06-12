@@ -19,11 +19,11 @@
 
 - [ ] Wordpress = WordPress, Php = PHP, Jsx = JSX
 
-- [ ] And more space between projects, they a little close. Also maybe put a border on them (could go either way)
+- [x] And more space between projects, they a little close. Also maybe put a border on them (could go either way)
 
 - [ ] Not sure about having them open a modal with a slider.
 
-- [ ] Modal ‘X’ should be top right.
+- [x] Modal ‘X’ should be top right.
 
 - [ ] Also tell a story. That’s what sells. "A local business came to me with building a small but fast website. After consideration we decided to build a fast loading, React site that blah blah blah. Since the new Site launched mobile traffic has improved by 15%”
 
