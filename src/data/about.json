@@ -7,7 +7,7 @@
   },
   "skills": [
     {
-      "name": "Wordpress",
+      "name": "WordPress",
       "prefix": "fab",
       "icon": "wordpress"
     },
@@ -22,12 +22,12 @@
       "icon": "sass"
     },
     {
-      "name": "Php",
+      "name": "PHP",
       "prefix": "fab",
       "icon": "php"
     },
     {
-      "name": "Jsx",
+      "name": "JSX",
       "prefix": "fas",
       "icon": "code"
     }
