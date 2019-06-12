@@ -23,32 +23,19 @@
   },
   {
     "title": "Mayhem",
-    "tag": "Business Website",
-    "description": "Test 2",
-    "link": "https://www.facebook.com",
+    "tag": "Wrestling Website",
+    "description": "Website for a local small professional wrestling organization. Affords the client the ability to alter the roster, add new upcoming events with details, among other benefits.",
+    "technologies": "Wordpress, ACF, Gatsby, Netlify, React, GraphQL, Sass",
+    "link": "https://mayhem.netlify.com/",
+    "github": "https://github.com/CoreyHutcheson/mayhem",
     "images": [
       {
-        "src": "../assets/images/silver-ticket.jpg",
-        "alt_text": "Silver Ticket"
-      }
-    ]
-  },
-  {
-    "title": "Mayhem",
-    "tag": "Business Website",
-    "description": "Test 3",
-    "images": [
-      {
-        "src": "../assets/images/gold-ticket.jpg",
-        "alt_text": "Gold Ticket"
+        "src": "../assets/images/projects/mayhem_3.jpg",
+        "alt_text": "Mayhem Roster Page"
       },
       {
-        "src": "../assets/images/bronze-ticket.jpg",
-        "alt_text": "Bronze Ticket"
-      },
-      {
-        "src": "../assets/images/silver-ticket.jpg",
-        "alt_text": "Silver Ticket"
+        "src": "../assets/images/projects/mayhem_1.jpg",
+        "alt_text": "Mayhem Landing Page"
       }
     ]
   }

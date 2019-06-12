@@ -8,7 +8,7 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 import { faAngleDoubleUp } from "@fortawesome/free-solid-svg-icons";
 
-import scrollTo from "src/utils/js/scrollTo";
+import { scrollTo } from "src/utils/js/helperFunctions";
 
 const StyledFooter = styled.footer`
   height: 90px;
@@ -73,26 +73,46 @@ const UpButton = styled.div`
   }
 `;
 
-const Footer = () => (
-  <StyledFooter>
-    <IconContainer>
-      <Link href="#0">
-        <StyledIcon icon={faGithub} size="3x" />
-      </Link>
+const Footer = () => {
+  const footerLinks = [
+    {
+      icon: faGithub,
+      href: "https://github.com/CoreyHutcheson",
+      ariaLabel: "Corey's Github",
+    },
+    {
+      icon: faFacebook,
+      href: "https://www.facebook.com/cjhutch",
+      ariaLabel: "Corey's Facebook",
+    },
+    {
+      icon: faCodepen,
+      href: "https://codepen.io/CoreyHutcheson/",
+      ariaLabel: "Corey's Codepen",
+    },
+  ];
 
-      <Link href="#0">
-        <StyledIcon icon={faFacebook} size="3x" />
-      </Link>
+  return (
+    <StyledFooter>
+      <IconContainer>
+        {footerLinks.map(link => (
+          <Link
+            key={link.ariaLabel}
+            href={link.href}
+            target="_blank"
+            rel="noreferrer noopener"
+            aria-label={link.ariaLabel}
+          >
+            <StyledIcon icon={link.icon} size="3x" />
+          </Link>
+        ))}
+      </IconContainer>
 
-      <Link href="#0">
-        <StyledIcon icon={faCodepen} size="3x" />
-      </Link>
-    </IconContainer>
-
-    <UpButton onClick={() => scrollTo(0)}>
-      <FontAwesomeIcon icon={faAngleDoubleUp} size="2x" />
-    </UpButton>
-  </StyledFooter>
-);
+      <UpButton onClick={() => scrollTo(0)}>
+        <FontAwesomeIcon icon={faAngleDoubleUp} size="2x" />
+      </UpButton>
+    </StyledFooter>
+  );
+};
 
 export default Footer;

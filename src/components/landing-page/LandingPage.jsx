@@ -6,12 +6,13 @@ import ScrollDownButton from "./scroll-down-button";
 const Text = styled.h1`
   font-size: 3rem;
   font-weight: bold;
-  max-width: 70%;
+  max-width: 90%;
   margin-bottom: 2rem;
   color: ${props => props.theme.font_onPrimary1};
 
   @media (min-width: 600px) {
     font-size: 5rem;
+    max-width: 70%;
   }
 `;
 
