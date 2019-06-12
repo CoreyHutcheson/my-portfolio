@@ -39,14 +39,14 @@ const ScrollUpButton = props => {
     }
   };
 
-  // window wrapper for netlify build process
-  if (typeof window !== `undefined`) {
-    useEffect(() => {
+  useEffect(() => {
+    // window wrapper for netlify build process
+    if (typeof window !== `undefined`) {
       window.addEventListener("scroll", onScroll);
 
       return () => window.removeEventListener("scroll", onScroll);
-    });
-  }
+    }
+  });
 
   const styles = {
     color: props.theme.font_onPrimary1,
