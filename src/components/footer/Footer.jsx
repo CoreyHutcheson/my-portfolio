@@ -1,13 +1,9 @@
 import React from "react";
 import styled from "styled-components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faGithub,
-  faFacebook,
-  faCodepen,
-} from "@fortawesome/free-brands-svg-icons";
 import { faAngleDoubleUp } from "@fortawesome/free-solid-svg-icons";
 
+import { footerLinks } from "src/data/footerLinks.js";
 import { scrollTo } from "src/utils/js/helperFunctions";
 
 const StyledFooter = styled.footer`
@@ -20,9 +16,8 @@ const StyledFooter = styled.footer`
 `;
 
 const IconContainer = styled.div`
-  max-width: 40%;
-  width: 40%;
-  min-width: 250px;
+  width: 30%;
+  min-width: 200px;
   display: flex;
   justify-content: space-between;
 `;
@@ -74,24 +69,6 @@ const UpButton = styled.div`
 `;
 
 const Footer = () => {
-  const footerLinks = [
-    {
-      icon: faGithub,
-      href: "https://github.com/CoreyHutcheson",
-      ariaLabel: "Corey's Github",
-    },
-    {
-      icon: faFacebook,
-      href: "https://www.facebook.com/cjhutch",
-      ariaLabel: "Corey's Facebook",
-    },
-    {
-      icon: faCodepen,
-      href: "https://codepen.io/CoreyHutcheson/",
-      ariaLabel: "Corey's Codepen",
-    },
-  ];
-
   return (
     <StyledFooter>
       <IconContainer>
