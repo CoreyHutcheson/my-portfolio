@@ -16,7 +16,7 @@ const Container = styled.div`
 `;
 
 const IconContainer = styled.div`
-  padding: 0.5rem;
+  padding: 0.4rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -30,9 +30,12 @@ const Icon = styled.div`
   align-items: center;
   fill: ${props => props.theme.font_onDark};
   width: 50px;
+  padding-bottom: 3px;
 `;
 
-const IconName = styled.div``;
+const IconName = styled.div`
+  padding-top: 3px;
+`;
 
 const IconList = ({ list }) => {
   return (
