@@ -35,6 +35,8 @@ const Description = styled.p`
 `;
 
 const StyledTech = styled.div`
+  border-top: 1px solid ${props => props.theme.font_onPrimary1};
+  padding-top: 0.5rem;
   margin-bottom: 1rem;
 
   & > span {
