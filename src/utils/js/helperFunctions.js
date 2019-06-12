@@ -1,4 +1,4 @@
-import messages from "src/data/contactMessages.js";
+import contactMessages from "src/data/contactMessages.js";
 
 export const getRandomMessage = () => {
   const randomNumber = (min, max) => {
@@ -8,7 +8,7 @@ export const getRandomMessage = () => {
     );
   };
 
-  return messages[randomNumber(0, messages.length - 1)];
+  return contactMessages[randomNumber(0, contactMessages.length - 1)];
 };
 
 export const scrollTo = pos => {
