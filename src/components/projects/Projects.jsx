@@ -35,7 +35,7 @@ const StyledProjects = styled.div`
   justify-items: center;
   justify-content: center;
   align-items: center;
-  grid-gap: 1rem;
+  grid-gap: 2rem;
 
   @media (min-width: 400px) {
     width: 90%;
