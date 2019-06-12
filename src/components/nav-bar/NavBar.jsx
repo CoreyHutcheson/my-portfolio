@@ -8,7 +8,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Toggler from "./Toggler";
 import NavLinks from "./NavLinks";
 import SliderButton from "src/components/slider-button";
-import usePinStartHeight from "src/utils/js/usePinStartHeight.js";
 
 const NavContainer = styled.nav`
   background: ${props => props.theme.color_primary};
@@ -59,7 +58,6 @@ const getHash = str => {
 
 const NavBar = ({ handleThemeChange, className }) => {
   const [open, setOpen] = useState(false);
-  const pinStartHeight = usePinStartHeight();
   const [activeLink, setActiveLink] = useState("/");
 
   const handleTogglerClick = () => {
@@ -75,7 +73,7 @@ const NavBar = ({ handleThemeChange, className }) => {
   });
 
   return (
-    <Headroom pinStart={pinStartHeight}>
+    <Headroom>
       <NavContainer className={className}>
         <Toggler handleClick={handleTogglerClick} />
 
