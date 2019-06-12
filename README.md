@@ -11,13 +11,13 @@
 
 - [ ] Lets talk about drop shadows, You’re entire website is flat (flat design) adding drop shadows to it makes it stick out like a sore thumb.
 
-- [ ] The text under the icons need a bit more breathing room. https://www.dropbox.com/s/eqvvexv8fe2i6go/- [ ] Screenshot%202019-06-12%2009.40.41.png?dl=0
+- [x] The text under the icons need a bit more breathing room. https://www.dropbox.com/s/eqvvexv8fe2i6go/Screenshot%202019-06-12%2009.40.41.png?dl=0
 
 - [ ] I’m digging this color: #3E637F, but the palette all together looks more elementary school and less playful.
 
-- [ ] The dark/light mode shit is fucking genius! But you get FOUC when it changes. Most likely that is due to JS getting - [ ] rerendered. Maybe make your light and dark theme regular css and toggle them with the component instead.
+- [ ] The dark/light mode shit is fucking genius! But you get FOUC when it changes. Most likely that is due to JS getting rerendered. Maybe make your light and dark theme regular css and toggle them with the component instead.
 
-- [ ] Wordpress = WordPress, Php = PHP, Jsx = JSX
+- [x] Wordpress = WordPress, Php = PHP, Jsx = JSX
 
 - [ ] And more space between projects, they a little close. Also maybe put a border on them (could go either way)
 
