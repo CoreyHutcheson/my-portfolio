@@ -1,6 +1,9 @@
 # TODO
 
-- [ ] Menu should be above the hero.
+- [x] Menu should be above the hero.
+
+  - [x] Position Navbar above Landing Page
+  - [x] Fix all Scroll buttons to scroll to correct position
 
 - [ ] Needs a logo in the top left… Even it’s a lightning bolt or something generic.
 
