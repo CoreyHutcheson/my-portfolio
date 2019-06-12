@@ -35,7 +35,9 @@
 - [ ] When clicking a link, maybe slide transition to the content. gives it a more SPA feel.
 
 - [ ] Rethink your font choices.
-  - Rubik for headings
-  - Karla for everything else
-  - Font weights
-  - No opacity
+  - [x] Rubik for headings
+    - Landing Page
+    - Section Titles
+  - [x] Karla for everything else
+  - [ ] Font weights
+  - [ ] No opacity
