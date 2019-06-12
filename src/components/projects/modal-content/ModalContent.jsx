@@ -45,12 +45,17 @@ const StyledTech = styled.div`
 `;
 
 const CloseButton = styled.div`
-  color: ${props => props.theme.font_onPrimary2};
+  background: rgba(0, 0, 0, 0.4);
+  color: rgba(255, 255, 255, 0.87);
+  padding: 20px;
   cursor: pointer;
-  margin-left: auto;
+  position: absolute;
+  top: 0;
+  right: 0;
 
   &:hover {
-    color: ${props => props.theme.font_onPrimary1};
+    background: rgba(255, 255, 255, 0.4);
+    color: rgba(0, 0, 0, 0.87);
   }
 `;
 
@@ -94,11 +99,11 @@ const ModalContent = ({
         {link ? <VisitSiteLink link={link} /> : null}
 
         {github ? <GithubLink url={github} /> : null}
-
-        <CloseButton onClick={handleModalClose}>
-          <FontAwesomeIcon icon={faTimes} size="2x" />
-        </CloseButton>
       </ButtonContainer>
+
+      <CloseButton onClick={handleModalClose}>
+        <FontAwesomeIcon icon={faTimes} size="2x" />
+      </CloseButton>
     </StyledModalContent>
   );
 };
