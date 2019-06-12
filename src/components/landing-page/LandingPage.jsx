@@ -4,6 +4,7 @@ import styled from "styled-components";
 import ScrollDownButton from "./scroll-down-button";
 
 const Text = styled.h1`
+  font-family: "Rubik", sans-serif;
   font-size: 3rem;
   font-weight: bold;
   max-width: 90%;
