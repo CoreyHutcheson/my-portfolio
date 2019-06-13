@@ -69,13 +69,10 @@ const NavBar = ({ handleThemeChange, className }) => {
     setOpen(!open);
   };
 
-  const handleLinkClick = () => {
+  const handleLinkClick = activeLink => {
     setOpen(false);
+    setActiveLink(activeLink);
   };
-
-  useEffect(() => {
-    setActiveLink(getHash(window.location.href));
-  });
 
   return (
     <Headroom>
