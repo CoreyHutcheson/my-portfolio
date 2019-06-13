@@ -56,10 +56,10 @@ const StyledLink = styled(Link).attrs(props => ({
 
     &:first-child {
       border-top: none;
-      margin-left: 15%;
+      margin-left: 5%;
     }
 
-    &:not(:last-child) {
+    &:not(:last-of-type) {
       margin-right: 1rem;
     }
 
