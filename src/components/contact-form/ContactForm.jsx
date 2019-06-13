@@ -1,6 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 
 import Input from "./input";
 import { getRandomMessage } from "src/utils/js/helperFunctions";
@@ -80,6 +82,16 @@ const FieldContainerFull = styled.div`
   }
 `;
 
+const Email = styled.span`
+  margin-top: 2rem;
+  display: flex;
+  align-items: center;
+
+  & > span {
+    margin-left: 1rem;
+  }
+`;
+
 const ContactForm = ({ className }) => (
   <FormContainer className={className}>
     <ContactText>{getRandomMessage()}</ContactText>
@@ -111,6 +123,11 @@ const ContactForm = ({ className }) => (
         <StyledButton type="reset" value="Clear" />
       </ButtonContainer>
     </StyledForm>
+
+    <Email>
+      <FontAwesomeIcon icon={faEnvelope} size="2x" />
+      <span>hutcheson.coreyj@gmail.com</span>
+    </Email>
   </FormContainer>
 );
 

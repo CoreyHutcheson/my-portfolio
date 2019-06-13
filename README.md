@@ -14,11 +14,7 @@
 
 - [ ] Also tell a story. That’s what sells. "A local business came to me with building a small but fast website. After consideration we decided to build a fast loading, React site that blah blah blah. Since the new Site launched mobile traffic has improved by 15%”
 
-- [ ] "Message me. I'm lonely =(“ = "Let’s Talk” or “How Can I Help?”
-
-- [ ] INCLUDE YOUR FUCKING EMAIL
-
-- [x] Drop Facebook. You don’t want a potential employer to know all ya business before you talk. They’ll probably stalk you anyway… Don’t make it easy.
+- [x] INCLUDE YOUR FUCKING EMAIL
 
 - [ ] Also modal looks like shit on mobile.
 
