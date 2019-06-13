@@ -39,6 +39,7 @@
     "react-modal": "^3.8.1",
     "react-reveal": "^1.2.2",
     "react-scroll-up-button": "^1.6.4",
+    "smooth-scroll": "^16.1.0",
     "styled-components": "^4.2.0"
   },
   "devDependencies": {
