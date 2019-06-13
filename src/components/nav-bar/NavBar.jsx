@@ -2,7 +2,12 @@ import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
 import Headroom from "react-headroom";
-import { faMoon, faSun } from "@fortawesome/free-solid-svg-icons";
+import {
+  faMoon,
+  faSun,
+  faChessKing,
+  faChess,
+} from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import Toggler from "./Toggler";
@@ -15,7 +20,6 @@ const NavContainer = styled.nav`
   width: 100%;
   min-height: 50px;
   ${props => props.theme.flexCenterMixin}
-  flex-direction: column;
 `;
 
 const LinkContainer = styled.div`
@@ -42,8 +46,13 @@ const LinkContainer = styled.div`
 const StyledSlider = styled(SliderButton)`
   @media (min-width: 600px) {
     margin-left: auto;
-    margin-right: 15%;
+    margin-right: 5%;
   }
+`;
+
+const MyIcon = styled(FontAwesomeIcon)`
+  margin-left: 2rem;
+  color: ${props => props.theme.font_onPrimary1};
 `;
 
 const getHash = str => {
@@ -75,6 +84,8 @@ const NavBar = ({ handleThemeChange, className }) => {
   return (
     <Headroom>
       <NavContainer className={className}>
+        <MyIcon icon={faChessKing} size="2x" />
+
         <Toggler handleClick={handleTogglerClick} />
 
         <LinkContainer open={open}>
