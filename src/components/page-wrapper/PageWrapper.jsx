@@ -10,8 +10,12 @@ const PageWrapper = ({ children, handleThemeChange }) => (
     <header id="navbar">
       <NavBar handleThemeChange={handleThemeChange} />
     </header>
-    <LandingPage />
-    <main>{children}</main>
+
+    <main>
+      <LandingPage />
+      {children}
+    </main>
+
     <Footer />
   </>
 );
