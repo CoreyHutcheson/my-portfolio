@@ -32,6 +32,7 @@ const Tag = styled.div`
 
 const Description = styled.p`
   line-height: 1.3;
+  padding-bottom: 1rem;
 `;
 
 const StyledTech = styled.div`
