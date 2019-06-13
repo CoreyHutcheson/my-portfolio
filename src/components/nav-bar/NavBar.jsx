@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
+import { Link } from "gatsby";
 import Headroom from "react-headroom";
 import {
   faMoon,
@@ -84,7 +85,9 @@ const NavBar = ({ handleThemeChange, className }) => {
   return (
     <Headroom>
       <NavContainer className={className}>
-        <MyIcon icon={faChessKing} size="2x" />
+        <Link to="/">
+          <MyIcon icon={faChessKing} size="2x" />
+        </Link>
 
         <Toggler handleClick={handleTogglerClick} />
 
