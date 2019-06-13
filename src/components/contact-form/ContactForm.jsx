@@ -28,7 +28,6 @@ const StyledForm = styled.form`
   border: 1px solid ${props => props.theme.font_onPrimary1};
   border-radius: ${props => props.theme.borderRadius};
   width: 100%;
-  box-shadow: ${props => props.theme.boxShadow};
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: 10px;

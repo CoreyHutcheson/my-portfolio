@@ -14,7 +14,6 @@ const Container = styled.div`
 
 const List = styled.ol`
   padding-left: 0;
-  box-shadow: ${props => props.theme.boxShadow};
   user-select: none;
 `;
 
@@ -28,7 +27,6 @@ const Content = styled.div`
   text-align: center;
   margin-top: -1px;
   padding: 1rem;
-  box-shadow: ${props => props.theme.boxShadow};
   ${props => props.theme.flexCenterMixin};
   line-height: 1.4rem;
 `;

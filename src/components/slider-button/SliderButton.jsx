@@ -52,14 +52,6 @@ const Checkbox = styled.input`
   width: 0;
   height: 0;
 
-  :checked + ${Slider} {
-    /* background: ${props => props.theme.color_background}; */
-  }
-
-  :focus + ${Slider} {
-    box-shadow: 0 0 1px #2196f3;
-  }
-
   :checked + ${Slider}:before {
     -webkit-transform: translateX(26px);
     -ms-transform: translateX(26px);
@@ -80,7 +72,12 @@ const SliderButton = ({
   <SliderButtonContainer className={className}>
     <Text>{preText}</Text>
     <Container htmlFor="slider">
-      <Checkbox type="checkbox" id="slider" aria-label="theme toggle button" onChange={e => handleChange(e)} />
+      <Checkbox
+        type="checkbox"
+        id="slider"
+        aria-label="theme toggle button"
+        onChange={e => handleChange(e)}
+      />
       <Slider />
     </Container>
     <Text>{postText}</Text>
