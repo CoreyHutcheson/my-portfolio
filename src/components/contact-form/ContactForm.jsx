@@ -85,6 +85,7 @@ const Email = styled.span`
   margin-top: 2rem;
   display: flex;
   align-items: center;
+  color: ${props => props.theme.font_onPrimary1};
 
   & > span {
     margin-left: 1rem;
