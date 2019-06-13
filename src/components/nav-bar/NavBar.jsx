@@ -3,12 +3,7 @@ import PropTypes from "prop-types";
 import styled from "styled-components";
 import { Link } from "gatsby";
 import Headroom from "react-headroom";
-import {
-  faMoon,
-  faSun,
-  faChessKing,
-  faChess,
-} from "@fortawesome/free-solid-svg-icons";
+import { faMoon, faSun, faChessKing } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import Toggler from "./Toggler";
