@@ -14,7 +14,7 @@
 
 - [ ] Also tell a story. That’s what sells. "A local business came to me with building a small but fast website. After consideration we decided to build a fast loading, React site that blah blah blah. Since the new Site launched mobile traffic has improved by 15%”
 
-- [ ] INCLUDE YOUR FUCKING EMAIL
+- [x] INCLUDE YOUR FUCKING EMAIL
 
 - [ ] Also modal looks like shit on mobile.
 
