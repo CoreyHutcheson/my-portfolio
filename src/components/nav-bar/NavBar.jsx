@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
 import { Link } from "gatsby";
@@ -50,16 +50,6 @@ const MyIcon = styled(FontAwesomeIcon)`
   margin-left: 2rem;
   color: ${props => props.theme.font_onPrimary1};
 `;
-
-const getHash = str => {
-  if (!str.includes("#")) {
-    return "/";
-  }
-
-  str = str.split("#");
-
-  return `/#${str[1]}`;
-};
 
 const NavBar = ({ handleThemeChange, className }) => {
   const [open, setOpen] = useState(false);
