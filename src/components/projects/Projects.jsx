@@ -13,6 +13,8 @@ const modalStyles = {
     zIndex: "1000",
   },
   content: {
+    display: "flex",
+    flexDirection: "column",
     top: "0",
     left: "0",
     bottom: "0",
@@ -52,11 +54,7 @@ const CarouselContainer = styled.div`
 `;
 
 const ContentContainer = styled.div`
-  height: 50%;
-
-  @media (min-width: 600px) {
-    height: 40%;
-  }
+  flex: 1;
 `;
 
 const Projects = ({ className }) => {
