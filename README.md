@@ -9,5 +9,3 @@
 - [ ] Not sure about having them open a modal with a slider.
 
 - [ ] Also tell a story. That’s what sells. "A local business came to me with building a small but fast website. After consideration we decided to build a fast loading, React site that blah blah blah. Since the new Site launched mobile traffic has improved by 15%”
-
-- [ ] When clicking a link, maybe slide transition to the content. gives it a more SPA feel.
