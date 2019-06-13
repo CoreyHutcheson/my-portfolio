@@ -67,7 +67,7 @@ const NavBar = ({ handleThemeChange, className }) => {
   return (
     <Headroom>
       <NavContainer className={className}>
-        <Link to="/">
+        <Link to="/" onClick={() => handleLinkClick("/")}>
           <MyIcon icon={faChessKing} size="2x" />
         </Link>
 
