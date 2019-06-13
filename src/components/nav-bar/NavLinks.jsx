@@ -5,6 +5,12 @@ import styled, { css } from "styled-components";
 
 import links from "src/data/navLinks.js";
 
+// Used for smooth-scrolling of links
+if (typeof window !== "undefined") {
+  // eslint-disable-next-line global-require
+  require("smooth-scroll")('a[href*="#"]');
+}
+
 const contentBorderMixin = color => css`
   :after,
   :before {
@@ -95,7 +101,7 @@ const NavLinks = ({ handleClick, className, activeLink }) => {
       <StyledLink
         key={link}
         to={url}
-        onClick={handleClick}
+        onClick={() => handleClick(url)}
         className={className}
         isactive={activeLink === url ? "true" : "false"}
       >
