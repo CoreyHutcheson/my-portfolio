@@ -63,26 +63,30 @@ const Text = styled.span`
   color: ${props => props.theme.font_onPrimary1};
 `;
 
-const SliderButton = ({
-  handleChange,
-  preText = "Off",
-  postText = "On",
-  className,
-}) => (
-  <SliderButtonContainer className={className}>
-    <Text>{preText}</Text>
-    <Container htmlFor="slider">
-      <Checkbox
-        type="checkbox"
-        id="slider"
-        aria-label="theme toggle button"
-        onChange={e => handleChange(e)}
-      />
-      <Slider />
-    </Container>
-    <Text>{postText}</Text>
-  </SliderButtonContainer>
-);
+const SliderButton = props => {
+  const { handleChange, preText, postText, className } = props;
+
+  return (
+    <SliderButtonContainer className={className}>
+      <Text>{preText}</Text>
+      <Container htmlFor="slider">
+        <Checkbox
+          type="checkbox"
+          id="slider"
+          aria-label="theme toggle button"
+          onChange={e => handleChange(e)}
+        />
+        <Slider />
+      </Container>
+      <Text>{postText}</Text>
+    </SliderButtonContainer>
+  );
+};
+
+SliderButton.defaultProps = {
+  preText: "Off",
+  postText: "On",
+};
 
 SliderButton.propTypes = {
   handleChange: PropTypes.func.isRequired,
