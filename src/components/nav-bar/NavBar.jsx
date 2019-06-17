@@ -1,24 +1,40 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
-import { Link } from "gatsby";
-import Headroom from "react-headroom";
-import { faMoon, faSun, faChessKing } from "@fortawesome/free-solid-svg-icons";
+import { faSun, faMoon } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Scrollspy from "react-scrollspy";
+import Headroom from "react-headroom";
 
-import Toggler from "./Toggler";
-import NavLinks from "./NavLinks";
+import { ToggleButton } from "./ToggleButton";
+import { Link } from "./Link";
 import SliderButton from "src/components/slider-button";
 
-const NavContainer = styled.nav`
+const Header = styled.header`
   background: ${props => props.theme.color_primary};
   position: relative;
   width: 100%;
   min-height: 50px;
-  ${props => props.theme.flexCenterMixin}
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 `;
 
-const LinkContainer = styled.div`
+const StyledIcon = styled.div`
+  color: ${props => props.theme.font_onPrimary1};
+  margin-left: ${props => props.theme.margin};
+`;
+
+const StyledToggle = styled(ToggleButton)`
+  margin-left: auto;
+  margin-right: ${props => props.theme.margin};
+
+  @media (min-width: 600px) {
+    display: none;
+  }
+`;
+
+const LinkContainer = styled(Scrollspy)`
   background: ${props => props.theme.color_primaryDark};
   display: flex;
   flex-direction: column;
@@ -26,11 +42,15 @@ const LinkContainer = styled.div`
   position: absolute;
   top: 50px;
   transition: transform 0.3s ease-out;
-  transform: translateX(${props => (props.open ? "0" : "-100%")});
+  transform: translateX(${props => (props.open ? 0 : "-100%")});
 
   @media (min-width: 600px) {
-    ${props => props.theme.flexCenterMixin}
+    display: flex;
     flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-left: ${props => props.theme.margin};
     background: inherit;
     position: relative;
     top: 0;
@@ -39,57 +59,80 @@ const LinkContainer = styled.div`
   }
 `;
 
-const StyledSlider = styled(SliderButton)`
+const Slider = styled(SliderButton)`
   @media (min-width: 600px) {
     margin-left: auto;
-    margin-right: 5%;
+    margin-right: ${props => props.theme.margin};
   }
 `;
 
-const MyIcon = styled(FontAwesomeIcon)`
-  margin-left: 2rem;
-  color: ${props => props.theme.font_onPrimary1};
-`;
-
-const NavBar = ({ handleThemeChange, className }) => {
+export const Navbar = props => {
+  const {
+    icon,
+    scrollToOffset,
+    children,
+    className,
+    handleThemeChange,
+  } = props;
   const [open, setOpen] = useState(false);
-  const [activeLink, setActiveLink] = useState("/");
 
   const handleTogglerClick = () => {
     setOpen(!open);
   };
 
-  const handleLinkClick = activeLink => {
+  const handleLinkClick = () => {
     setOpen(false);
-    setActiveLink(activeLink);
   };
+
+  const Links = children.map(({ props }) => (
+    <Link
+      key={props.element}
+      element={props.element}
+      handleLinkClick={handleLinkClick}
+      scrollToOffset={scrollToOffset}
+    >
+      {props.text}
+    </Link>
+  ));
 
   return (
     <Headroom>
-      <NavContainer className={className}>
-        <Link to="/" onClick={() => handleLinkClick("/")}>
-          <MyIcon icon={faChessKing} size="2x" />
-        </Link>
+      <Header className={className}>
+        {/* Include Icon Component if passed in via props */}
+        {icon && <StyledIcon>{icon}</StyledIcon>}
 
-        <Toggler handleClick={handleTogglerClick} />
+        <StyledToggle open={open} handleClick={handleTogglerClick} />
 
-        <LinkContainer open={open}>
-          <NavLinks handleClick={handleLinkClick} activeLink={activeLink} />
+        <LinkContainer
+          open={open}
+          items={["about", "projects", "contact"]}
+          currentClassName="is-current"
+          componentTag="nav"
+          offset={-300}
+        >
+          {Links}
 
-          <StyledSlider
+          <Slider
             handleChange={handleThemeChange}
             preText={<FontAwesomeIcon icon={faSun} />}
             postText={<FontAwesomeIcon icon={faMoon} />}
           />
         </LinkContainer>
-      </NavContainer>
+      </Header>
     </Headroom>
   );
 };
 
-NavBar.propTypes = {
-  handleThemeChange: PropTypes.func.isRequired,
-  className: PropTypes.string,
+Navbar.defaultProps = {
+  icon: false,
+  scrollToOffset: 0,
 };
 
-export default NavBar;
+Navbar.propTypes = {
+  icon: PropTypes.oneOfType([PropTypes.bool, PropTypes.element]),
+  dark: PropTypes.bool,
+  scrollOffset: PropTypes.number,
+  children: PropTypes.node.isRequired,
+  className: PropTypes.string,
+  handleThemeChange: PropTypes.func,
+};
