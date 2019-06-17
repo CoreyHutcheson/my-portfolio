@@ -6,6 +6,7 @@ const baseTheme = {
   navbarHeight: "50px",
   boxShadow: "3px 3px 7px 0px rgba(0, 0, 0, 0.75);",
   borderRadius: "5px",
+  margin: "2rem",
 };
 
 export default baseTheme;
