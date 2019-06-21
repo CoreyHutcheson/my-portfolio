@@ -1,0 +1,14 @@
+[
+  {
+    "element": "about",
+    "text": "About"
+  },
+  {
+    "element": "projects",
+    "text": "Projects"
+  },
+  {
+    "element": "contact",
+    "text": "Contact"
+  }
+]
