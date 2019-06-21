@@ -5,7 +5,7 @@ import { Navbar as ReusableNavbar } from "@corey_hutcheson/reusable-react";
 import { faSun, faMoon, faChessKing } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-import SliderButton from "src/components/slider-button";
+import { SliderButton } from "./SliderButton.jsx";
 
 export const Navbar = props => {
   const { className, handleThemeChange } = props;

@@ -63,7 +63,7 @@ const Text = styled.span`
   color: ${props => props.theme.font_onPrimary1};
 `;
 
-const SliderButton = props => {
+export const SliderButton = props => {
   const { handleChange, preText, postText, className } = props;
 
   return (
@@ -94,5 +94,3 @@ SliderButton.propTypes = {
   postText: PropTypes.node,
   className: PropTypes.string,
 };
-
-export default SliderButton;
