@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 
 import LandingPage from "src/components/landing-page";
-import { Navbar } from "src/components/nav-bar";
+import { Navbar } from "src/components/navbar";
 import Footer from "src/components/footer";
 
 const PageWrapper = ({ children, handleThemeChange }) => (
