@@ -1,4 +1,4 @@
-import contactMessages from "src/data/contactMessages.js";
+import contactMessages from "src/data/contactMessages.json";
 
 export const getRandomMessage = () => {
   const randomNumber = (min, max) => {
