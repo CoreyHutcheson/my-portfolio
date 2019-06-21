@@ -1,29 +1,14 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { Navbar as ReusableNavbar } from "@corey_hutcheson/reusable-react";
-
 import { faSun, faMoon, faChessKing } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
+import { Navbar as ReusableNavbar } from "@corey_hutcheson/reusable-react";
 import { SliderButton } from "./SliderButton.jsx";
+import links from "src/data/navLinks.json";
 
 export const Navbar = props => {
   const { className, handleThemeChange } = props;
-
-  const links = [
-    {
-      element: "about",
-      text: "About",
-    },
-    {
-      element: "projects",
-      text: "Projects",
-    },
-    {
-      element: "contact",
-      text: "Contact",
-    },
-  ];
 
   return (
     <ReusableNavbar
