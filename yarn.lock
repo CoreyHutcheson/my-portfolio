@@ -759,9 +759,9 @@
     minimist "^1.2.0"
 
 "@corey_hutcheson/reusable-react@^0.2.2":
-  version "0.2.2"
-  resolved "https://registry.yarnpkg.com/@corey_hutcheson/reusable-react/-/reusable-react-0.2.2.tgz#0b4e1571ef89715fdb8315454ee9c873c2207a83"
-  integrity sha512-iv5J7ch3cbu64E5i2HuWMqWyvAri3sGQtZtJl+M8HaypSmACu8qdDSc6d8phlTvdP50dQS6S+nzl19b6lAOk0Q==
+  version "0.2.6"
+  resolved "https://registry.yarnpkg.com/@corey_hutcheson/reusable-react/-/reusable-react-0.2.6.tgz#26e5e666832004502fe20a16498b162a0846e938"
+  integrity sha512-LydaiuHw8LmDZ8gvW0zXfLvFJ2LLBPOA4Eo7a7MpAsKJ/Q0mymJw8dur4SZN47h/mjVHZAUrjY5lB6b0bgRrFA==
   dependencies:
     react-headroom "^2.2.8"
     react-scrollspy "^3.4.0"
@@ -4216,9 +4216,9 @@ ee-first@1.1.1:
   integrity sha1-WQxhFWsK4vTwJVcyoViyZrxWsh0=
 
 electron-to-chromium@^1.3.164, electron-to-chromium@^1.3.47:
-  version "1.3.167"
-  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.3.167.tgz#6c22e5384a6b54fb13136ca5b3ade5daac9bf894"
-  integrity sha512-84IjpeRudjP43Q0+K7tlS7ESoHOl0W6CIdzs5reS9p+sAjCQEDiaAyiXN2v1qLUdL+Of6ZSaH4Cq6bl+sfzy8A==
+  version "1.3.169"
+  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.3.169.tgz#f9722d3f6a18a19c1fc1216bf9e1654daafab539"
+  integrity sha512-CxKt4ONON7m0ekVaFzvTZakHgGQsLMRH0J8W6h4lhyBNgskj3CIJz4bj+bh5+G26ztAe6dZjmYUeEW4u/VSnLQ==
 
 elliptic@^6.0.0:
   version "6.4.1"
