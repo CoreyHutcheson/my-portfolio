@@ -759,9 +759,9 @@
     minimist "^1.2.0"
 
 "@corey_hutcheson/reusable-react@^0.2.2":
-  version "0.2.2"
-  resolved "https://registry.yarnpkg.com/@corey_hutcheson/reusable-react/-/reusable-react-0.2.2.tgz#0b4e1571ef89715fdb8315454ee9c873c2207a83"
-  integrity sha512-iv5J7ch3cbu64E5i2HuWMqWyvAri3sGQtZtJl+M8HaypSmACu8qdDSc6d8phlTvdP50dQS6S+nzl19b6lAOk0Q==
+  version "0.2.7"
+  resolved "https://registry.yarnpkg.com/@corey_hutcheson/reusable-react/-/reusable-react-0.2.7.tgz#c98b4b94d6156ced053a4b7bf6a0d0c2e96c5827"
+  integrity sha512-kCUKPDeWvMKblmVDkrJxZ4tYZV2Pe8eTf11+AcwKdexT5Ritv4ftEmR5GWEd8yGVzBI8YqzNEx1FpolZDCOyQQ==
   dependencies:
     react-headroom "^2.2.8"
     react-scrollspy "^3.4.0"
