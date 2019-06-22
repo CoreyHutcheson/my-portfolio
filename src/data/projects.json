@@ -48,12 +48,12 @@
     "github": "https://github.com/CoreyHutcheson/reusable-react",
     "images": [
       {
-        "src": "../assets/images/projects/mayhem_3.jpg",
-        "alt_text": "Mayhem Roster Page"
+        "src": "../assets/images/projects/reusable-react-1.jpg",
+        "alt_text": "NPM Page"
       },
       {
-        "src": "../assets/images/projects/mayhem_1.jpg",
-        "alt_text": "Mayhem Landing Page"
+        "src": "../assets/images/projects/reusable-react-3.jpg",
+        "alt_text": "Mobile Navbar Version"
       }
     ]
   }
