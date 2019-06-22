@@ -38,5 +38,23 @@
         "alt_text": "Mayhem Landing Page"
       }
     ]
+  },
+  {
+    "title": "Reusable-React",
+    "tag": "Custom React Library",
+    "description": "Realizing a need to build more versitile and resuable react components, I began placing my more frequently used components into their own npm package.",
+    "technologies": "React, Styled-Components",
+    "link": "https://www.npmjs.com/package/@corey_hutcheson/reusable-react",
+    "github": "https://github.com/CoreyHutcheson/reusable-react",
+    "images": [
+      {
+        "src": "../assets/images/projects/mayhem_3.jpg",
+        "alt_text": "Mayhem Roster Page"
+      },
+      {
+        "src": "../assets/images/projects/mayhem_1.jpg",
+        "alt_text": "Mayhem Landing Page"
+      }
+    ]
   }
 ]
