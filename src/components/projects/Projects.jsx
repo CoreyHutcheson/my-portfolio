@@ -41,7 +41,7 @@ const StyledProjects = styled.div`
 
   @media (min-width: 400px) {
     width: 90%;
-    max-width: 900px;
+    max-width: 1000px;
   }
 `;
 
