@@ -56,5 +56,23 @@
         "alt_text": "Mobile Navbar Version"
       }
     ]
+  },
+  {
+    "title": "Alarm Clock",
+    "tag": "",
+    "description": "Small React app that allows the user the ability to set multiple alarms.",
+    "technologies": "React, Storybook, CSS Modules, Github Pages",
+    "link": "https://CoreyHutcheson.github.io/alarm-clock",
+    "github": "https://github.com/CoreyHutcheson/alarm-clock",
+    "images": [
+      {
+        "src": "../assets/images/projects/alarm-clock-2.jpg",
+        "alt_text": "Main alarm screen"
+      },
+      {
+        "src": "../assets/images/projects/alarm-clock-3.jpg",
+        "alt_text": "Mobile multiple alarm view"
+      }
+    ]
   }
 ]
