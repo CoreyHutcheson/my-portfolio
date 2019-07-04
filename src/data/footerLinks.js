@@ -12,7 +12,7 @@ export const footerLinks = [
   },
   {
     icon: faLinkedin,
-    href: "https://www.linkedin.com/in/corey-hutcheson-b5150318a/",
+    href: "https://www.linkedin.com/in/coreyhutcheson/",
     ariaLabel: "Corey's LinkedIn",
   },
   {
