@@ -759,15 +759,9 @@
     minimist "^1.2.0"
 
 "@corey_hutcheson/reusable-react@^0.2.2":
-<<<<<<< HEAD
-  version "0.2.6"
-  resolved "https://registry.yarnpkg.com/@corey_hutcheson/reusable-react/-/reusable-react-0.2.6.tgz#26e5e666832004502fe20a16498b162a0846e938"
-  integrity sha512-LydaiuHw8LmDZ8gvW0zXfLvFJ2LLBPOA4Eo7a7MpAsKJ/Q0mymJw8dur4SZN47h/mjVHZAUrjY5lB6b0bgRrFA==
-=======
   version "0.2.7"
   resolved "https://registry.yarnpkg.com/@corey_hutcheson/reusable-react/-/reusable-react-0.2.7.tgz#c98b4b94d6156ced053a4b7bf6a0d0c2e96c5827"
   integrity sha512-kCUKPDeWvMKblmVDkrJxZ4tYZV2Pe8eTf11+AcwKdexT5Ritv4ftEmR5GWEd8yGVzBI8YqzNEx1FpolZDCOyQQ==
->>>>>>> develop
   dependencies:
     react-headroom "^2.2.8"
     react-scrollspy "^3.4.0"
@@ -7954,9 +7948,9 @@ lodash.uniq@^4.5.0:
   integrity sha1-0CJTc662Uq3BvILklFM5qEJ1R3M=
 
 lodash@^4.11.1, lodash@^4.15.0, lodash@^4.17.10, lodash@^4.17.11, lodash@^4.17.4, lodash@^4.17.5, lodash@^4.3.0:
-  version "4.17.11"
-  resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.11.tgz#b39ea6229ef607ecd89e2c8df12536891cac9b8d"
-  integrity sha512-cQKh8igo5QUhZ7lg38DYWAxMvjSAKG0A8wGSVimP07SIUEK2UO+arSRKbRZWtelMtN5V0Hkwh5ryOto/SshYIg==
+  version "4.17.14"
+  resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.14.tgz#9ce487ae66c96254fe20b599f21b6816028078ba"
+  integrity sha512-mmKYbW3GLuJeX+iGP+Y7Gp1AiGHGbXHCOh/jZmrawMmsE7MS4znI3RL2FsjbqOyMayHInjOeykW7PEajUk1/xw==
 
 log-update@^3.0.0:
   version "3.2.0"
